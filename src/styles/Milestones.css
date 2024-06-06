@@ -1,0 +1,29 @@
+.milestones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .milestone {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Khand';
+  }
+
+  .milestone:nth-child(even) {
+    justify-self: flex-end;
+  }
+  
+  .milestone h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .milestone p {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+  }

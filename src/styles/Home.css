@@ -1,0 +1,66 @@
+.hero {
+    background-image: url('../assets/hero-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero-text {
+    margin-top: 3.875rem;
+    text-align: center;
+}
+
+.hero-text h1{
+    font-size: 75px;
+    font-family: 'Khand', sans-serif;
+    color: white;
+    padding: 1rem 0;
+}
+
+
+.call-out a {
+    text-decoration: none;
+    font-family: 'Khand';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.call-out button {
+    border: none;
+    background: none;
+    color: white;
+    padding: .5rem 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+
+}
+
+.call-out button:first-child {
+    border: 2px white solid;
+    margin-right: .9375rem;
+
+}
+
+.call-out button:last-child {
+    background-color: var(--yellow);
+}
+
+.call-out button:last-child:hover {
+    background: none;
+    border: 2px solid white;
+    
+}
+
+.call-out button:first-child:hover {
+    background-color: var(--yellow);
+    border: none;
+
+}
+
+.church-history {
+    margin-top: 80px;
+}
+
+
+
