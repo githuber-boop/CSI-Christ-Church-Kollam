@@ -76,15 +76,6 @@ textarea:not([rows]) {
   min-height: 10em;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-header {
-  font-size: calc(10px + 2vmin);
-  color: white;
-  height: 200px; /* Adjust this height to fit your header content */
-}
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {

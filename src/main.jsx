@@ -9,6 +9,7 @@ import {
 import './index.css'
 import Milestones from './pages/Milestones.jsx';
 import OurBishop from './pages/OurBishop.jsx';
+import VicarsMessage from './pages/VicarsMessage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/our-bishops",
     element: <OurBishop/>,
+  },
+  {
+    path: "/vicars-message",
+    element: <VicarsMessage/>,
   },
 ]);
 

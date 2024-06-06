@@ -5,6 +5,7 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isFixed, setIsFixed] = useState(false);
     const [dropdowns, setDropdowns] = useState({
         home: false,
         services: false,
@@ -13,21 +14,21 @@ const Navbar = () => {
         missions: false,
     });
 
-    // useEffect(() => {
-    //   const handleScroll = () => {
-    //     const headerHeight = document.querySelector('.App-header').offsetHeight;
-    //     if (window.scrollY > headerHeight) {
-    //       setIsFixed(true);
-    //     } else {
-    //       setIsFixed(false);
-    //     }
-    //   };
+    useEffect(() => {
+      const handleScroll = () => {
+        const headerHeight = document.querySelector('.App-header').offsetHeight;
+        if (window.scrollY > headerHeight) {
+          setIsFixed(true);
+        } else {
+          setIsFixed(false);
+        }
+      };
   
-    //   window.addEventListener('scroll', handleScroll);
-    //   return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    //   };
-    // }, []);
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -42,7 +43,7 @@ const Navbar = () => {
             <div className="logo">
                 <img src="src/assets/csi-christ-logo.png" alt="CSI Christ Church Logo" />
             </div>
-            <button className="hamburger" onClick={toggleMenu}>
+            <button className={`hamburger ${isFixed ? 'color' : ''}`} onClick={toggleMenu}>
                 {isOpen ? <FaTimes /> : <FaBars />}
             </button>
             <ul className={isOpen ? 'nav-links active' : 'nav-links'}>
@@ -55,6 +56,7 @@ const Navbar = () => {
                             <li className="dropdown-item"><Link className="link" to="/church-history">Church History</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/milestones">Milestones</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/our-bishops">Our Bishops</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/vicars-message">Vicar's Message</Link></li>
                         </ul>
                     )}
                 </li>

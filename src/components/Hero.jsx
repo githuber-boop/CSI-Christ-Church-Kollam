@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     
 
-            <header className="hero">
+            <header className="hero App-header">
               <div className="container">
             
               <Navbar/>

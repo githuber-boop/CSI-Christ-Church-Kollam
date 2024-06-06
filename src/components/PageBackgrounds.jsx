@@ -5,7 +5,7 @@ import '../assets/milestones-bg.png'
 
 const PageBackgrounds = ({backgroundImg, heroText}) => {
   return (
-    <div className="image-container"   
+    <div className="image-container App-header"   
     style={{
         backgroundImage: `url(${backgroundImg})`,
         backgroundRepeat: 'no-repeat',
