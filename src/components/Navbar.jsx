@@ -94,7 +94,7 @@ const Navbar = () => {
                     )}
                 </li>
 
-                <li className="nav-link"><Link className="link" to="#">Login</Link></li>
+                <li className="nav-link"><Link className="link" to="/login">Login</Link></li>
             </ul>
         </nav>
     );

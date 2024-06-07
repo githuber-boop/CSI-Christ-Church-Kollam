@@ -1,0 +1,19 @@
+.dashboard {
+    height: 100vh;
+    display: flex;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: spa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: #612118;
+    width: 400px;
+    
+  }

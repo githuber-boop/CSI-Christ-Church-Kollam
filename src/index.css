@@ -37,6 +37,7 @@ ol[role='list'] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -76,7 +77,19 @@ textarea:not([rows]) {
   min-height: 10em;
 }
 
+.grid {
+  display: grid;
+}
 
+.date {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .72);
+  margin-bottom: 10px;
+}
+
+.titles {
+  margin-top: 20px;
+}
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;

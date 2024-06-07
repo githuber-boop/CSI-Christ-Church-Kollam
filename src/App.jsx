@@ -8,9 +8,6 @@ const App = () => {
       <div>
         <Hero/>
         <ChurchHistory/>
-        <ChurchHistory/>
-        <ChurchHistory/>
-        
       </div>
     
 
