@@ -2,8 +2,25 @@ import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
 import messageBg from '../assets/vicars-message-bg.png'
 import bishopImage from '../assets/vicar-image.png'
+import { useState } from 'react'
+import { useEffect } from 'react'
+
 
 const VicarsMessage = () => {
+  
+  const [messages, setMessages] = useState([])
+
+  useEffect(() => {
+        
+    const fetchMessage = async () => {
+        const res = await fetch("http://localhost:5000/message")
+        const data = await res.json()
+        setMessages(data)
+    }   
+
+    fetchMessage()
+}, [])
+
     const styles = {
         content: {
         maxWidth: '1200px',
@@ -14,8 +31,9 @@ const VicarsMessage = () => {
           padding:"30px"
         },
         image: {
-          float: 'center',
-          margin: '0 0  20px 20px',
+          float: 'right',
+          // margin: "0 auto",
+          margin: '0 0 20px 20px',
         },
         text: {
           fontFamily: "IBM Plex Sans Condensed",
@@ -30,23 +48,19 @@ const VicarsMessage = () => {
   
         <div style={styles.content}>
             <img src={bishopImage} alt="Bishop" style={styles.image} width="300" />
-            <div>
 
-                <h2 className='date'>6th of June 2024</h2>
-                <p style={styles.text} >I am delighted to know that a commemorative volume will be  published in connection with the centenary celebrations of our church edifice.
+            {messages.map((message, index) => (
+              <div key={index}>
+              <h2 className='date'>{message.date}</h2>
+              <p style={styles.text}>{message.message}</p>
 
-On the occasion of the Jubilee, as the Bible teaches, we are called to thank God for all the blessings and guidance given to us and also to rededicate ourselves to walk with God and to participate in His mission.
-Quilon has been blessed with a very strong missionary tradition. The missionaries underwent extremely difficult situations, mainly on account of their health. In spite of all the difficulties, God enabled them to give birth to a community that accepted Jesus Christ as Lord and Savior. The work of education and the proclamation of the Gospel were the main areas of their ministry. This transformed the total life of the society. Several of our fathers and mothers who had associated with them also rendered their service with commitment to the Church and society. We remember all of them with gratitude. We are proud of the Christian community connected to the Church of South India in Kollam, which has been giving witness as the 'people of God'.</p>
-                <p style={styles.text} >I am delighted to know that a commemorative volume will be  published in connection with the centenary celebrations of our church edifice.
-
-On the occasion of the Jubilee, as the Bible teaches, we are called to thank God for all the blessings and guidance given to us and also to rededicate ourselves to walk with God and to participate in His mission.
-Quilon has been blessed with a very strong missionary tradition. The missionaries underwent extremely difficult situations, mainly on account of their health. In spite of all the difficulties, God enabled them to give birth to a community that accepted Jesus Christ as Lord and Savior. The work of education and the proclamation of the Gospel were the main areas of their ministry. This transformed the total life of the society. Several of our fathers and mothers who had associated with them also rendered their service with commitment to the Church and society. We remember all of them with gratitude. We are proud of the Christian community connected to the Church of South India in Kollam, which has been giving witness as the 'people of God'.</p>
-
-                <div className="titles">
-                  <h3>REV. JOSE GEORGE</h3>
-                  <h4>DEAN</h4>
-                </div>
-            </div>
+              <div className="titles">
+                <h3>{message.vicarName}</h3>
+                <h4>DEAN</h4>
+              </div>
+          </div>
+            ))}
+            
                 
         </div>
 

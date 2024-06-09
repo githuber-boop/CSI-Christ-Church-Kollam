@@ -1,49 +1,54 @@
-.dashboard main, .sidebar {
+.admin-member-dashboard main, .sidebar {
     padding: 12px;
 }
+.link-active {
+  border: 2px solid white;
+}
   
-  
-  .content {
+  .admin-member-content {
     flex: 1;
     /* padding: 20px; */
     box-sizing: border-box;
     margin-left: 400px;
-    display: flex;
-    flex-direction: column;
   
   }
-  .sort-filter {
-    display: flex;
+
+  .grid-col-2 {
+    display: grid;
+    grid-template-columns: minmax(150px, 40%) minmax(150px, 40%);
+    justify-content: center;
     gap: 1rem;
-    margin-bottom: 50px;
   }
 
-  .sort-filter .input input {
-    padding: .2rem .85rem ;
+  .deleteButton {
+    padding: .5rem 2.5rem;
+    font-size: 18px;
+    font-family: "Khand";
+    color: white;
+    background-color: #612118;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    margin-top: 10px;
   }
-
- 
   
-  .member-details h3{
+  .member-details {
     color: black;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* margin-left: 50px; */
-    padding-left: 5px;
-    font-size: 1.25rem;
-    margin-bottom: 1px;
-    font-family: "IBM Plex Mono", sans-serif;
-    font-weight: 400;
-  }
-  .member-details h3 span {
-    font-family: "Khand", sans-serif;
-    color: #352A2A;
-    font-family: "IBM Plex Sans Condensed", sans-serif;
-    font-weight: bold;
-  }
+    padding: 20px;
+    font-family: "IBM Plex Sans Condensed";
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 
-
-  .sidebar {
+    /* justify-content: center; */
+    /* height: 250px; */
+  }
+  
+  .admin-member-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,9 +57,9 @@
     top: 0;
     left: 0;
     height: 100vh;
-    background: #352A2A;
+    background: #612118;
     width: 400px;
-    
+    padding: 20px;
   }
   
   .sidebar-link:last-child {
@@ -80,27 +85,8 @@
     height: 4px; /* Adjust the thickness of the underline */
     background-color: #fff;
   }
-  .bottom-links {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .log-out {
-    border: 2px solid white;
-    margin-bottom: 4px;
-
-  }
-
-  .flex-center {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .flex-center .links  {
-    align-self: center;
-  }
-  .dashboard {
+  
+  .admin-member-dashboard {
     height: 100vh;
     display: flex;
   }
