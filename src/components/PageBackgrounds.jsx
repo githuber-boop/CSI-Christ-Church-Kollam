@@ -10,13 +10,12 @@ const PageBackgrounds = ({backgroundImg, heroText}) => {
         backgroundImage: `url(${backgroundImg})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height:'50vh'
       }}
     >
         <div className='container'>
             <Navbar/>
             <div className="hero-text">
-              <h1>{heroText}</h1>
+              <h1 className='heroText'>{heroText}</h1>
             </div>
         </div>
     </div>

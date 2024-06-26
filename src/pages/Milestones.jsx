@@ -1,7 +1,6 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
 import milestonesBg from '../assets/milestones-bg.png'
-import idk from '../assets/milestones.png'
 import '../styles/Milestones.css'
 
 const Milestones = () => {
@@ -43,6 +42,7 @@ const Milestones = () => {
             <h2>{milestone.period}</h2>
             <p>{milestone.details}</p>
           </div>
+          
         ))}
       </div>
       </div>

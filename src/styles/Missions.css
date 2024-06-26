@@ -1,0 +1,100 @@
+.mission-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-left: 20px;
+}
+
+.mission {
+    border-left: 10px solid var(--yellow);
+    margin-top: 50px;
+
+}
+
+.mission-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.missions {
+    margin-top: 50px;
+}
+
+.flex-align {
+    margin-top: 50px;
+}
+
+.mission-text h2{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: "Khand";
+    letter-spacing: .1ch;
+}
+
+.mission-text .button{
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+.mission-text .button {
+    text-decoration: none;
+    font-family: "Khand";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    border: 2px solid var(--yellow);
+    
+}
+
+.mission-text .button:hover {
+    background: none;
+    color: black;
+}
+
+.mission-text p{
+    font-size:1.6875rem;
+    margin: 10px 0;
+    padding-right: 70px;
+    
+}
+
+@media screen and (max-width: 950px) {
+    .mission-content {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .mission-text p{
+        font-size: 3vw;
+        padding-right: 10px;
+    }
+
+    .mission-image {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .mission-text .button {
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    .mission {
+        margin-bottom: 100px;
+    }
+
+    .text-container {
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+@media screen and (max-width:500px) {
+    .mission-text p{
+        font-size: 4vw;
+    }
+}

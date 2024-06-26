@@ -60,3 +60,11 @@
 
 
 
+@media screen and (max-width:600px) {
+    .hero-text h1{
+
+        font-size: 12vw;
+    }
+
+    
+}

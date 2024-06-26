@@ -3,17 +3,72 @@
     flex-direction: column;
     align-items: center;
     margin: 20px;
-  }
+}
+
+.milestone:nth-child(even) {
+  /* background-color: red; */
+  align-self: end;
+}
+  
+
+.milestone:nth-child(odd) {
+  align-self: flex-start;
+  
+}
   
   .milestone {
     background: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
+
     margin: 10px;
-    width: 80%;
+    width: 60%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-family: 'Khand';
+    position: relative;
+  }
+
+  .milestone:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    right: 0;
+    height: 50%;
+    background-color: var(--yellow);
+  }
+
+  .milestone:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 9%;
+    right: 0;
+    display: block;
+    height: 5px;
+    background-color: var(--yellow);
+  }
+
+  .milestone:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    left: 0;
+    height: 50%;
+    background-color: var(--yellow);
+  }
+
+  .milestone:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 9%;
+    left: 0;
+    display: block;
+    height: 5px;
+    background-color: var(--yellow);
   }
 
   .milestone:nth-child(even) {

@@ -4,6 +4,7 @@ import messageBg from '../assets/vicars-message-bg.png'
 import bishopImage from '../assets/vicar-image.png'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import LazyLoad from 'react-lazyload'
 
 
 const VicarsMessage = () => {
@@ -47,7 +48,10 @@ const VicarsMessage = () => {
         <PageBackgrounds backgroundImg={messageBg} heroText={"VICAR'S MESSAGE"}/>
   
         <div style={styles.content}>
+          <LazyLoad offset={7000}>
+
             <img src={bishopImage} alt="Bishop" style={styles.image} width="300" />
+          </LazyLoad>
 
             {messages.map((message, index) => (
               <div key={index}>

@@ -82,6 +82,7 @@ textarea:not([rows]) {
   display: grid;
 }
 
+
 .date {
   text-transform: uppercase;
   color: rgba(0, 0, 0, .72);
@@ -107,6 +108,7 @@ textarea:not([rows]) {
 .heading h1 {
   text-transform: uppercase;
   font-size: 60px;
+  
   /* margin-bottom: -10px; */
 }
 
@@ -159,8 +161,9 @@ textarea:not([rows]) {
 }
 
 .center {
-  display: block;
-  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.625rem;
 }
 
 .container {
@@ -169,6 +172,64 @@ textarea:not([rows]) {
     display: block;
     padding: 0 1rem;
 }
+
+.flex-align {
+  display: inline-flex;
+  align-items: center;
+  border-top: 3px solid #F9A228; /* Orange color for the top border */
+  border-bottom: 3px solid #F9A228;
+  margin-top: 20px;
+  
+}
+
+
+
+.text-box {
+  font-family: 'KHAND', sans-serif; /* Font family to make text bold */
+  font-size: 49px; /* Adjust the font size as needed */
+  color: #000000; /* Black text color */
+  padding: 0 10px; /* Adjust the padding to create space for the border */
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-box::before,
+.text-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px; 
+  height: 3px; /* Thickness of the line */
+  background-color: #F9A228; /* Orange color for the lines */
+}
+
+.text-box::before {
+  left: -20px; /* Positioning before the text */
+  transform: translateY(-50%);
+}
+
+.text-box::after {
+  right: -20px; /* Positioning after the text */
+  transform: translateY(-50%);
+}
+
+.line {
+  height: 3px; /* Thickness of the line */
+  background-color: #F9A228; /* Orange color for the lines */
+  /* flex-grow: 1; */
+}
+
+.left-line {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.right-line {
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+
+
+
 .button {
   border: none;
 
@@ -186,4 +247,48 @@ textarea:not([rows]) {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.125rem;
+}
+
+.image-container  {
+  height: 50vh;
+}
+
+@media screen and (max-width:700px) {
+  .image-container {
+    height: 80vh;
+  }
+
+  .flex-align {
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    align-self:center;
+  }
+
+
+
+}
+
+@media screen and (max-width:1000px) {
+  .grid-column {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+
+  }
+
+  .grid-column .col-2-text {
+    text-align: center;
+    }
+    
+  .grid-column .col-2-text p {
+      
+      padding-right: .5rem;
+  }
+
+  .church-history .heading p{
+    text-align: center;
+  }
+
+
+
 }

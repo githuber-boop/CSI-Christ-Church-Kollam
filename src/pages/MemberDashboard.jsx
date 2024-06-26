@@ -33,7 +33,7 @@ const MemberDashboard = () => {
               </div>
             </div>
             <div className="bottom-links">
-                <Link to="/home" className='log-out'>Home</Link>
+                <Link to="/" className='log-out'>Home</Link>
                 <Link to="" className='log-out'>Log Out</Link>
             </div>
         </aside>
@@ -49,6 +49,7 @@ const MemberDashboard = () => {
 
         <div className="grid-col-2">
           {details.map((memberDetail, index) => (
+            
             <div key={index} className="member-details">
               <h3><span>NAME:</span> {memberDetail.name}</h3>
               <h3><span>ADDRESS: </span>{memberDetail.address}</h3>
@@ -65,4 +66,4 @@ const MemberDashboard = () => {
   )
 }
 
-export default MemberDashboard
+export default React.memo(MemberDashboard)

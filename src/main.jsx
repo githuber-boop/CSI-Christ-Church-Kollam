@@ -15,6 +15,9 @@ import MemberDashboard from './pages/MemberDashboard.jsx';
 import NewUser from './pages/NewUser.jsx'
 import AdminMemberDetails from './pages/AdminMemberDetails.jsx';
 import AdminVicarsMessage from './pages/AdminVicarsMessage.jsx'
+import Missions from './pages/Missions.jsx';
+import EditUser from './pages/EditUser.jsx';
+import ChhattisgarhMission from './pages/ChhattisgarhMission.jsx';
 
 
 const addUser = async (newUser) => {
@@ -57,6 +60,14 @@ const router = createBrowserRouter([
     element: <VicarsMessage/>,
   },
   {
+    path: "/missions-projects",
+    element: <Missions/>,
+  },
+  {
+    path: "/chhattisgarh-mission",
+    element: <ChhattisgarhMission/>,
+  },
+  {
     path: "/login",
     element: <Login/>,
   },
@@ -72,6 +83,11 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard/members",
     element: <AdminMemberDetails/>,
+
+  },
+  {
+    path: "/admin-dashboard/edit-user/:id",
+    element: <EditUser/>,
 
   },
   {

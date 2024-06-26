@@ -26,10 +26,10 @@
     cursor: pointer;
     color: #fff;
     display: block;
-    position: fixed;
-    top: 0;
-    right: 50px;
-    transform: translate(-100%, 100%);
+    /* position: fixed; */
+    /* top: 0; */
+    /* right: 50px; */
+    /* transform: translate(-100%, 100%); */
   }
   
   .nav-links {
@@ -37,11 +37,11 @@
     flex-direction: column;
     width: 35%;
     height: 100vh;
-    position: fixed;
+    position:absolute;
     overflow: hidden;
     top: 0;
     right: 0;
-    /* opacity: 1; */
+    opacity: 1;
     transition: all 0.5s ease;
     background: rgba(51, 51, 51, 0.8);
     z-index: 1;
@@ -114,3 +114,23 @@
     margin-left: 10px;
   }
   
+@media screen and (max-width:600px) {
+  .logo img {
+    width: 60vw;
+  }
+/* 
+  .hamburger.color {
+    display: none;
+  } */
+
+}
+  
+@media screen and (max-width:850px) {
+  .nav-links {
+    width: 100%;
+  }
+
+  .hamburger {
+    right: 10px;
+  }
+}

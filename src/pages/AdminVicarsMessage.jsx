@@ -4,6 +4,7 @@ import logo from '../assets/csi-christ-logo.png'
 import '../styles/AdminVicarsMessage.css';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LazyLoad from 'react-lazyload';
 
 import { useState } from 'react';
 
@@ -30,7 +31,9 @@ const AdminDashboard = ({addMessageSubmit}) => {
     <div className="admin-dashboard">
         <aside className='admin-sidebar'>
             <div>
+            <LazyLoad offset={1000}>
                 <img src={logo} alt="CSI Christ Church Logo" />
+              </LazyLoad>
                 <div className="links">
                     <Link to="/admin-dashboard/members" className='admin-sidebar-link'>MEMBER DETAILS</Link>
                     <Link to="/admin-dashboard" className='admin-sidebar-link '>CREATE NEW USER</Link>
@@ -57,4 +60,4 @@ const AdminDashboard = ({addMessageSubmit}) => {
   )
 }
 
-export default AdminDashboard
+export default React.memo(AdminDashboard)
