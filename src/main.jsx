@@ -21,7 +21,7 @@ import ChhattisgarhMission from './pages/ChhattisgarhMission.jsx';
 
 
 const addUser = async (newUser) => {
-  const res = await fetch('http://localhost:5000/details', {
+  const res = await fetch('http://localhost:5000/users', {
     method:'POST',
     headers: {
       'Content-Type': 'application/json'

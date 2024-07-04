@@ -32,4 +32,43 @@
 .floatRight img {
     float: right;
     margin-left:20px ;
+    width: 40%;
+}
+
+.barnawapara {
+    margin-top: 8rem;
+}
+
+.block {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.center .text-container {
+    margin-bottom: 30px;
+}
+
+.missionNeeds p {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 700px) {
+    .float-image img, .floatRight img{
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .missionContent {
+        text-align: center;
+    }
+
+    
+
+
+    .block {
+        width: 100%;
+        /* display: none; */
+    }
 }

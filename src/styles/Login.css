@@ -1,0 +1,62 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    background-color: #612118;
+    color: white;
+    /* text-align: center; */
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 50%;
+
+}
+
+.form-container form img {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.form-container form h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-family: "Khand", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.78rem;
+}
+
+.form-container form input {
+    padding: .2rem .78rem;
+    margin: 7px 0;
+}
+
+.form-container form button {
+    background-color: white;
+    color: black;
+    padding: .5rem .8rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+  font-family: "Khand", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.homeLink {
+    text-align: center;
+    color: white;
+
+    margin-top: 10px;
+}
+
+@media screen and (max-width:700px) {
+    .form-container form {
+        width: 100%;
+    }
+}

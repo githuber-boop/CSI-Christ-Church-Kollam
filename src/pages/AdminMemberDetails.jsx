@@ -13,7 +13,7 @@ const AdminMemberDetails = () => {
     useEffect(() => {
         
         const fetchJobs = async () => {
-            const res = await fetch("http://localhost:5000/details")
+            const res = await fetch("http://localhost:5000/users")
             const data = await res.json()
             setDetails(data)
         }   
@@ -36,7 +36,7 @@ const AdminMemberDetails = () => {
 
     if (confirmation) {
       try {
-        const response = await fetch(`http://localhost:5000/details/${id}`, {
+        const response = await fetch(`http://localhost:5000/users/${id}`, {
           method: 'DELETE',
         });
         if (response.ok) {
@@ -57,23 +57,23 @@ const AdminMemberDetails = () => {
   return (
     <div className="admin-member-dashboard">
         <aside className='admin-member-sidebar'>
-            <div>
+
 
             <LazyLoad offset={1000}>
                 <img src={logo} alt="CSI Christ Church Logo" />
               </LazyLoad>
-                <div className="links">
+              <div className="links">
                     <Link to="/admin-dashboard/members" className='admin-sidebar-link link-active'>MEMBER DETAILS</Link>
                     <Link to="/admin-dashboard" className='admin-sidebar-link '>CREATE NEW USER</Link>
                     <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link'>VICAR'S MESSAGE</Link>
                     <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
-                </div>
-            </div>
+              </div>
             <div className="logOut">
-                <a href="#" className='log-out'>Log Out</a>
+              <Link to='/login' className='log-out'>Log Out</Link>
             </div>
         </aside>
         <main className='admin-member-content'>
+
         <div className='searchBar'>
             <input
                 type="text"
@@ -82,7 +82,6 @@ const AdminMemberDetails = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
         </div>
-
         <div className="grid-col-2">
         {details.filter(matchesSearchCriteria).map((memberDetail) => (
                         <div key={memberDetail.id} className="member-details">

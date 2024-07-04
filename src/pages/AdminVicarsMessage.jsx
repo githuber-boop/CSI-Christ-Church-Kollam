@@ -28,10 +28,10 @@ const AdminDashboard = ({addMessageSubmit}) => {
     }
 
   return (
-    <div className="admin-dashboard">
-        <aside className='admin-sidebar'>
-            <div>
-            <LazyLoad offset={1000}>
+    <div className="admin-dashboard dashboard">
+        <aside className='admin-sidebar sidebar'>
+
+                <LazyLoad offset={1000}>
                 <img src={logo} alt="CSI Christ Church Logo" />
               </LazyLoad>
                 <div className="links">
@@ -40,14 +40,14 @@ const AdminDashboard = ({addMessageSubmit}) => {
                     <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link link-active'>VICAR'S MESSAGE</Link>
                     <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
                 </div>
-            </div>
-            <div className="logOut">
-                <a href="#" className='log-out'>Log Out</a>
+
+            <div className="logOut bottom-links">
+                <Link to='/login' className='log-out'>Log Out</Link>
             </div>
         </aside>
-        <main className='user-form admin-content'>
+        <main className='user-form admin-content content'>
             <ToastContainer/>
-            <h1>CREATE A NEW USER</h1>
+            <h1>VICAR'S MESSAGE</h1>
             <form onSubmit={submitForm} className='new_user-form'>
                 <input type="date" placeholder='Date' value={date} onChange={(e)=> setDate(e.target.value)}/>
                 <textarea name="" id="" placeholder='Message' rows={13} value={message} onChange={(e)=> setMessage(e.target.value)}></textarea>

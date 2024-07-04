@@ -19,7 +19,7 @@ function EditUser() {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/details/${id}`);
+      const response = await fetch(`http://localhost:5000/users/${id}`);
       const data = await response.json();
       setFormData(data);
     } catch (error) {
@@ -36,7 +36,7 @@ function EditUser() {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/details/${id}`, {
+      const response = await fetch(`http://localhost:5000/users/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,8 @@ function EditUser() {
                 </div>
             </div>
             <div className="logOut">
-                <a href="#" className='log-out'>Log Out</a>
+            <Link to='/login' className='log-out'>Log Out</Link>
+
             </div>
         </aside>
         <main className='admin-member-content'>

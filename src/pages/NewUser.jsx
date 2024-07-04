@@ -31,7 +31,9 @@ const AdminDashboard = ({addUserSubmit}) => {
             number,
             dob,
             baptism,
-            confirmation
+            confirmation,
+            role:'member',
+            password:'kollamchurch'
         }
 
        
@@ -45,7 +47,6 @@ const AdminDashboard = ({addUserSubmit}) => {
   return (
     <div className="admin-dashboard">
         <aside className='admin-sidebar'>
-            <div>
                 <img src={logo} alt="CSI Christ Church Logo" />
                 <div className="links">
                     <Link to="/admin-dashboard/members" className='admin-sidebar-link'>MEMBER DETAILS</Link>
@@ -53,9 +54,10 @@ const AdminDashboard = ({addUserSubmit}) => {
                     <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link'>VICAR'S MESSAGE</Link>
                     <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
                 </div>
-            </div>
-            <div className="logOut">
-                <a href="#" className='log-out'>Log Out</a>
+
+            <div className="logOut bottom-links">
+                <Link to='/login' className='log-out'>Log Out</Link>
+
             </div>
         </aside>
         <main className='user-form admin-content'>

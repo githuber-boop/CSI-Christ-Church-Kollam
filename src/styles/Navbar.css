@@ -36,7 +36,7 @@
     display: none;
     flex-direction: column;
     width: 35%;
-    height: 100vh;
+    height: 100%;
     position:absolute;
     overflow: hidden;
     top: 0;
