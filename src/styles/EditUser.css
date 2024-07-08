@@ -64,14 +64,13 @@
     height: 100vh;
     background: #612118;
     width: 400px;
-    padding: 200px;
   }
   
   .sidebar-link:last-child {
     justify-self: flex-start;
   }
   
-  .admin-sidebar-link {
+  .sidebar-link {
     /* margin-top: 30px; */
     position: relative;
     display: block;

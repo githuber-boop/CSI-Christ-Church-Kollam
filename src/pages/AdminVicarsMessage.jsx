@@ -5,6 +5,7 @@ import '../styles/AdminVicarsMessage.css';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LazyLoad from 'react-lazyload';
+import Sidebar from '../components/Sidebar';
 
 import { useState } from 'react';
 
@@ -29,22 +30,8 @@ const AdminDashboard = ({addMessageSubmit}) => {
 
   return (
     <div className="admin-dashboard dashboard">
-        <aside className='admin-sidebar sidebar'>
+        <Sidebar message={'link-active'}/>
 
-                <LazyLoad offset={1000}>
-                <img src={logo} alt="CSI Christ Church Logo" />
-              </LazyLoad>
-                <div className="links">
-                    <Link to="/admin-dashboard/members" className='admin-sidebar-link'>MEMBER DETAILS</Link>
-                    <Link to="/admin-dashboard" className='admin-sidebar-link '>CREATE NEW USER</Link>
-                    <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link link-active'>VICAR'S MESSAGE</Link>
-                    <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
-                </div>
-
-            <div className="logOut bottom-links">
-                <Link to='/login' className='log-out'>Log Out</Link>
-            </div>
-        </aside>
         <main className='user-form admin-content content'>
             <ToastContainer/>
             <h1>VICAR'S MESSAGE</h1>

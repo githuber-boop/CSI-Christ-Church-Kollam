@@ -44,11 +44,11 @@ const Login = () => {
             <h2>LOGIN</h2>
 
             <label htmlFor="username">
-              <b>Username</b>
+              <b>Phone Number</b>
             </label>
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Number"
               name="name"
               value={number}
               onChange={(e) => setNumber(e.target.value)}

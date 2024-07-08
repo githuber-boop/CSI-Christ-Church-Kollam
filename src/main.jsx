@@ -18,6 +18,7 @@ import AdminVicarsMessage from './pages/AdminVicarsMessage.jsx'
 import Missions from './pages/Missions.jsx';
 import EditUser from './pages/EditUser.jsx';
 import ChhattisgarhMission from './pages/ChhattisgarhMission.jsx';
+import NewEvent from './pages/NewEvent.jsx';
 
 
 const addUser = async (newUser) => {
@@ -95,6 +96,11 @@ const router = createBrowserRouter([
     element: <AdminVicarsMessage addMessageSubmit={addMessage}/>,
 
   },
+  {
+    path: "/admin-dashboard/events",
+    element: <NewEvent/>
+
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -14,7 +14,7 @@ const Hero = () => {
             
               <Navbar/>
                 <main className="hero-text">
-                  <h1>WELCOME TO<br></br> CSI CHRIST CHURCH <br></br>KOLLAM</h1>
+                  <h1>WELCOME TO<br></br> CSI CHRIST CHURCH CATHEDRAL <br></br>KOLLAM</h1>
                   <div className="call-out">
                     <button><a href="#">Learn More</a></button>
                     <button><a href="#">Service Timings</a></button>

@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import logo from '../assets/csi-christ-logo.png'
 import { Link } from 'react-router-dom'
-import LazyLoad from 'react-lazyload';
 import '../styles/AdminMemberDetails.css';
+import Sidebar from '../components/Sidebar';
 
 
 
@@ -56,31 +55,18 @@ const AdminMemberDetails = () => {
   
   return (
     <div className="admin-member-dashboard">
-        <aside className='admin-member-sidebar'>
-
-
-            <LazyLoad offset={1000}>
-                <img src={logo} alt="CSI Christ Church Logo" />
-              </LazyLoad>
-              <div className="links">
-                    <Link to="/admin-dashboard/members" className='admin-sidebar-link link-active'>MEMBER DETAILS</Link>
-                    <Link to="/admin-dashboard" className='admin-sidebar-link '>CREATE NEW USER</Link>
-                    <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link'>VICAR'S MESSAGE</Link>
-                    <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
-              </div>
-            <div className="logOut">
-              <Link to='/login' className='log-out'>Log Out</Link>
-            </div>
-        </aside>
+        <Sidebar member={'link-active'}/>
         <main className='admin-member-content'>
 
-        <div className='searchBar'>
-            <input
-                type="text"
-                placeholder="Search by name or email"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
+        <div className='sort-filter'>
+            <div className="input">
+              <input
+                  type="text"
+                  placeholder="Search by name or email"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
         </div>
         <div className="grid-col-2">
         {details.filter(matchesSearchCriteria).map((memberDetail) => (

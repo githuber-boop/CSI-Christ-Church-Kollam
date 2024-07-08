@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/csi-christ-logo.png'
 import '../styles/NewUser.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Sidebar from '../components/Sidebar';
 
 
 
@@ -46,20 +46,8 @@ const AdminDashboard = ({addUserSubmit}) => {
     }
   return (
     <div className="admin-dashboard">
-        <aside className='admin-sidebar'>
-                <img src={logo} alt="CSI Christ Church Logo" />
-                <div className="links">
-                    <Link to="/admin-dashboard/members" className='admin-sidebar-link'>MEMBER DETAILS</Link>
-                    <Link to="/admin-dashboard" className='admin-sidebar-link link-active'>CREATE NEW USER</Link>
-                    <Link to="/admin-dashboard/vicar-message" className='admin-sidebar-link'>VICAR'S MESSAGE</Link>
-                    <Link to="/member-dashboard" className='admin-sidebar-link'>MONTHLY NEWSLETTER</Link>
-                </div>
-
-            <div className="logOut bottom-links">
-                <Link to='/login' className='log-out'>Log Out</Link>
-
-            </div>
-        </aside>
+        <Sidebar newUser={'link-active'}/>
+        
         <main className='user-form admin-content'>
                 <ToastContainer />
             <h1>CREATE A NEW USER</h1>
