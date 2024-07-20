@@ -5,7 +5,7 @@ const jsonServer = require('json-server');
 
 const app = express();
 const apiServer = jsonServer.create();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('api/db.json');
 const middlewares = jsonServer.defaults();
 
 // Serve React build
@@ -16,7 +16,8 @@ app.get('/', (req, res) => {
 });
 
 // Use JSON Server as middleware
-app.use('/api', middlewares, router);
+apiServer.use(middlewares);
+apiServer.use(router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

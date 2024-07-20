@@ -2,6 +2,7 @@ import React, { useState , useEffect } from 'react';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
+import logo from 'src/assets/csi-christ-logo.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className="logo">
                 <Link to='/'>
-                <img src="src/assets/csi-christ-logo.png" alt="CSI Christ Church Logo" />
+                <img src={logo} alt="CSI Christ Church Logo" />
                 </Link>
             </div>
             <button className={`hamburger`} onClick={toggleMenu}>

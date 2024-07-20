@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
-
+import churchHistory from '"src\assets\church-history.png"'
 
 const ChurchHistory = () => {
   return (
@@ -17,7 +17,7 @@ const ChurchHistory = () => {
                         <button className="button"><Link to='/church-history'>Read More</Link></button>
                     </div>
                     <div className="col-2-img">
-                        <img src="src\assets\church-history.png" />
+                        <img src={churchHistory} />
                     </div>
                   </div>
         </section>
