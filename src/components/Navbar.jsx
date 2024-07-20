@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import logo from 'src/assets/csi-christ-logo.png'
+import logo from '../assets/csi-christ-logo.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
