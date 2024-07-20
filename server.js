@@ -1,10 +1,13 @@
-// server.js
-const express = require('express');
-const path = require('path');
-const jsonServer = require('json-server');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import jsonServer from 'json-server';
+
+// Get __dirname equivalent in ES6
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const apiServer = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
@@ -17,8 +20,6 @@ app.get('/', (req, res) => {
 
 // Use JSON Server as middleware
 app.use('/api', middlewares, router);
-apiServer.use(middlewares);
-apiServer.use(router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
