@@ -59,6 +59,7 @@ const Navbar = () => {
                             <li className="dropdown-item"><Link className="link" to="/milestones">Milestones</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/our-bishops">Our Bishops</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/vicars-message">Vicar's Message</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/office-bearers">Office Bearers</Link></li>
                         </ul>
                     )}
                 </li>
@@ -86,14 +87,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="nav-link">
-                    <Link className="link" to="" onClick={() => toggleDropdown('events')}>Events & News <span><FaChevronDown /></span></Link>
-                    {dropdowns.events && (
-                        <ul className="dropdown-menu">
-                            <li className="dropdown-item"><Link className="link" to="#events1">Event 1</Link></li>
-                            <li className="dropdown-item"><Link className="link" to="#events2">Event 2</Link></li>
-                            <li className="dropdown-item"><Link className="link" to="#events3">Event 3</Link></li>
-                        </ul>
-                    )}
+                    <Link className="link" to="/events">Events </Link>
                 </li>
 
                 <li className="nav-link"><Link className="link" to="/login">Login</Link></li>

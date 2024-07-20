@@ -20,6 +20,7 @@ const Sidebar = ({member, newUser, message, newEvent}) => {
                     <Link to="/admin-dashboard" className={`admin-sidebar-link ${newUser}`}>CREATE NEW USER</Link>
                     <Link to="/admin-dashboard/vicar-message" className={`admin-sidebar-link ${message}`}>VICAR'S MESSAGE</Link>
                     <Link to="/admin-dashboard/events" className={`admin-sidebar-link ${newEvent}`}>CREATE A NEW EVENT</Link>
+                    <Link to="/admin-dashboard/edit-events" className={`admin-sidebar-link`}>EDIT A EVENT</Link>
                     <Link to="/member-dashboard" className='admin-sidebar-link '>MONTHLY NEWSLETTER</Link>
                 </div>
             </div>

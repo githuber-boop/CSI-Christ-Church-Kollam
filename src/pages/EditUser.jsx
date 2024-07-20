@@ -13,19 +13,20 @@ function EditUser() {
   const navigate = useNavigate();
   const success = () => toast.info("User Edited");
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
   const fetchUser = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${id}`);
+      const response = await fetch(`/api/users/${id}`);
       const data = await response.json();
       setFormData(data);
     } catch (error) {
       console.error('Error fetching user:', error);
     }
   };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;

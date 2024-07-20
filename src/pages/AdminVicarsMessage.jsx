@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/csi-christ-logo.png'
 import '../styles/AdminVicarsMessage.css';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import LazyLoad from 'react-lazyload';
 import Sidebar from '../components/Sidebar';
 
 import { useState } from 'react';

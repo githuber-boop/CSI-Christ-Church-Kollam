@@ -1,11 +1,44 @@
 import React from 'react'
-
+import cathedral from '../assets/cathedral.png'
+import PageBackgrounds from '../components/PageBackgrounds'
+import eventBg from '../assets/eventBg.png'
+import '../styles/Events.css'
+import { useState, useEffect } from 'react'
 const Events = () => {
+  const [events, setEvents] = useState([])
+
+  useEffect(() => {
+        
+    const fetchMessage = async () => {
+        const res = await fetch("/api/events")
+        const data = await res.json()
+        setEvents(data)
+    }   
+
+    fetchMessage()
+}, [])
+
+
   return (
     <>
-        <PageBackgrounds backgroundImg={missionsBg} heroText={"MISSIONS AND PROJECTS"}/>
+        <PageBackgrounds backgroundImg={eventBg} heroText={"UPCOMING EVENTS"}/>
         <div className="container">
-            
+            <div className="grid-column-2">
+              <div className="event-cards">
+
+              {events.map((event, index) => (
+                <div key={index} className="event-card">
+                  <h2>{event.eventName}</h2>
+                  <p><strong>Date and Time:</strong> {event.date} {event.time}</p>
+                  <p>{event.eventDetails}</p>
+                </div>
+              ))}
+              </div>
+              <div className="event-image">
+                <img src={cathedral} alt="cathderal-image" />
+                <img src={cathedral} alt="cathderal-image" />
+              </div>
+            </div>
         </div>
     </>
   )

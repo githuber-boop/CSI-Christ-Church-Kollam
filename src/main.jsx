@@ -19,10 +19,12 @@ import Missions from './pages/Missions.jsx';
 import EditUser from './pages/EditUser.jsx';
 import ChhattisgarhMission from './pages/ChhattisgarhMission.jsx';
 import NewEvent from './pages/NewEvent.jsx';
+import OfficeBearers from './pages/OfficeBearers.jsx';
+import Events from './pages/Events.jsx';
 
 
 const addUser = async (newUser) => {
-  const res = await fetch('http://localhost:5000/users', {
+  const res = await fetch('/api/users', {
     method:'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -33,12 +35,23 @@ const addUser = async (newUser) => {
 }
 
 const addMessage = async (newMessage) => {
-  const res = await fetch('http://localhost:5000/message/1', {
+  const res = await fetch('/api/message/1', {
     method:'PATCH',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(newMessage)
+  });
+  return;
+}
+
+const addEvent = async (newEvent) => {
+  const res = await fetch('/api/events', {
+    method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newEvent)
   });
   return;
 }
@@ -98,7 +111,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin-dashboard/events",
-    element: <NewEvent/>
+    element: <NewEvent addEventSubmit={addEvent}/>
+
+  },
+  {
+    path: "/office-bearers",
+    element: <OfficeBearers/>
+
+  },
+  {
+    path: "/events",
+    element: <Events/>
 
   }
 ]);
