@@ -16,8 +16,7 @@ app.get('/', (req, res) => {
 });
 
 // Use JSON Server as middleware
-apiServer.use(middlewares);
-apiServer.use(router);
+app.use('/api', middlewares, router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
