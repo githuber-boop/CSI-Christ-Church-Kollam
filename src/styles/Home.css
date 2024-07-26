@@ -58,6 +58,21 @@
 
 }
 
+.social-icons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.social-icons span .icon {
+    color: white;
+    transform: scale(2);
+}
+
+.facebook {
+    color: blue;
+}
 
 
 @media screen and (max-width:600px) {

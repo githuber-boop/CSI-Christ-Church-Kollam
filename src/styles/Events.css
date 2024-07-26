@@ -25,3 +25,7 @@
 .event-image {
     height: 100%;
 }
+
+.event-image img {
+    margin-top: 10px;
+}

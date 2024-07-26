@@ -76,6 +76,7 @@ const MemberDashboard = () => {
               <h3>
                 <span>DOB:</span> {memberDetail.dob}
               </h3>
+              <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
               <h3>
                 <span>BAPTISM DATE:</span> {memberDetail.baptism}
               </h3>

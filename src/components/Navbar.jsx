@@ -61,6 +61,7 @@ const Navbar = () => {
                             <li className="dropdown-item"><Link className="link" to="/our-bishops">Our Bishops</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/vicars-message">Vicar's Message</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/office-bearers">Office Bearers</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/past-vicars">Past Vicars</Link></li>
                         </ul>
                     )}
                 </li>
@@ -82,7 +83,8 @@ const Navbar = () => {
                         <ul className="dropdown-menu">
                             <li className="dropdown-item"><Link className="link" to="/missions-projects">Missions and Projects</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/chhattisgarh-mission">Chhattisgarh Mission</Link></li>
-                            <li className="dropdown-item"><Link className="link" to="#missions3">Mission 3</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/csi-convention-center">CSI Convention Center</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/balikamandhiram-balabhavan">Balikamandiram and Balabhavan</Link></li>
                         </ul>
                     )}
                 </li>

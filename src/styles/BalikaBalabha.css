@@ -1,0 +1,37 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
+.desc-text {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 30px;
+}
+
+.hostels-grid_imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+
+.children-grid_imgs {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+    margin-top: 50px;
+}
+.children-grid_imgs img {
+    max-width: 800px;
+}
+
+@media screen and (max-width: 600px) {
+    .hostels-grid_imgs {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

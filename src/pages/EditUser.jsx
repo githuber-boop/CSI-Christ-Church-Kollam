@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/EditUser.css';
-import LazyLoad from 'react-lazyload';
-import logo from '../assets/csi-christ-logo.png'
-import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Sidebar from '../components/Sidebar';
 
 function EditUser() {
   const { id } = useParams();

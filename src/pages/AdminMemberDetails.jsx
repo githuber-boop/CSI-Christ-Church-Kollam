@@ -75,6 +75,7 @@ const AdminMemberDetails = () => {
                             <h3><span>ADDRESS:</span>  {memberDetail.address}</h3>
                             <h3><span>NUMBER:</span>  {memberDetail.number}</h3>
                             <h3><span>DOB:</span>  {memberDetail.dob}</h3>
+                            <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
                             <h3><span>BAPTISM DATE:</span>  {memberDetail.baptism}</h3>
                             <h3><span>CONFIRMATION:</span>  {memberDetail.confirmation}</h3>
                             <div className="functions-user">

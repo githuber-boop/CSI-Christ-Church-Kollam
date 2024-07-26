@@ -2,6 +2,7 @@ import React from 'react'
 import cathedral from '../assets/cathedral.png'
 import PageBackgrounds from '../components/PageBackgrounds'
 import eventBg from '../assets/eventBg.png'
+import event2 from '../assets/event-2.png'
 import '../styles/Events.css'
 import { useState, useEffect } from 'react'
 const Events = () => {
@@ -36,7 +37,7 @@ const Events = () => {
               </div>
               <div className="event-image">
                 <img src={cathedral} alt="cathderal-image" />
-                <img src={cathedral} alt="cathderal-image" />
+                <img src={event2} alt="cathderal-image" />
               </div>
             </div>
         </div>

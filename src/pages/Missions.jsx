@@ -39,18 +39,6 @@ const Missions = () => {
                   </div>
                 </div>
               </article>
-              <article className="mission">
-                <div className="mission-content">
-                  <div className="mission-text">
-                    <h2>christ mission hospital</h2>
-                    <p>Christ Church Mission Hospital in Kollam is a well-known healthcare  facility offering a range of medical services. Established by the CSI  Church, it serves the community with essential health care and  treatments.</p>
-                    <Link to="/christ-mission-hospital" className='button'>Read More</Link>
-                  </div>
-                  <div className="mission-image">
-                    <img src={christHospitalhMission} alt="christ-church-hospital-image" />
-                  </div>
-                </div>
-              </article>
             </div>
         </div>
         <div className="container">

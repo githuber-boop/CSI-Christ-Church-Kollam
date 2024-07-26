@@ -1,0 +1,19 @@
+.parish-image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+/* 
+.parish-image-grid img {
+    width: 600px;
+} */
+
+.parish-text p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.parish-text {
+    margin:50px 10px;
+}

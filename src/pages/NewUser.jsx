@@ -17,6 +17,7 @@ const AdminDashboard = ({addUserSubmit}) => {
     const [address , setAddress] = useState("");
     const [number , setNumber] = useState("");
     const [dob , setDob] = useState("");
+    const [email , setEmail] = useState("");
     const [baptism , setBaptism] = useState("");
     const [confirmation , setConfirmation] = useState("");
     
@@ -30,6 +31,7 @@ const AdminDashboard = ({addUserSubmit}) => {
             address,
             number,
             dob,
+            email,
             baptism,
             confirmation,
             role:'member',
@@ -56,6 +58,7 @@ const AdminDashboard = ({addUserSubmit}) => {
                 <label htmlFor="address">Address:<input type="text"  value={address} onChange={(e)=> setAddress(e.target.value)}/></label>
                 <label htmlFor="number">Phone Number:<input type="text"  value={number} onChange={(e)=> setNumber(e.target.value)}/></label>
                 <label htmlFor="date">Date of Birth<input type="date" value={dob} onChange={(e)=> setDob(e.target.value)}/></label>
+                <label htmlFor="date">Email<input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}/></label>
                 <label htmlFor="baptism">Baptism Date:<input type="date"  value={baptism} onChange={(e)=> setBaptism(e.target.value)}/></label>
                 <label htmlFor="confirmation">Confirmation Date<input type="date" value={confirmation} onChange={(e)=> setConfirmation(e.target.value)}/></label>
                 <button type='submit' onClick={success}>Add User</button>
