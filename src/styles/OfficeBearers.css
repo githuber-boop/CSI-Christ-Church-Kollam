@@ -12,16 +12,29 @@
     
 }
 
+.office-members {
+    display: flex;
+    justify-content: center;
+}
+
 .group-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.title {
+    font-family: "Khand";
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 .office-group {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
     /* flex-direction: column; */
 }
 
@@ -30,7 +43,18 @@
     grid-template-columns: repeat(auto-fill, minmax(200px , 1fr));
 }
 
+.office-group-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .office-bearer img {
     width: 200px;
     height: 200px;
+}
+
+.office-bearer h3 {
+    margin-top: 10px;
 }

@@ -18,76 +18,75 @@ const OfficeBearers = () => {
                 <div className="office-group">
                     <div className="office-bearer">
                         <img src={dean} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
-                        <p>Number</p>
+                        <h3>Rev. Jose George</h3>
+                        <p>Dean</p>
+                        <p>9846466513</p>
                     </div>
                     <div className="office-bearer">
                         <img src={secretary} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
-                        <p>Number</p>
+                        <h3>Lal Thomas</h3>
+                        <p>Secretary</p>
+                        <p>9496991960</p>
                     </div>
                     <div className="office-bearer">
                         <img src={accountant} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
-                        <p>Number</p>
+                        <h3>Oommen Jacob</h3>
+                        <p>Accountant</p>
+                        <p>9446109231</p>
                     </div>
                 </div>
             </div>
+
+
             <div className="office-members group-container">
-                <h1>Members</h1>
-                <div className="office-group-grid">
+                <h3 className='title'>Members</h3>
+                <div className="office-group-flex">
                     <div className="office-bearer">
                         <img src={profileImg} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
+                        <h3>Aneesh Thomson</h3>
                     </div>
                     <div className="office-bearer">
                         <img src={profileImg} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
+                        <h3>Finny V. Philip</h3>
                     </div>
                     <div className="office-bearer">
                         <img src={profileImg} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
+                        <h3>Adv. George Mathew</h3>
                     </div>
                     <div className="office-bearer">
                         <img src={profileImg} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
+                        <h3>Isaac Thomas</h3>
                     </div>
                     <div className="office-bearer">
                         <img src={profileImg} alt="" />
-                        <h1>Name</h1>
-                        <p>Position</p>
+                        <h3>Sunil Gabriel</h3>
                     </div>
                 </div>
             </div>
             <div className="office-ladies group-container">
-                <div className="office-bearer">
-                    <img src={profileImg} alt="" />
-                    <h1>Name</h1>
-                    <p>Position</p>
-                </div>
-                <div className="office-bearer">
-                    <img src={profileImg} alt="" />
-                    <h1>Name</h1>
-                    <p>Position</p>
+                <h3 className='title'>Lady Representatives</h3>
+                <div className="office-group-flex">
+                    <div className="office-bearer">
+                        <img src={profileImg} alt="" />
+                        <h3>Leela Thomas</h3>
+                    </div>
+                    <div className="office-bearer">
+                        <img src={profileImg} alt="" />
+                        <h3>Shyla Solomon</h3>
+                    </div>
                 </div>
             </div>
             <div className="office-youth group-container">
-                <div className="office-bearer">
-                    <img src={profileImg} alt="" />
-                    <h1>Name</h1>
-                    <p>Position</p>
-                </div>
-                <div className="office-bearer">
-                    <img src={profileImg} alt="" />
-                    <h1>Name</h1>
-                    <p>Position</p>
+                <h3 className='title'>Youth Representatives</h3>
+                <div className="office-group-flex">
+                    <div className="office-bearer">
+                        <img src={profileImg} alt="" />
+                        <h3>Dr. Sharan Elizabeth George</h3>
+                    </div>
+                    <div className="office-bearer">
+                        <img src={profileImg} alt="" />
+                        <h3>Simi S.</h3>
+                    </div>
                 </div>
             </div>
         </div>

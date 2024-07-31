@@ -24,7 +24,8 @@ import PastVicars from './pages/PastVicars.jsx';
 import ServiceTimings from './pages/ServiceTimings.jsx';
 import BalikaBalabha from './pages/BalikaBalabha.jsx';
 import ConventionCenter from './pages/ConventionCenter.jsx';
-import AdminAlmanacUpload from './pages/AdminAlmanacUpload.jsx';
+import AdminChurchHerald from './pages/AdminChurchHerald.jsx';
+import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 
 const addUser = async (newUser) => {
   const res = await fetch('/api/users', {
@@ -113,8 +114,12 @@ const router = createBrowserRouter([
     element: <NewEvent addEventSubmit={addEvent} />,
   },
   {
+    path: "/admin-dashboard/herald",
+    element: <AdminChurchHerald/> 
+  },
+  {
     path: "/admin-dashboard/almanac",
-    element: <AdminAlmanacUpload/> 
+    element: <AdminChurchAlmanac/> 
   },
   {
     path: "/office-bearers",

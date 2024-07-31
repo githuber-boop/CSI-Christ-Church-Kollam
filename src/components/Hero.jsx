@@ -7,16 +7,37 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareYoutube } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
 import pdfImage from '../assets/pdf-image.png'
+
+
+const removeFileExtension = (filename) => {
+  return filename.replace(/\.[^/.]+$/, "");
+};
+
 const Hero = () => {
 
-  const [files, setFiles] = useState([]);
+  const [heralds, setHerald] = useState([]);
+  const [almanacs, setAlmanac] = useState([]);
 
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const response = await fetch('/api/files');
+        const response = await fetch('/api/herald');
         const data = await response.json();
-        setFiles(data);
+        setHerald(data);
+      } catch (error) {
+        console.error('Error fetching files:', error);
+      }
+    };
+
+    fetchFiles();
+  }, []);
+
+  useEffect(() => {
+    const fetchFiles = async () => {
+      try {
+        const response = await fetch('/api/almanac');
+        const data = await response.json();
+        setAlmanac(data);
       } catch (error) {
         console.error('Error fetching files:', error);
       }
@@ -67,26 +88,43 @@ const Hero = () => {
                 </div>
               </header>
 
-              <div>
-      <h1>Home Page</h1>
-      <h2>Uploaded Files:</h2>
-      {files.length > 0 ? (
-        files.map((file) => (
-          <div key={file.name}>
-            {file.type === 'application/pdf' && (
-              <button onClick={() => fileClickHandler(file)}>Open PDF</button>
-            )}
-            <img
-              src={pdfImage}
-              alt={file.name}
-              style={{ maxWidth: '100%', height: 'auto', cursor: 'pointer' }}
-              onClick={() => fileClickHandler(file)}
-            />
-          </div>
-        ))
-      ) : (
-        <p>No files uploaded yet.</p>
-      )}
+      <div className='container'>
+      <div className="file-uploads">
+        {heralds.length > 0 ? (
+          heralds.map((herald) => (
+            <div className='upload' key={herald.name}>
+              <h1>CHURCH HERALD</h1>
+              <img
+                src={pdfImage}
+                alt={herald.name}
+                style={{ maxWidth: '50%', height: 'auto', cursor: 'pointer' }}
+                onClick={() => fileClickHandler(herald)}
+              />
+              <p>{removeFileExtension(herald.name)}</p>
+            </div>
+          ))
+        ) : (
+          <p>No files uploaded yet.</p>
+        )}
+        
+        {almanacs.length > 0 ? (
+          almanacs.map((almanac) => (
+            <div  className='upload'  key={almanac.name}>
+              <h1>CHURCH ALMANAC</h1>
+              <img
+                src={pdfImage}
+                alt={almanac.name}
+                style={{ maxWidth: '50%', height: 'auto', cursor: 'pointer' }}
+                onClick={() => fileClickHandler(almanac)}
+              />
+              <p>{removeFileExtension(almanac.name)}</p>
+        
+            </div>
+          ))
+        ) : (
+          <p>No files uploaded yet.</p>
+        )}
+      </div>
     </div>
             </>
 
