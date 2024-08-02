@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import jsonServer from 'json-server';
+
 
 // Get __dirname equivalent in ES6
 const __filename = fileURLToPath(import.meta.url);
