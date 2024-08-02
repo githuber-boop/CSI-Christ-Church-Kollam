@@ -8,8 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
 
 // Serve React build
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -19,7 +17,6 @@ app.get('/', (req, res) => {
 });
 
 // Use JSON Server as middleware
-app.use('/api', middlewares, router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
