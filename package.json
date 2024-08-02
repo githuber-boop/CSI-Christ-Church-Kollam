@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": " concurrently \"node server.js\" \" npm run server\"",
-    "server": "json-server --watch db.json -s ./dist/index.html --port 5000"
+    "server": "json-server --watch db.json -s ./dist --port 5000"
   },
   "dependencies": {
     "common": "^0.2.5",
