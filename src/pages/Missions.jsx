@@ -1,8 +1,8 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
-import missionsBg from '../assets/missions-projects-bg.png'
-import pyaridarChurch from '../assets/pyaridarChurch.png'
-import christHospitalhMission from '../assets/christ-hospital.png'
+import missionsBg from '../assets/missions-projects-bg.webp'
+import pyaridarChurch from '../assets/pyaridarChurch.webp'
+import christHospitalhMission from '../assets/christ-hospital.webp'
 import { Link } from 'react-router-dom'
 import '../styles/Missions.css';
 import LazyLoad from 'react-lazyload'

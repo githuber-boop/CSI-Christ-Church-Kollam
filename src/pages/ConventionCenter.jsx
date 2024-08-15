@@ -1,9 +1,9 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'; 
-import conventionBg from '../assets/convention.png'
-import conventionCenter from '../assets/convention-center.png'
-import conventionInside from '../assets/convention-inside.png'
-import conventionInside2 from '../assets/convention-inside-2.png'
+import conventionBg from '../assets/convention.webp'
+import conventionCenter from '../assets/convention-center.webp'
+import conventionInside from '../assets/convention-inside.webp'
+import conventionInside2 from '../assets/convention-inside-2.webp'
 import '../styles/ConventionCenter.css';
 
 

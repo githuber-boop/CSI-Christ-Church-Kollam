@@ -1,10 +1,10 @@
 import React from 'react'
-import office from '../assets/office.jpg'
+import office from '../assets/office.webp'
 import PageBackgrounds from '../components/PageBackgrounds'
-import profileImg from'../assets/profile-img.png'
-import dean from'../assets/dean.png'
-import secretary from'../assets/secretary.png'
-import accountant from'../assets/accountant.png'
+import profileImg from'../assets/profile-img.webp'
+import dean from'../assets/dean.webp'
+import secretary from'../assets/secretary.webp'
+import accountant from'../assets/accountant.webp'
 import '../styles/OfficeBearers.css';
 
 

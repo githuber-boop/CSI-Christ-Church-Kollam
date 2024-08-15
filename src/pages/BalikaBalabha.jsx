@@ -1,11 +1,11 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'; 
-import BalikaBhavanBg from '../assets/BalikaBhavanBg.png'
+import BalikaBhavanBg from '../assets/BalikaBhavanBg.webp'
 import '../styles/BalikaBalabha.css';
-import balikamandiram from '../assets/balikamandiram.jpg'
-import balabhavan from '../assets/balabhavan.jpg'
-import childrenBalikamandiram from '../assets/children-balikamandiram.jpg'
-import childrenBalabhavan from '../assets/children-balabhavan.jpg'
+import balikamandiram from '../assets/balikamandiram.webp'
+import balabhavan from '../assets/balabhavan.webp'
+import childrenBalikamandiram from '../assets/children-balikamandiram.webp'
+import childrenBalabhavan from '../assets/children-balabhavan.webp'
 
 
 const BalikaBalabha = () => {

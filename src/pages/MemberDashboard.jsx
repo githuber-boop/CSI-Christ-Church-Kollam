@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/csi-christ-logo.png";
+import logo from "../assets/csi-christ-logo.webp";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/MemberDashboard.css";

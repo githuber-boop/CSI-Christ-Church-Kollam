@@ -2,56 +2,35 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import '../styles/AdminChurchHerald.css';
-
+import axios from 'axios';
 
 const AdminChurchHerald = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null);
 
-  const fileSelectedHandler = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-
-    // Generate a base64 preview URL
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setPreviewUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
   };
 
-  const fileUploadHandler = async () => {
+  const handleUpload = async () => {
     if (!selectedFile) return;
-
-    // Mock upload to server
-    const fileMetadata = {
-      name: selectedFile.name,
-      type: selectedFile.type,
-      size: selectedFile.size,
-      previewUrl
+  
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+    // Append the file name as a header
+    const headers = {
+      'Content-Type': 'multipart/form-data',
+      'file-name': selectedFile.name, // Ensure this is being set correctly
     };
-
+  
     try {
-      const response = await fetch('/api/almanac/1', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(fileMetadata)
-      });
-
-      if (response.ok) {
-        alert('File uploaded successfully');
-      } else {
-        alert('Failed to upload file');
-      }
+      const response = await axios.post('http://localhost:5000/upload', formData, { headers });
+      console.log('File uploaded:', response.data);
     } catch (error) {
-      alert('Error uploading file');
-      console.error(error);
+      console.error('Error uploading file:', error);
     }
   };
-
-
+  
+  
   return (
 
     <div className="admin-member-dashboard">
@@ -61,21 +40,8 @@ const AdminChurchHerald = () => {
         <div className='almanac-upload'>
         <h1>ALMANAC UPLOAD</h1>
         <p>Click on Browse to select the file and then click Upload</p>
-          <input type="file" onChange={fileSelectedHandler} />
-      {selectedFile && (
-        <div>
-          <h2>File Details:</h2>
-          <p>Name: {selectedFile.name}</p>
-          <p>Size: {(selectedFile.size / 1024).toFixed(2)} KB</p>
-          {previewUrl && selectedFile.type !== 'application/pdf' && (
-            <div>
-              <h2>Preview:</h2>
-              <img src={previewUrl} alt="Preview" style={{ maxWidth: '50%', height: 'auto' }} />
-            </div>
-          )}
-          <button onClick={fileUploadHandler}>Upload</button>
-        </div>
-      )}
+        <input type="file" onChange={handleFileChange} />
+        <button onClick={handleUpload}>Upload</button>
     </div>
         </main>
     </div>

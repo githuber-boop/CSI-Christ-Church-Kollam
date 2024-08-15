@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
-import churchHistory from "../assets/church-history.png"
+import churchHistory from "../assets/church-history.webp"
 
 const ChurchHistory = () => {
   return (

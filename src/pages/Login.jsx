@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "../components/Navbar";
 import '../styles/Login.css';
-import christLogo from '../assets/christChurch.png'
+import christLogo from '../assets/christChurch.webp'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -9,6 +9,7 @@ import { useState } from "react";
 const Login = () => {
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
+  // const [users, setUsers]
   const navigate = useNavigate();
 
   const handleLogin = async (e) =>  {

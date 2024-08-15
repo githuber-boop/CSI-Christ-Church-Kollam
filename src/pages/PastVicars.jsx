@@ -1,7 +1,7 @@
 import React from 'react';
 import PageBackgrounds from '../components/PageBackgrounds';
 import '../styles/PastVicars.css';
-import pastVicars from '../assets/past-vicars.png'
+import pastVicars from '../assets/past-vicars.webp'
 
 
 const vicarsData = [

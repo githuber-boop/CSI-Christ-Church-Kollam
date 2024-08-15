@@ -1,6 +1,6 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
-import milestonesBg from '../assets/milestones-bg.png'
+import milestonesBg from '../assets/milestones-bg.webp'
 import '../styles/Milestones.css'
 
 const Milestones = () => {

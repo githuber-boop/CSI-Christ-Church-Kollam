@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import '../assets/milestones-bg.png'
+import '../assets/milestones-bg.webp'
 
 
 const PageBackgrounds = ({backgroundImg, heroText}) => {

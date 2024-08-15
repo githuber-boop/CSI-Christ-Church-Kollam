@@ -1,12 +1,12 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
-import chhattisgarhMission from '../assets/chhattisgarh-mission.png'
+import chhattisgarhMission from '../assets/chhattisgarh-mission.webp'
 import '../styles/ChhattisgarhMission.css';
-import missionQuarter from '../assets/mission-quarters.png'
-import visitors from '../assets/visitors.jpg'
-import pyaridar from '../assets/pyaridar.png'
-import nurserySchool from '../assets/nursery-school.png'
-import patewaSchool from '../assets/patewa.png'
+import missionQuarter from '../assets/mission-quarters.webp'
+import visitors from '../assets/visitors.webp'
+import pyaridar from '../assets/pyaridar.webp'
+import nurserySchool from '../assets/nursery-school.webp'
+import patewaSchool from '../assets/patewa.webp'
 import LazyLoad from 'react-lazyload'
 
 

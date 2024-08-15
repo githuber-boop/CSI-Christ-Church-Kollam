@@ -1,22 +1,86 @@
-const express = require('express');
-const path = require('path');
-const jsonServer = require('json-server');
+import express from 'express';
+import path from 'path';
+import fs from 'fs';
+import jsonServer from 'json-server';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+
+// Get the current file's directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+const PORT = 5000;
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
-// Serve React build
-app.use(express.static(path.join(__dirname, 'dist')));
+// Middleware to enable CORS
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// Serve static files from the uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Endpoint to handle file uploads
+app.post('/upload', (req, res) => {
+  const fileName = req.headers['file-name'];
+  console.log('Received file name:', fileName); // Debugging log
+
+  if (!fileName) {
+    return res.status(400).json({ message: 'File name is required' });
+  }
+
+  const uploadsDir = path.join(__dirname, 'uploads');
+
+  // Ensure the uploads directory exists
+  if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  }
+
+  const filePath = path.join(uploadsDir, fileName);
+  const fileStream = fs.createWriteStream(filePath);
+
+  req.pipe(fileStream);
+
+  fileStream.on('finish', () => {
+    const fileData = {
+      name: fileName,
+      url: `http://localhost:${PORT}/uploads/${fileName}`,
+    };
+  
+    // Read existing data
+    fs.readFile('db.json', (err, data) => {
+      if (err) {
+        console.error('Error reading db.json:', err);
+        return res.status(500).json({ message: 'Error reading database' });
+      }
+  
+      const jsonData = JSON.parse(data);
+      jsonData.uploads = jsonData.uploads || []; // Change to 'uploads'
+      jsonData.uploads.push(fileData); // Change to 'uploads'
+  
+      // Write updated data back to db.json
+      fs.writeFile('db.json', JSON.stringify(jsonData, null, 2), (err) => {
+        if (err) {
+          console.error('Error writing to db.json:', err);
+          return res.status(500).json({ message: 'Error saving to database' });
+        }
+  
+        res.json({ message: 'File uploaded successfully', url: fileData.url });
+      });
+    });
+  });
+
+  
+  fileStream.on('error', (err) => {
+    console.error('File stream error:', err);
+    res.status(500).json({ message: 'Error uploading file' });
+  });
 });
 
 // Use JSON Server as middleware
 app.use('/api', middlewares, router);
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import logo from '../assets/csi-christ-logo.png'
+import logo from '../assets/csi-christ-logo.webp'
 import '../styles/Sidebar.css';
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
-import bishopBg from '../assets/bishop-bg.png'
+import bishopBg from '../assets/bishop-bg.webp'
 import LazyLoad from 'react-lazyload'
 
 const OurBishop = () => {
@@ -20,7 +20,7 @@ const OurBishop = () => {
               </div>
               <div className="col-2-img">
               <LazyLoad offset={8000}>
-                        <img src="src\assets\bishop-francis.png" />
+                        <img src="src\assets\bishop-francis.webp" />
               </LazyLoad>
               </div>
             </div>
@@ -38,7 +38,7 @@ const OurBishop = () => {
               </div>
               <div className="col-2-img">
               <LazyLoad offset={1000}>
-                        <img src="src\assets\bishop-oomen.png" />
+                        <img src="src\assets\bishop-oomen.webp" />
               </LazyLoad>
                     </div>
             </div>

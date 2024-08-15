@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ServiceTimings.css';
 import PageBackgrounds from '../components/PageBackgrounds';
-import serviceTiming from '../assets/service-timing.png'
+import serviceTiming from '../assets/service-timing.webp'
 
 
 const worshipTimingsData = [

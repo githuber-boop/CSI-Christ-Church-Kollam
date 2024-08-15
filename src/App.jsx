@@ -1,15 +1,12 @@
 import React from 'react'
-import Hero from './components/Hero'
-import ChurchHistory from './components/ChurchHistory'
-
+import Home from './pages/Home'
 const App = () => {
   return (
 
 
-      <div>
-        <Hero/>
-        <ChurchHistory/>
-      </div>
+      <>
+        <Home/>
+      </>
     
 
 

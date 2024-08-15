@@ -1,8 +1,8 @@
 import React from 'react'
-import cathedral from '../assets/cathedral.png'
+import cathedral from '../assets/cathedral.webp'
 import PageBackgrounds from '../components/PageBackgrounds'
-import eventBg from '../assets/eventBg.png'
-import event2 from '../assets/event-2.png'
+import eventBg from '../assets/eventBg.webp'
+import event2 from '../assets/event-2.webp'
 import '../styles/Events.css'
 import { useState, useEffect } from 'react'
 const Events = () => {
