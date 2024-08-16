@@ -11,7 +11,7 @@ const App = () => {
     useEffect(() => {
         
         const fetchMessage = async () => {
-            const res = await fetch("http://localhost:5000/api/message")
+            const res = await fetch("https://church-kollam-backend.onrender.com/api/message")
             const data = await res.json()
             setMessage(data)
         }   
