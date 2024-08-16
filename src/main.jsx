@@ -29,7 +29,7 @@ import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 import ChurchHistory from './pages/ChurchHistory.jsx';
 
 const addUser = async (newUser) => {
-  const res = await fetch('http://localhost:5000/api/users', {
+  const res = await fetch('https://church-kollam-backend.onrender.com/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ const addUser = async (newUser) => {
 };
 
 const addMessage = async (newMessage) => {
-  const res = await fetch('http://localhost:5000/api/message/1', {
+  const res = await fetch('https://church-kollam-backend.onrender.com/api/message/1', {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -51,7 +51,7 @@ const addMessage = async (newMessage) => {
 };
 
 const addEvent = async (newEvent) => {
-  const res = await fetch('http://localhost:5000/api/events', {
+  const res = await fetch('https://church-kollam-backend.onrender.com/api/events', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

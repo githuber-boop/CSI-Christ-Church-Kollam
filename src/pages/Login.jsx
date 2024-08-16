@@ -15,7 +15,7 @@ const Login = () => {
   const handleLogin = async (e) =>  {
     e.preventDefault();
 
-    const response = await fetch('/api/users');
+    const response = await fetch('https://church-kollam-backend.onrender.com/api/users');
     const users = await response.json();
     
     const memberUser = users.find(u => u.number === number && u.password === password && u.role === "member");
