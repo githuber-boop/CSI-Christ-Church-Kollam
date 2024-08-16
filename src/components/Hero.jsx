@@ -43,13 +43,10 @@ console.log(files)
             </div>
             <div className="social-icons">
               <span className='social-icon'>
-                <Link><FaFacebookSquare className='icon facebook' /></Link>
+                <Link to={'https://www.facebook.com/groups/CSI.Christ.Church.Kollam/'}target="_blank" rel="noopener noreferrer" ><FaFacebookSquare className='icon facebook' /></Link>
               </span>
               <span className='social-icon'>
-                <FaSquareInstagram className='icon instagram' />
-              </span>
-              <span className='social-icon'>
-                <FaSquareYoutube className='icon youtube' />
+                <Link to={'https://www.youtube.com/channel/UCBvvHn1GTMEL5I4txG320vg'} target="_blank" rel="noopener noreferrer" ><FaSquareYoutube className='icon youtube' /></Link>
               </span>
             </div>
           </main>

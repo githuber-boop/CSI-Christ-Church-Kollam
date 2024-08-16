@@ -52,7 +52,7 @@ const AdminChurchHerald = () => {
         <main className='admin-member-content'>
 
         <div className='almanac-upload'>
-        <h1>ALMANAC UPLOAD</h1>
+        <h1>HERALD UPLOAD</h1>
         <p>Click on Browse to select the file and then click Upload</p>
         <input type="file" onChange={handleFileChange} />
           {selectedFile && (

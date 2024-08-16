@@ -28,7 +28,7 @@ import AdminChurchHerald from './pages/AdminChurchHerald.jsx';
 import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 
 const addUser = async (newUser) => {
-  const res = await fetch('/api/users', {
+  const res = await fetch('http://localhost:5000/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const addUser = async (newUser) => {
 };
 
 const addMessage = async (newMessage) => {
-  const res = await fetch('/api/message/1', {
+  const res = await fetch('http://localhost:5000/api/message/1', {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const addMessage = async (newMessage) => {
 };
 
 const addEvent = async (newEvent) => {
-  const res = await fetch('/api/events', {
+  const res = await fetch('http://localhost:5000/api/events', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

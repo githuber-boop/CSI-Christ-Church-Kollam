@@ -79,7 +79,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .upload {
@@ -100,7 +100,8 @@
 }
 
 .upload img {
-    max-width: 150px;
+    max-width: 100px;
+    margin-top: .5rem;
 }
 
 .vicars-message {
