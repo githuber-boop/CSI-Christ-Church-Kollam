@@ -38,7 +38,7 @@ console.log(files)
           <main className="hero-text">
             <h1>WELCOME TO<br /> CSI CHRIST CHURCH CATHEDRAL <br /> KOLLAM</h1>
             <div className="call-out">
-              <button><a href="#">Learn More</a></button>
+              <button><Link to={'/church-history'}>LEARN MORE</Link></button>
               <button><Link to='/service-timings'>Service Timings</Link></button>
             </div>
             <div className="social-icons">

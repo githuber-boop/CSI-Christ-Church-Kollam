@@ -26,6 +26,7 @@ import BalikaBalabha from './pages/BalikaBalabha.jsx';
 import ConventionCenter from './pages/ConventionCenter.jsx';
 import AdminChurchHerald from './pages/AdminChurchHerald.jsx';
 import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
+import ChurchHistory from './pages/ChurchHistory.jsx';
 
 const addUser = async (newUser) => {
   const res = await fetch('http://localhost:5000/api/users', {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/milestones",
     element: <Milestones />,
+  },
+  {
+    path: "/church-history",
+    element: <ChurchHistory />,
   },
   {
     path: "/our-bishops",

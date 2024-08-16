@@ -1,0 +1,58 @@
+.cathedral-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 50px;
+}
+
+.cathedral .heading{
+    margin-top: 70px;
+}
+
+.cathedral-content p {
+    font-size: 23px;
+    align-self: center;
+}
+
+.quilon-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 50px;
+}
+
+.quilon-content p {
+    font-size: 23px;
+    align-self: center;
+}
+
+.quilon-mission .heading {
+    margin-top: 100px;
+}
+@media screen and (max-width:1000px) {
+    .cathedral-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .cathedral-content p {
+        text-align: center;
+    }
+
+    .cathedral-content-alt img{
+        order: 2;
+    }  
+    
+    .quilon-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .quilon-content p {
+        text-align: center;
+    }
+
+    .quilon-content-alt img{
+        order: 2;
+    }  
+}
