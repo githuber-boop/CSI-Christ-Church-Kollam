@@ -14,13 +14,14 @@ import axios from 'axios';
 // };
 
 const Hero = () => {
-  const [files, setFiles] = useState([]);
+  const [heralds, setHeralds] = useState([]);
+  const [almanacs, setAlmanacs] = useState([]);
 
 useEffect(() => {
   const fetchFiles = async () => {
     try {
-      const response = await axios.get('https://church-kollam-backend.onrender.com/api/files/almanac');
-      setFiles(response.data); 
+      const response = await axios.get('https://church-kollam-backend.onrender.com/api/heralds');
+      setHeralds(response.data); 
     } catch (error) {
       console.error('Error fetching files:', error);
     }
@@ -29,7 +30,19 @@ useEffect(() => {
   fetchFiles();
 }, []);
 
-console.log(files)
+useEffect(() => {
+  const fetchFiles = async () => {
+    try {
+      const response = await axios.get('https://church-kollam-backend.onrender.com/api/almanacs');
+      setAlmanacs(response.data); 
+    } catch (error) {
+      console.error('Error fetching files:', error);
+    }
+  };
+
+  fetchFiles();
+}, []);
+
   return (
     <>
       <header className="hero App-header">
@@ -55,10 +68,18 @@ console.log(files)
 
       <div className='container'>
         <div className="file-uploads">
-          {files.map((file) => (
-        <div className='upload' key={file.name}>
+        {heralds.map((herald) => (
+        <div className='upload' key={herald.name}>
+          <h1>CHURCH HERALD</h1>
+          <a href={herald.url} target="_blank" rel="noopener noreferrer">
+          <img src={pdfImage} alt="Almanac" />
+          </a>
+        </div>
+      ))}
+        {almanacs.map((almanac) => (
+        <div className='upload' key={almanac.name}>
           <h1>CHURCH ALMANAC</h1>
-          <a href={file.url} target="_blank" rel="noopener noreferrer">
+          <a href={almanac.url} target="_blank" rel="noopener noreferrer">
           <img src={pdfImage} alt="Almanac" />
           </a>
         </div>
