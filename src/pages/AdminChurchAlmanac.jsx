@@ -14,7 +14,7 @@ const AdminChurchHerald = () => {
         <main className='admin-member-content'>
 
           <div className='almanac-upload'>
-          <FileUpload type={almanac}/>
+          <FileUpload type={'almanac'}/>
           </div>
         </main>
     </div>
