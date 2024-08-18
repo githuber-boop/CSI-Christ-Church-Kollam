@@ -19,7 +19,7 @@ const Hero = () => {
 useEffect(() => {
   const fetchFiles = async () => {
     try {
-      const response = await axios.get('https://church-kollam-backend.onrender.com/api/uploads');
+      const response = await axios.get('https://church-kollam-backend.onrender.com/api/files/almanac');
       setFiles(response.data); 
     } catch (error) {
       console.error('Error fetching files:', error);
