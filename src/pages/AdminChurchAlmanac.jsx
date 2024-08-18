@@ -23,7 +23,7 @@ const AdminChurchHerald = () => {
     };
   
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData, { headers });
+      const response = await axios.post('https://church-kollam-backend.onrender.com/upload', formData, { headers });
       console.log('File uploaded:', response.data);
     } catch (error) {
       console.error('Error uploading file:', error);

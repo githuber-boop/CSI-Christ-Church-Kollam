@@ -265,6 +265,12 @@ textarea:not([rows]) {
     align-self:center;
   }
 
+  .vicarsMessage .deanImage {
+    float: none !important; 
+    margin: 0px auto !important;
+    /* display: none; */
+    margin-bottom: 50px !important;
+  }
 
 
 }

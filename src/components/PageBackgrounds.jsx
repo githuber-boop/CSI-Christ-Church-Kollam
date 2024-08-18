@@ -10,7 +10,8 @@ const PageBackgrounds = ({backgroundImg, heroText}) => {
         backgroundImage: `url(${backgroundImg})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-      }}
+      }
+    }
     >
         <div className='container'>
             <Navbar/>

@@ -47,10 +47,10 @@ const VicarsMessage = () => {
       <div>
         <PageBackgrounds backgroundImg={messageBg} heroText={"VICAR'S MESSAGE"}/>
   
-        <div style={styles.content}>
+        <div style={styles.content} className='vicarsMessage'>
           <LazyLoad offset={7000}>
 
-            <img src={bishopImage} alt="Bishop" style={styles.image} width="300" />
+            <img src={bishopImage} alt="Bishop" style={styles.image} className='deanImage' width="300" />
           </LazyLoad>
 
             {messages.map((message, index) => (
