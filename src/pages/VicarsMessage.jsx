@@ -5,6 +5,7 @@ import bishopImage from '../assets/vicar-image.webp'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import LazyLoad from 'react-lazyload'
+import Footer from '../components/Footer'
 
 
 const VicarsMessage = () => {
@@ -44,7 +45,7 @@ const VicarsMessage = () => {
       };
 
   return (
-      <div>
+      <>
         <PageBackgrounds backgroundImg={messageBg} heroText={"VICAR'S MESSAGE"}/>
   
         <div style={styles.content} className='vicarsMessage'>
@@ -67,8 +68,8 @@ const VicarsMessage = () => {
             
                 
         </div>
-
-    </div>
+      <Footer/>
+    </>
 
 
     

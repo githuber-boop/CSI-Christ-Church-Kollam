@@ -6,6 +6,7 @@ import quilonMission from '../assets/quilonMission.png'
 import cathedralColor from '../assets/cathedralColor.png'
 import PageBackgrounds from '../components/PageBackgrounds'
 import '../styles/ChurchHistory.css'
+import Footer from '../components/Footer'
 const ChurchHistory = () => {
   return (
     <>
@@ -48,6 +49,7 @@ const ChurchHistory = () => {
         </div>
 
       </div>
+      <Footer/>
     </>
   )
 }

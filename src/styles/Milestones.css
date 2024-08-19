@@ -82,3 +82,17 @@
   .milestone p {
     font-family: "IBM Plex Sans Condensed", sans-serif;
   }
+
+  @media screen and (max-width:600px) {
+
+    .milestone {
+
+      width: 100%;
+
+    }
+
+    .milestone:nth-child(even), .milestone:nth-child(odd) {
+      justify-self: center;
+    }
+    
+  }

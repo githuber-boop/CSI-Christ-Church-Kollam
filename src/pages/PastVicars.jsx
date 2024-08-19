@@ -2,6 +2,7 @@ import React from 'react';
 import PageBackgrounds from '../components/PageBackgrounds';
 import '../styles/PastVicars.css';
 import pastVicars from '../assets/past-vicars.webp'
+import Footer from '../components/Footer';
 
 
 const vicarsData = [
@@ -48,6 +49,7 @@ const PastVicars = () => {
                   </tbody>
             </table>
         </div>
+        <Footer/>
     </>
 
     

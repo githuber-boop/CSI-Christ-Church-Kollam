@@ -10,6 +10,7 @@ const PageBackgrounds = ({backgroundImg, heroText}) => {
         backgroundImage: `url(${backgroundImg})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
+        backgroundPosition:'center'
       }
     }
     >

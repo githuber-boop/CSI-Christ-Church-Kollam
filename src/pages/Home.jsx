@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import '../styles/Home.css'
 import { Link } from 'react-router-dom'
 import churchHistory from "../assets/church-history.webp"
+import Footer from '../components/Footer'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
@@ -27,8 +28,10 @@ const App = () => {
         <Hero/>
         <div className="container">
         <section className="church-history">
-                  <div className="heading">
-                    <h1>Our Church History</h1>
+                  <div className="marginCenter">
+                    <div className="heading">
+                      <h1>Our Church History</h1>
+                    </div>
                   </div>
                   <div className="col-2 grid-column">
                     <div className="col-2-text">
@@ -68,6 +71,8 @@ const App = () => {
                 </div>
             </div>
         </div>
+
+        <Footer/>
       </>
     
 

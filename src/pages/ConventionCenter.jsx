@@ -5,6 +5,7 @@ import conventionCenter from '../assets/convention-center.webp'
 import conventionInside from '../assets/convention-inside.webp'
 import conventionInside2 from '../assets/convention-inside-2.webp'
 import '../styles/ConventionCenter.css';
+import Footer from '../components/Footer';
 
 
 const ConventionCenter = () => {
@@ -48,6 +49,7 @@ hall are utilized for mission and charity work.</p>
         </div>
 
         </div>
+        <Footer/>
     </>
   );
 }

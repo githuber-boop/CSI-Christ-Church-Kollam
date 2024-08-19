@@ -6,6 +6,8 @@ import christHospitalhMission from '../assets/christ-hospital.webp'
 import { Link } from 'react-router-dom'
 import '../styles/Missions.css';
 import LazyLoad from 'react-lazyload'
+import balikamandiram from '../assets/balikamandiram.webp'
+
 
 
 const Missions = () => {
@@ -56,29 +58,19 @@ const Missions = () => {
               <article className="mission">
                 <div className="mission-content">
                   <div className="mission-text">
-                    <h2>Chhattisgarh Mission</h2>
-                    <p>In accordance with the Great Commission of our Lord, the  Kollam-Kottarakara Diocese decided to adopt a mission field under the  Jubilee Mission of the South Kerala Diocese</p>
-                    <Link to="/chhattisgarh-mission" className='button'>Read More</Link>
+                    <h2>CSI Balikamandiram and Balabhavanam </h2>
+                    <p>The home for the boys-Balabhavan and the home for the girls-Balikamandiram, which are situated at the right-hand and left-hand side of the Cathedral, depicts the two extended arms of the Church, which accommodates..</p>
+                    <Link to="/balikamandhiram-balabhavan" className='button'>Read More</Link>
                   </div>
                   <div className="mission-image">
-                    <img src={pyaridarChurch} alt="chhattisgarh-image" />
+                    <img src={balikamandiram} alt="chhattisgarh-image" />
                   </div>
                 </div>
               </article>
-              <article className="mission">
-                <div className="mission-content">
-                  <div className="mission-text">
-                    <h2>christ mission hospital</h2>
-                    <p>Christ Church Mission Hospital in Kollam is a well-known healthcare  facility offering a range of medical services. Established by the CSI  Church, it serves the community with essential health care and  treatments.</p>
-                    <Link to="/christ-mission-hospital" className='button'>Read More</Link>
-                  </div>
-                  <div className="mission-image">
-                    <img src={christHospitalhMission} alt="christ-church-hospital-image" />
-                  </div>
-                </div>
-              </article>
+
             </div>
         </div>
+
     </>
   )
 }

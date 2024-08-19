@@ -2,7 +2,9 @@
     background-image: url('../assets/hero-bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-position: center;
+    height: 100%;
+    padding-bottom: 200px;
 }
 
 .hero-text {
@@ -137,6 +139,23 @@
         font-size: 12vw;
     }
 
+    .hero {
+        height: 100%;
+    padding-bottom: 90px;
+
+    }
+
+    .heading h1 {
+        font-size: 11vw !important;
+    }
+
+    .col-2-text p , .partMessage p{
+        font-size: 20px !important;
+    }
+
+    .container {
+        padding: 0 .7rem !important;
+    }
     
 }
 
@@ -144,6 +163,12 @@
 
     .marginRight {
         justify-content: center;
+    }
+
+    .marginCenter {
+        display: flex;
+        justify-content: center;
+
     }
 
     .vicars-message {

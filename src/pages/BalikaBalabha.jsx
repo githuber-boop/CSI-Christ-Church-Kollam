@@ -6,6 +6,7 @@ import balikamandiram from '../assets/balikamandiram.webp'
 import balabhavan from '../assets/balabhavan.webp'
 import childrenBalikamandiram from '../assets/children-balikamandiram.webp'
 import childrenBalabhavan from '../assets/children-balabhavan.webp'
+import Footer from '../components/Footer';
 
 
 const BalikaBalabha = () => {
@@ -59,6 +60,8 @@ of the least of my brethren’s, you did for me ”
         </div>
 
     </div>
+
+    <Footer/>
     </>
   );
 }

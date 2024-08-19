@@ -6,6 +6,7 @@ import dean from'../assets/dean.webp'
 import secretary from'../assets/secretary.webp'
 import accountant from'../assets/accountant.webp'
 import '../styles/OfficeBearers.css';
+import Footer from '../components/Footer'
 
 
 const OfficeBearers = () => {
@@ -91,6 +92,7 @@ const OfficeBearers = () => {
             </div>
         </div>
     </div>
+    <Footer/>
     </>
   )
 }

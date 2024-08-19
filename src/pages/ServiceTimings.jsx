@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/ServiceTimings.css';
 import PageBackgrounds from '../components/PageBackgrounds';
 import serviceTiming from '../assets/service-timing.webp'
+import Footer from '../components/Footer';
 
 
 const worshipTimingsData = [
@@ -47,6 +48,7 @@ const ServiceTimings = () => {
               </table>
             </div>
         </div>
+        <Footer/>
     </>
   );
 };

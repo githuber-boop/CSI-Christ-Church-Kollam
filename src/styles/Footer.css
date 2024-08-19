@@ -1,0 +1,82 @@
+.footer-social-icons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.footer-social-icon span .icon {
+    color: white;
+    transform: scale(2);
+}
+
+.footer-social-icon .facebook, .footer-social-icon .youtube {
+    background: white;
+    padding: 13px;
+    font-size: 25px;
+    border-radius: 180%;
+    transition: all 0.5s ease-in-out;
+}
+
+.facebook {
+    color: #316FF6;
+}
+
+.youtube {
+    color: #FF0000;
+}
+
+.footer-social-icon .facebook:hover , .footer-social-icon .youtube:hover {
+    background: none;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: .5rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: black;
+    font-family: 'IBM Plex Sans Condensed';
+    font-size: 1.1875rem;
+    border-bottom: 3px solid #000;
+}
+
+footer {
+    background-color: rgb(255, 247, 237);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+}
+
+.copyright p {
+    font-family: 'IBM Plex Sans Condensed';
+    margin-top: .5rem;
+    color: black;
+    
+}
+
+@media screen and (max-width:900px) {
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: .45rem;
+    }
+
+    .copyright p {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+}

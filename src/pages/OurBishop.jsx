@@ -2,10 +2,13 @@ import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
 import bishopBg from '../assets/bishop-bg.webp'
 import LazyLoad from 'react-lazyload'
+import VSFrancis from '../assets/bishop-francis.webp'
+import OommenGeorge from '../assets/bishop-oomen.webp'
+import Footer from '../components/Footer'
 
 const OurBishop = () => {
   return (
-    <div>
+    <>
         <PageBackgrounds backgroundImg={bishopBg} heroText={"OUR BISHOP"}/>
         <div className="container">
           <div className="bishop-1">
@@ -20,7 +23,7 @@ const OurBishop = () => {
               </div>
               <div className="col-2-img">
               <LazyLoad offset={8000}>
-                        <img src="src\assets\bishop-francis.webp" />
+                        <img src={VSFrancis} />
               </LazyLoad>
               </div>
             </div>
@@ -37,15 +40,16 @@ const OurBishop = () => {
                 <p>Bishop Oommen George, born on July 21, 1956, in Maramon, dedicated his  life to ministry, influenced by his parents. Educated in engineering and  theology, he earned degrees from Mysore University and Kerala United  Theological Seminary. Ordained at Mulayakkunnu CSI Church, he served in  various parishes and held significant church committee roles. In the  USA, he was Vice-President of the Council of CSI Congregations and  earned a Doctor of Ministry. Consecrated as the first bishop of the CSI  Diocese of Kollam-Kottarakkara in 2017, he holds leadership positions,  including President of the Kerala Council of Churches and promotes  biblical messages via YouTube.</p>
               </div>
               <div className="col-2-img">
-              <LazyLoad offset={1000}>
-                        <img src="src\assets\bishop-oomen.webp" />
+              <LazyLoad offset={5000}>
+                        <img src={OommenGeorge} />
               </LazyLoad>
                     </div>
             </div>
 
           </div>
         </div>
-    </div>
+        <Footer/>
+    </>
   )
 }
 

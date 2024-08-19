@@ -14,34 +14,34 @@ import axios from 'axios';
 // };
 
 const Hero = () => {
-  const [heralds, setHeralds] = useState([]);
-  const [almanacs, setAlmanacs] = useState([]);
+//   const [heralds, setHeralds] = useState([]);
+//   const [almanacs, setAlmanacs] = useState([]);
 
-useEffect(() => {
-  const fetchFiles = async () => {
-    try {
-      const response = await axios.get('https://church-kollam-backend.onrender.com/api/heralds');
-      setHeralds(response.data); 
-    } catch (error) {
-      console.error('Error fetching files:', error);
-    }
-  };
+// useEffect(() => {
+//   const fetchFiles = async () => {
+//     try {
+//       const response = await axios.get('https://church-kollam-backend.onrender.com/api/heralds');
+//       setHeralds(response.data); 
+//     } catch (error) {
+//       console.error('Error fetching files:', error);
+//     }
+//   };
 
-  fetchFiles();
-}, []);
+//   fetchFiles();
+// }, []);
 
-useEffect(() => {
-  const fetchFiles = async () => {
-    try {
-      const response = await axios.get('https://church-kollam-backend.onrender.com/api/almanacs');
-      setAlmanacs(response.data); 
-    } catch (error) {
-      console.error('Error fetching files:', error);
-    }
-  };
+// useEffect(() => {
+//   const fetchFiles = async () => {
+//     try {
+//       const response = await axios.get('https://church-kollam-backend.onrender.com/api/almanacs');
+//       setAlmanacs(response.data); 
+//     } catch (error) {
+//       console.error('Error fetching files:', error);
+//     }
+//   };
 
-  fetchFiles();
-}, []);
+//   fetchFiles();
+// }, []);
 
   return (
     <>
@@ -66,7 +66,7 @@ useEffect(() => {
         </div>
       </header>
 
-      <div className='container'>
+      {/* <div className='container'>
         <div className="file-uploads">
         {heralds.map((herald) => (
         <div className='upload' key={herald.name}>
@@ -85,7 +85,7 @@ useEffect(() => {
         </div>
       ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

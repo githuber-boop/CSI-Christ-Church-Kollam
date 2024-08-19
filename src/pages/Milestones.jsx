@@ -2,6 +2,7 @@ import React from 'react'
 import PageBackgrounds from '../components/PageBackgrounds'
 import milestonesBg from '../assets/milestones-bg.webp'
 import '../styles/Milestones.css'
+import Footer from '../components/Footer'
 
 const Milestones = () => {
 
@@ -46,6 +47,7 @@ const Milestones = () => {
         ))}
       </div>
       </div>
+      <Footer/>
     </div>
     
   )

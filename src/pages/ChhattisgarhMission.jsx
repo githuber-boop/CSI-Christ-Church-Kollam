@@ -8,6 +8,7 @@ import pyaridar from '../assets/pyaridar.webp'
 import nurserySchool from '../assets/nursery-school.webp'
 import patewaSchool from '../assets/patewa.webp'
 import LazyLoad from 'react-lazyload'
+import Footer from '../components/Footer';
 
 
 
@@ -153,6 +154,8 @@ Stepping into the mission field in Chhattisgarh marked a significant commitment 
 
 
         </div>
+
+        <Footer/>
     </div>
   )
 }

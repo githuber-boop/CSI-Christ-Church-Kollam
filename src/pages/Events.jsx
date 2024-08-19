@@ -5,6 +5,7 @@ import eventBg from '../assets/eventBg.webp'
 import event2 from '../assets/event-2.webp'
 import '../styles/Events.css'
 import { useState, useEffect } from 'react'
+import Footer from '../components/Footer'
 const Events = () => {
   const [events, setEvents] = useState([])
 
@@ -41,6 +42,7 @@ const Events = () => {
               </div>
             </div>
         </div>
+        <Footer/>
     </>
   )
 }
