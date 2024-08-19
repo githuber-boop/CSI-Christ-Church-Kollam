@@ -18,16 +18,24 @@ const Footer = () => {
 
             <ul className="footer-links">
               <li>
-                <Link className='footer-link' to={'/'}>Home</Link>
+                <a>
+                  <Link className='footer-link' to={'/'}>Home</Link>
+                </a>
               </li>
               <li>
-                <Link className='footer-link' to={'/church-history'}>About Us</Link>
+                <a>
+                  <Link className='footer-link' to={'/church-history'}>About Us</Link>
+                </a>
               </li>
               <li>
-                <Link className='footer-link' to={'/'}>Missions & Projects</Link>
+                <a>
+                  <Link className='footer-link' to={'/missions-projects'}>Missions & Projects</Link>
+                </a>
               </li>
               <li>
-                <Link className='footer-link' to={'/events'}>Events</Link>
+                <a>
+                  <Link className='footer-link' to={'/events'}>Events</Link>
+                </a>
               </li>
             </ul>
 

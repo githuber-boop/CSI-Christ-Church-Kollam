@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import '../styles/Missions.css';
 import LazyLoad from 'react-lazyload'
 import balikamandiram from '../assets/balikamandiram.webp'
+import Footer from '../components/Footer'
 
 
 
@@ -70,7 +71,7 @@ const Missions = () => {
 
             </div>
         </div>
-
+      <Footer/>
     </>
   )
 }
