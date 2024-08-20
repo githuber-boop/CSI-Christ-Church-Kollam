@@ -20,6 +20,7 @@
 }
 
 
+
   
   
 
@@ -141,7 +142,17 @@
 .flexCenter {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+}
 
+.location {
+    margin: 60px auto !important;
+}
+
+.location iframe {
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
 
@@ -160,6 +171,12 @@
     padding: 20px 25px;
     gap: 1rem;
     border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 0.5s ease;
+}
+
+
+.bearer-card:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -187,6 +204,15 @@
 }
 
 @media screen and (max-width:600px) {
+
+    .office-bearers-cards {
+        flex-direction: column;
+    }
+
+    .bearer-card img {
+        width: 60%;
+    }
+
     .hero-text h1{
 
         font-size: 12vw;
@@ -214,6 +240,10 @@
 
 @media screen and (max-width:900px) {
 
+    .bearer-name {
+        font-size: 1.687rem;
+    }
+
     .marginRight {
         justify-content: center;
     }
@@ -222,6 +252,10 @@
         display: flex;
         justify-content: center;
 
+    }
+
+    .grid-column .col-2-text {
+        text-align: center;
     }
 
     .vicars-message {
@@ -234,6 +268,15 @@
 
     .partMessage {
         text-align: center;
+    }
+
+    .bearer-card {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+
+    .col-2 {
+        grid-template-columns: 1fr !important;
     }
     
 }

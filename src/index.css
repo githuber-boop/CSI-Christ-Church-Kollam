@@ -279,6 +279,13 @@ textarea:not([rows]) {
 
 
 }
+@media screen and (max-width:700px) {
+  .vicarsSpeech p {
+    font-size: 1.175rem !important;
+  }
+
+
+}
 
 @media screen and (max-width:1000px) {
   .grid-column {
@@ -287,9 +294,7 @@ textarea:not([rows]) {
 
   }
 
-  .grid-column .col-2-text {
-    text-align: center;
-    }
+
     
   .grid-column .col-2-text p {
       

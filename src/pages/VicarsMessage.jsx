@@ -58,7 +58,7 @@ const VicarsMessage = () => {
           </LazyLoad>
 
             {messages.map((message, index) => (
-              <div key={index}>
+              <div className='vicarsSpeech' key={index}>
               <h2 className='date'>{message.date}</h2>
               <p style={styles.text}>{message.message}</p>
 
