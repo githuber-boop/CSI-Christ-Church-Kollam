@@ -10,6 +10,7 @@ import roundedDean from '../assets/rounded-dean.png'
 import roundedSecretary from '../assets/rounded-secretary.png'
 import roundedAccountant from '../assets/rounded-accountant.png'
 import CarouselComponenet from '../components/CarouselComponenet'
+
 const App = () => {
     const [message, setMessage] = useState([]) 
     useEffect(() => {
@@ -116,6 +117,15 @@ const App = () => {
 
         </div>
 
+        <div className="gallery">
+          <div className="flexCenter">
+            <div className="heading">
+              <h1>GALLERY</h1>
+            </div>
+          </div>
+          <CarouselComponenet/>
+          </div>
+
         <div className="container location">
           <div className="flexCenter">
             <div className="heading">
@@ -124,7 +134,7 @@ const App = () => {
           </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9139467430173!2d76.59111947436166!3d8.887592791187792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fc586740d3d1%3A0x746e561db8908230!2sCSI%20Christ%20Church%20Cathedral!5e0!3m2!1sen!2sin!4v1724148779697!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        {/* <CarouselComponenet/> */}
+        
         <Footer/>
       </>
     

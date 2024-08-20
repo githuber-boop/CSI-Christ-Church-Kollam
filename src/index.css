@@ -257,6 +257,7 @@ textarea:not([rows]) {
 
 
 
+
 @media screen and (max-width:700px) {
   .image-container {
     height: 60%;
