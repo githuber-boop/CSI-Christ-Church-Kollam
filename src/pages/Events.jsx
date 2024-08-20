@@ -29,15 +29,16 @@ const Events = () => {
         <Breadcrumb/>
 
             <div className="grid-column-2">
-              <div className="event-cards">
-
-              {events.map((event, index) => (
-                <div key={index} className="event-card">
-                  <h2>{event.eventName}</h2>
-                  <p><strong>Date and Time:</strong> {event.date} {event.time}</p>
-                  <p>{event.eventDetails}</p>
+              <div className="event-container">
+                <div className="event-cards">
+                {events.map((event, index) => (
+                  <div key={index} className="event-card">
+                    <h2>{event.eventName}</h2>
+                    <p><strong>Date and Time:</strong> {event.date} {event.time}</p>
+                    <p>{event.eventDetails}</p>
+                  </div>
+                ))}
                 </div>
-              ))}
               </div>
               <div className="event-image">
                 <img src={cathedral} alt="cathderal-image" />

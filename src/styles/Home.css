@@ -115,6 +115,10 @@
     gap: 2rem;
 }
 
+.vicarsMessage {
+    margin: 60px auto !important;
+}
+
 .marginRight{
     display: flex;
     justify-content: flex-end;
@@ -134,7 +138,53 @@
     margin-top: 10px;
 }
 
+.flexCenter {
+    display: flex;
+    justify-content: center;
 
+}
+
+
+.office-bearers-cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 1.875rem 0;
+}
+
+.bearer-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF7ED;
+    padding: 20px 25px;
+    gap: 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.bearer-text {
+    text-align: center;
+    font-family: 'IBM Plex Sans Condensed';
+    margin-top: 7px;
+    color: black;
+}
+
+.bearer-card img {
+    width: 70%;
+}
+
+.bearer-name {
+    color: #3E0202;
+    font-family: "Khand";
+    text-transform: uppercase;
+}
+
+
+.bearer-position {
+    font-family: "Khand";
+    text-transform: uppercase;
+}
 
 @media screen and (max-width:600px) {
     .hero-text h1{

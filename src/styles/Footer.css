@@ -15,7 +15,7 @@
     padding: 13px;
     font-size: 25px;
     border-radius: 180%;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .facebook {
@@ -26,10 +26,14 @@
     color: #FF0000;
 }
 
-.footer-social-icon .facebook:hover , .footer-social-icon .youtube:hover {
+.footer-social-icon .facebook:hover  {
     background: none;
-    color: var(--yellow);
-    border: 1px solid var(--yellow);
+    border: 1px solid #316FF6;
+}
+
+.footer-social-icon .youtube:hover {
+    background: none;
+    border: 1px solid #FF0000;
 }
 
 .footer-links {

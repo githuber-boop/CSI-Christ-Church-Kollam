@@ -9,10 +9,10 @@ const Footer = () => {
     <footer className="footer">
             <div className="footer-social-icons">
               <span className='footer-social-icon'>
-                <Link to={'https://www.facebook.com/groups/CSI.Christ.Church.Kollam/'}target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-facebook facebook"></i></Link>
+                <Link to={'https://www.facebook.com/groups/CSI.Christ.Church.Kollam/'}target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-facebook facebook"></i></Link>
               </span>
               <span className='footer-social-icon'>
-                <Link to={'https://www.youtube.com/channel/UCBvvHn1GTMEL5I4txG320vg'} target="_blank" rel="noopener noreferrer" ><i class="fa-brands fa-square-youtube youtube"></i></Link>
+                <Link to={'https://www.youtube.com/channel/UCBvvHn1GTMEL5I4txG320vg'} target="_blank" rel="noopener noreferrer" ><i className="fa-brands fa-square-youtube youtube"></i></Link>
               </span>
             </div>
 

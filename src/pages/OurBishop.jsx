@@ -6,6 +6,7 @@ import VSFrancis from '../assets/bishop-francis.webp'
 import OommenGeorge from '../assets/bishop-oomen.webp'
 import Footer from '../components/Footer'
 import Breadcrumb from '../components/BreadCrumbs'
+import '../styles/OurBishop.css'
 
 const OurBishop = () => {
   return (
@@ -14,9 +15,11 @@ const OurBishop = () => {
         <div className="container">
           <Breadcrumb/>
           <div className="bishop-1">
-            <div className="heading">
-                  <h1>Rt.Rev. V.S.Francis</h1>
-                  <p>bishop in charge</p>
+            <div className="bishop-heading">
+              <div className="heading">
+                    <h1>Rt.Rev. V.S.Francis</h1>
+                    <p>bishop in charge</p>
+              </div>
             </div>
             
             <div className="col-2">
@@ -32,9 +35,11 @@ const OurBishop = () => {
 
           </div>
           <div className="bishop-2">
-            <div className="heading">
-                  <h1>Rt.Rev. Dr. Oommen George</h1>
-                  <p>First Bishop of CSI Kollam-Kottarakara Diocese</p>
+            <div className="bishop-heading">
+              <div className="heading">
+                    <h1>Rt.Rev. Dr. Oommen George</h1>
+                    <p>First Bishop of CSI Kollam-Kottarakara Diocese</p>
+              </div>
             </div>
             
             <div className="col-2">

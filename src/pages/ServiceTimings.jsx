@@ -26,9 +26,10 @@ const ServiceTimings = () => {
   return (
     <>
         <PageBackgrounds backgroundImg={serviceTiming} heroText={"SERVICE TIMINGS"}/>
-    
-        <div className="container center-container">
+        <div className="container">
           <Breadcrumbs/>
+        </div>
+        <div className="container center-container">
             <div className="table-container">
               <table>
                 <thead>

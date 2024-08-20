@@ -28,12 +28,19 @@ const vicarsData = [
 ];
 
 const PastVicars = () => {
+  const styles = {
+    text: {
+      marginBottom:"30px"
+    },
+  };
+
   return (
     <>
         <PageBackgrounds backgroundImg={pastVicars} heroText={"PREVIOUS VICARS"}/>
-
+          <div className="container" style={styles.text}>
+            <Breadcrumb/>
+          </div>
         <div className="container center-container">
-          <Breadcrumb/>
             <table className='table-container'>
                   <thead>
                     <tr>

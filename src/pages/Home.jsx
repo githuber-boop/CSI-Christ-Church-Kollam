@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 import churchHistory from "../assets/church.png"
 import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
+import roundedDean from '../assets/rounded-dean.png'
+import roundedSecretary from '../assets/rounded-secretary.png'
+import roundedAccountant from '../assets/rounded-accountant.png'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
@@ -52,7 +55,7 @@ const App = () => {
     </div>
 
 
-        <div className="container">
+        <div className="container vicarsMessage">
             <div className="marginRight">
                 <div className="heading messageHeading">
                     <h1>VICAR'S MESSAGE</h1>
@@ -76,6 +79,42 @@ const App = () => {
               ))}
                 </div>
             </div>
+        </div>
+
+        <div className="container officeBearers">
+          <div className="flexCenter">
+            <div className="heading">
+              <h1>OFFICE BEARERS</h1>
+            </div>
+          </div>
+
+          <div className="office-bearers-cards">
+            <div className="bearer-card">
+              <img src={roundedDean} alt="deanImage" />
+              <div className="bearer-text">
+                <h1 className='bearer-name'>REV. JOSE GEORGE</h1>
+                <h3 className='bearer-position'>DEAN</h3>
+                <p className='bearer-number'>+91 98464 66513</p>
+              </div>
+            </div>
+            <div className="bearer-card">
+              <img src={roundedSecretary} alt="deanImage" />
+              <div className="bearer-text" >
+                <h1 className='bearer-name'>Lal Thomas</h1>
+                <h3 className='bearer-position'>Secretary</h3>
+                <p className='bearer-number'>+91 94969 91960</p>
+              </div>
+            </div>
+            <div className="bearer-card">
+              <img src={roundedAccountant} alt="deanImage" />
+              <div className="bearer-text">
+                <h1 className='bearer-name'>Oommen George</h1>
+                <h3 className='bearer-position'>accountant</h3>
+                <p className='bearer-number'>+91 94461 09231</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
 

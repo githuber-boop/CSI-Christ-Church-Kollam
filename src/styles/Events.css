@@ -5,11 +5,14 @@
     gap: 20px;
 }
 
+
 .event-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh; 
+    display: flex;
+    flex-direction: column-reverse;
+    height: fit-content;
+    
 }
+
 
 .event-card {
     height: fit-content; 
@@ -29,3 +32,21 @@
 .event-image img {
     margin-top: 10px;
 }
+
+@media screen and (max-width: 900px) {
+    .grid-column-2 {
+        grid-template-columns: 1fr 200px;
+    }
+    
+  }
+
+@media screen and (max-width: 600px) {
+    .grid-column-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .event-image {
+        display: none;
+    }
+    
+  }
