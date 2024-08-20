@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import LazyLoad from 'react-lazyload'
 import Footer from '../components/Footer'
+import Breadcrumbs from '../components/BreadCrumbs'
 
 
 const VicarsMessage = () => {
@@ -47,7 +48,9 @@ const VicarsMessage = () => {
   return (
       <>
         <PageBackgrounds backgroundImg={messageBg} heroText={"VICAR'S MESSAGE"}/>
-  
+        <div className="container">
+          <Breadcrumbs/>
+        </div>
         <div style={styles.content} className='vicarsMessage'>
           <LazyLoad offset={7000}>
 

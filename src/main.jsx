@@ -27,6 +27,7 @@ import ConventionCenter from './pages/ConventionCenter.jsx';
 import AdminChurchHerald from './pages/AdminChurchHerald.jsx';
 import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 import ChurchHistory from './pages/ChurchHistory.jsx';
+import { BreadcrumbProvider } from './components/BreadCrumsContext.jsx';
 
 const addUser = async (newUser) => {
   const res = await fetch('https://church-kollam-backend.onrender.com/api/users', {
@@ -154,6 +155,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <BreadcrumbProvider>
     <RouterProvider router={router} />
+    </BreadcrumbProvider>
   </React.StrictMode>
 );

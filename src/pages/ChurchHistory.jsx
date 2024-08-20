@@ -7,12 +7,15 @@ import cathedralColor from '../assets/cathedralColor.png'
 import PageBackgrounds from '../components/PageBackgrounds'
 import '../styles/ChurchHistory.css'
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/BreadCrumbs'
 const ChurchHistory = () => {
   return (
     <>
       <PageBackgrounds backgroundImg={churchHistoryBG} heroText={"CHURCH HISTORY"}/>
     
       <div className="container">
+      <Breadcrumb/>
+
           <div className="cathedral">
             <div className="heading">
                 <h1>THE CATHEDRAL</h1>

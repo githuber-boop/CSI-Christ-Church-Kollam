@@ -7,13 +7,16 @@ import balabhavan from '../assets/balabhavan.webp'
 import childrenBalikamandiram from '../assets/children-balikamandiram.webp'
 import childrenBalabhavan from '../assets/children-balabhavan.webp'
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/BreadCrumbs';
 
 
 const BalikaBalabha = () => {
   return (
     <>
         <PageBackgrounds backgroundImg={BalikaBhavanBg} heroText={"BALIKAMANDIRAM AND BALABHAVAN"}/>
+
         <div className="container">
+            <Breadcrumb/>
         <div className="center-container">
             <div className="text-container">
                   <div className="flex-align">

@@ -3,6 +3,7 @@ import PageBackgrounds from '../components/PageBackgrounds'
 import milestonesBg from '../assets/milestones-bg.webp'
 import '../styles/Milestones.css'
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/BreadCrumbs'
 
 const Milestones = () => {
 
@@ -37,6 +38,8 @@ const Milestones = () => {
     <div>
       <PageBackgrounds backgroundImg={milestonesBg} heroText={"MILESTONES"}/>
       <div className="container">
+      <Breadcrumb/>
+
           <div className="milestones">
         {milestones.map((milestone, index) => (
           <div key={index} className="milestone">

@@ -1,0 +1,39 @@
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li a {
+  color: #393b3e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid #393b3e;
+}
+
+.breadcrumb li a:hover {
+  color: var(--yellow);
+}
+
+.breadcrumb li .separator {
+  margin: 0 8px;
+  color: #999;
+  font-weight: 400;
+}
+
+.breadcrumb::before {
+  content: '>';
+  margin-right: 8px;
+  color: #999;
+}

@@ -6,6 +6,7 @@ import event2 from '../assets/event-2.webp'
 import '../styles/Events.css'
 import { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/BreadCrumbs'
 const Events = () => {
   const [events, setEvents] = useState([])
 
@@ -25,6 +26,8 @@ const Events = () => {
     <>
         <PageBackgrounds backgroundImg={eventBg} heroText={"UPCOMING EVENTS"}/>
         <div className="container">
+        <Breadcrumb/>
+
             <div className="grid-column-2">
               <div className="event-cards">
 

@@ -9,7 +9,7 @@ import nurserySchool from '../assets/nursery-school.webp'
 import patewaSchool from '../assets/patewa.webp'
 import LazyLoad from 'react-lazyload'
 import Footer from '../components/Footer';
-
+import Breadcrumb from '../components/BreadCrumbs';
 
 
 const ChhattisgarhMission = () => {
@@ -17,6 +17,8 @@ const ChhattisgarhMission = () => {
     <div>
         <PageBackgrounds backgroundImg={chhattisgarhMission} heroText={"CHHATTISGARH MISSION"}/>
     <div className="container">
+    <Breadcrumb/>
+
             <div className="center">
                 <p>In accordance with the Great Commission of our Lord, CSI Christ Church has committed to a mission field under the Jubilee Mission of the South Kerala Diocese in Patewa, Chhattisgarh State. This mission, originally initiated by the South Kerala Diocese and supported by our church since April 1st, 2007, is now supervised by the Board for Mission of the Kollam-Kottarakkara Diocese.</p>
             </div>

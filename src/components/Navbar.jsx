@@ -3,8 +3,10 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import logo from '../assets/csi-christ-logo.webp'
+import { useBreadcrumb } from '../components/BreadCrumsContext';
 
 const Navbar = () => {
+    const { resetBreadcrumbs } = useBreadcrumb();
     const [isOpen, setIsOpen] = useState(false);
     // const [isFixed, setIsFixed] = useState(false);
     const [dropdowns, setDropdowns] = useState({
@@ -14,22 +16,10 @@ const Navbar = () => {
         events: false,
         missions: false,
     });
+    const handleLogoClick = () => {
+        resetBreadcrumbs(); // Clear breadcrumb memory
+      };
 
-    // useEffect(() => {
-    //   const handleScroll = () => {
-    //     const headerHeight = document.querySelector('.App-header').offsetHeight;
-    //     if (window.scrollY > headerHeight) {
-    //       setIsFixed(true);
-    //     } else {
-    //       setIsFixed(false);
-    //     }
-    //   };
-  
-    //   window.addEventListener('scroll', handleScroll);
-    //   return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    //   };
-    // }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -42,7 +32,7 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className="logo">
-                <Link to='/'>
+                <Link to='/'  onClick={handleLogoClick}>
                 <img src={logo} alt="CSI Christ Church Logo" />
                 </Link>
             </div>
@@ -66,16 +56,6 @@ const Navbar = () => {
                     )}
                 </li>
 
-                <li className="nav-link">
-                    <Link className="link" to="#" onClick={() => toggleDropdown('services')}>Organisations <span><FaChevronDown /></span></Link>
-                    {dropdowns.services && (
-                        <ul className="dropdown-menu">
-                            <li className="dropdown-item"><Link className="link" to="#services1">Services 1</Link></li>
-                            <li className="dropdown-item"><Link className="link" to="#services2">Services 2</Link></li>
-                            <li className="dropdown-item"><Link className="link" to="#services3">Services 3</Link></li>
-                        </ul>
-                    )}
-                </li>
 
                 <li className="nav-link">
                     <Link className="link" to="#" onClick={() => toggleDropdown('missions')}>Missions & Projects <span><FaChevronDown /></span></Link>

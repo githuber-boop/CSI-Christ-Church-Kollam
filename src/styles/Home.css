@@ -20,6 +20,9 @@
 }
 
 
+  
+  
+
 .call-out a {
     text-decoration: none;
     font-family: 'Khand';
@@ -62,9 +65,9 @@
 
 .social-icons {
     display: flex;
-    margin-top: 20px;
+    margin-top: 25px;
     justify-content: center;
-    gap: 1.25rem;
+    gap: 2rem;
 }
 
 .social-icons span .icon {

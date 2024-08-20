@@ -7,6 +7,7 @@ import secretary from'../assets/secretary.webp'
 import accountant from'../assets/accountant.webp'
 import '../styles/OfficeBearers.css';
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/BreadCrumbs'
 
 
 const OfficeBearers = () => {
@@ -14,6 +15,7 @@ const OfficeBearers = () => {
     <>
     <PageBackgrounds backgroundImg={office} heroText={"OFFICE BEARERS"}/>
     <div className="container">
+        <Breadcrumb/>
         <div className="grid office-bearers">
             <div className="imp group-container">
                 <div className="office-group">
@@ -43,23 +45,18 @@ const OfficeBearers = () => {
                 <h3 className='title'>Members</h3>
                 <div className="office-group-flex">
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Aneesh Thomson</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Finny V. Philip</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Adv. George Mathew</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Isaac Thomas</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Sunil Gabriel</h3>
                     </div>
                 </div>
@@ -68,11 +65,9 @@ const OfficeBearers = () => {
                 <h3 className='title'>Lady Representatives</h3>
                 <div className="office-group-flex">
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Leela Thomas</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Shyla Solomon</h3>
                     </div>
                 </div>
@@ -81,11 +76,9 @@ const OfficeBearers = () => {
                 <h3 className='title'>Youth Representatives</h3>
                 <div className="office-group-flex">
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Dr. Sharan Elizabeth George</h3>
                     </div>
                     <div className="office-bearer">
-                        <img src={profileImg} alt="" />
                         <h3>Simi S.</h3>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ import '../styles/Missions.css';
 import LazyLoad from 'react-lazyload'
 import balikamandiram from '../assets/balikamandiram.webp'
 import Footer from '../components/Footer'
-
+import Breadcrumb from '../components/BreadCrumbs'
 
 
 const Missions = () => {
@@ -17,6 +17,8 @@ const Missions = () => {
         <PageBackgrounds backgroundImg={missionsBg} heroText={"MISSIONS AND PROJECTS"}/>
 
         <div className="container">
+        <Breadcrumb/>
+
             <div className="text-container">
               <div className="flex-align">
                   <div class="line left-line"></div>

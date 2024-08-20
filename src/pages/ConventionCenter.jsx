@@ -6,13 +6,15 @@ import conventionInside from '../assets/convention-inside.webp'
 import conventionInside2 from '../assets/convention-inside-2.webp'
 import '../styles/ConventionCenter.css';
 import Footer from '../components/Footer';
-
+import Breadcrumb from '../components/BreadCrumbs';
 
 const ConventionCenter = () => {
   return (
     <>
         <PageBackgrounds backgroundImg={conventionBg} heroText={"CSI CONVENTION CENTER"}/>
         <div className="container">
+            <Breadcrumb/>
+
         <div className="center-container">
             <div className="text-container">
                   <div className="flex-align">

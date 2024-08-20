@@ -3,6 +3,7 @@ import PageBackgrounds from '../components/PageBackgrounds';
 import '../styles/PastVicars.css';
 import pastVicars from '../assets/past-vicars.webp'
 import Footer from '../components/Footer';
+import Breadcrumb from '../components/BreadCrumbs';
 
 
 const vicarsData = [
@@ -32,6 +33,7 @@ const PastVicars = () => {
         <PageBackgrounds backgroundImg={pastVicars} heroText={"PREVIOUS VICARS"}/>
 
         <div className="container center-container">
+          <Breadcrumb/>
             <table className='table-container'>
                   <thead>
                     <tr>

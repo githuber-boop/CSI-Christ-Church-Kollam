@@ -3,6 +3,7 @@ import '../styles/ServiceTimings.css';
 import PageBackgrounds from '../components/PageBackgrounds';
 import serviceTiming from '../assets/service-timing.webp'
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/BreadCrumbs';
 
 
 const worshipTimingsData = [
@@ -27,6 +28,7 @@ const ServiceTimings = () => {
         <PageBackgrounds backgroundImg={serviceTiming} heroText={"SERVICE TIMINGS"}/>
     
         <div className="container center-container">
+          <Breadcrumbs/>
             <div className="table-container">
               <table>
                 <thead>

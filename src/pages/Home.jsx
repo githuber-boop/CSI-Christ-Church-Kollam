@@ -4,8 +4,9 @@ import deanImage from '../assets/dean.webp'
 import { useEffect } from 'react'
 import '../styles/Home.css'
 import { Link } from 'react-router-dom'
-import churchHistory from "../assets/church-history.webp"
+import churchHistory from "../assets/church.png"
 import Footer from '../components/Footer'
+import Carousel from '../components/Carousel'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
@@ -20,6 +21,11 @@ const App = () => {
         fetchMessage()
     }, [])
 
+    const images = [
+      'https://via.placeholder.com/600x300?text=Slide+1',
+      'https://via.placeholder.com/600x300?text=Slide+2',
+      'https://via.placeholder.com/600x300?text=Slide+3',
+    ];
 
   return (
 
@@ -72,6 +78,8 @@ const App = () => {
             </div>
         </div>
 
+
+        {/* <Carousel images={images} /> */}
         <Footer/>
       </>
     

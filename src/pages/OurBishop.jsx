@@ -5,12 +5,14 @@ import LazyLoad from 'react-lazyload'
 import VSFrancis from '../assets/bishop-francis.webp'
 import OommenGeorge from '../assets/bishop-oomen.webp'
 import Footer from '../components/Footer'
+import Breadcrumb from '../components/BreadCrumbs'
 
 const OurBishop = () => {
   return (
     <>
         <PageBackgrounds backgroundImg={bishopBg} heroText={"OUR BISHOP"}/>
         <div className="container">
+          <Breadcrumb/>
           <div className="bishop-1">
             <div className="heading">
                   <h1>Rt.Rev. V.S.Francis</h1>
