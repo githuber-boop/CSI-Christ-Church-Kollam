@@ -7,13 +7,44 @@ import carouselImage3 from '../assets/church-quilon.png'
 import carouselImage4 from '../assets/church-old-comitee.png'
 import carouselImage2 from '../assets/church-rainy.png'
 import carouselImage5 from '../assets/church-old-parsonage.png'
-
+import { useRef, useEffect } from 'react';
 const CarouselComponenet = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const galleryRef = useRef(null);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setIsPlaying(true);
+                } else {
+                    setIsPlaying(false);
+                }
+            },
+            { threshold: 0.5 } // Trigger when 50% of the gallery section is visible
+        );
+
+        if (galleryRef.current) {
+            observer.observe(galleryRef.current);
+        }
+
+        return () => {
+            if (galleryRef.current) {
+                observer.unobserve(galleryRef.current);
+            }
+        };
+    }, []);
   return (
     <>
         <div className="container">
-          <Carousel className='rounded' >
+        <div ref={galleryRef}>  
+          <Carousel autoPlay={isPlaying}  // Start auto-playing only if isPlaying is true
+                interval={3000}
+                infiniteLoop
+                showThumbs={true}
+                showStatus={true}
+                showArrows={true}
+                stopOnHover={false}>
                   <div>
                       <img src={carouselImage1} />
                   </div>
@@ -30,7 +61,8 @@ const CarouselComponenet = () => {
                       <img src={carouselImage5} />
                   </div>
    
-              </Carousel>
+          </Carousel>
+        </div>
         </div>
     </>
   );

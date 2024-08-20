@@ -8,6 +8,7 @@
   color: #333;
   padding-top: 30px;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .breadcrumb li {
@@ -37,3 +38,4 @@
   margin-right: 8px;
   color: #999;
 }
+

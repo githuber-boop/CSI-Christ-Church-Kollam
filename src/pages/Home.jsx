@@ -10,6 +10,7 @@ import roundedDean from '../assets/rounded-dean.png'
 import roundedSecretary from '../assets/rounded-secretary.png'
 import roundedAccountant from '../assets/rounded-accountant.png'
 import CarouselComponenet from '../components/CarouselComponenet'
+import SlideUpFadeIn from '../components/AnimationSlideup'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
@@ -48,7 +49,9 @@ const App = () => {
                         <button className="button"><Link to='/church-history'>Read More</Link></button>
                     </div>
                     <div className="col-2-img">
+                        <SlideUpFadeIn>
                         <img src={churchHistory} />
+                        </SlideUpFadeIn>
                     </div>
                   </div>
         </section>
@@ -66,7 +69,9 @@ const App = () => {
             </div>
             <div className="vicars-message">
                 <div className="dean-image">
-                    <img src={deanImage} alt="" />
+                <SlideUpFadeIn>
+                    <img src={deanImage} alt="deanImage" />
+                </SlideUpFadeIn>
                 </div>
 
                 <div className="message">
@@ -87,8 +92,10 @@ const App = () => {
               <h1>OFFICE BEARERS</h1>
             </div>
           </div>
-
+          <SlideUpFadeIn>
           <div className="office-bearers-cards">
+            
+
             <div className="bearer-card">
               <img src={roundedDean} alt="deanImage" />
               <div className="bearer-text">
@@ -114,6 +121,7 @@ const App = () => {
               </div>
             </div>
           </div>
+          </SlideUpFadeIn>
 
         </div>
 

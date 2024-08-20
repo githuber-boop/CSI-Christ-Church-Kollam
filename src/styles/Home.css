@@ -17,11 +17,10 @@
     font-family: 'Khand', sans-serif;
     color: white;
     padding: 1rem 0;
+    animation: fadeIn 2s forwards;
 }
 
 
-
-  
   
 
 .call-out a {
@@ -149,6 +148,10 @@
     margin: 60px auto !important;
 }
 
+.gallery {
+    margin: 80px 0 !important;
+}
+
 .location iframe {
     border: none;
     border-radius: 20px;
@@ -264,6 +267,7 @@
 
     .dean-image {
         justify-self: center;
+        order: 2;
     }
 
     .partMessage {
@@ -280,3 +284,15 @@
     }
     
 }
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  

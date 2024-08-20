@@ -25,7 +25,7 @@ const Breadcrumbs = () => {
     "/events": "Events",
     "/past-vicars": "Past Vicars",
     "/service-timings": "Service Timings",
-    "/balikamandhiram-balabhavan": "Balika Balabha",
+    "/balikamandhiram-balabhavan": "Balikamandhiram Balabhavanam",
     "/csi-convention-center": "CSI Convention Center",
   };
   
@@ -50,6 +50,10 @@ const Breadcrumbs = () => {
   return (
     <nav>
       <ul className="breadcrumb">
+        <li>
+          <Link to="/">Home</Link>
+          <span className="separator">{`>`}</span>
+        </li>
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.path}>
             <Link to={crumb.path}>{crumb.label}</Link>

@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import pdfImage from '../assets/pdf-image.webp'
 import axios from 'axios';
 
+
 // const removeFileExtension = (filename) => {
 //   return filename.replace(/\.[^/.]+$/, "");
 // };
@@ -49,7 +50,7 @@ const Hero = () => {
         <div className="container">
           <Navbar />
           <main className="hero-text">
-            <h1>WELCOME TO<br /> <span className='typewriter'>CSI CHRIST CHURCH CATHEDRAL <br /> KOLLAM </span></h1>
+            <h1>WELCOME TO<br /><span className="slideIn"> CSI CHRIST CHURCH CATHEDRAL <br /> KOLLAM</span></h1>
             <div className="call-out">
               <button><Link to={'/church-history'}>LEARN MORE</Link></button>
               <button><Link to='/service-timings'>Service Timings</Link></button>

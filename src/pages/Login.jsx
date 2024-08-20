@@ -5,8 +5,15 @@ import christLogo from '../assets/christChurch.webp'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useBreadcrumb } from '../components/BreadCrumsContext';
+
 
 const Login = () => {
+
+  const handleLogoClick = () => {
+    resetBreadcrumbs(); // Clear breadcrumb memory
+  };
+
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
   // const [users, setUsers]
@@ -70,7 +77,7 @@ const Login = () => {
             />
             <button type="submit">Login</button>
 
-            <Link className="homeLink" to='/'>Home</Link>
+            <Link className="homeLink" to='/' onClick={handleLogoClick}>Home</Link>
           </form>
         </div>
       </div>
