@@ -13,7 +13,7 @@ function EditUser() {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch(`/api/users/${id}`);
+      const response = await fetch(`https://church-kollam-backend.onrender.com/api/users/${id}`);
       const data = await response.json();
       setFormData(data);
     } catch (error) {

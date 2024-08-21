@@ -2,9 +2,9 @@ import React from 'react'
 import office from '../assets/office.webp'
 import PageBackgrounds from '../components/PageBackgrounds'
 import profileImg from'../assets/profile-img.webp'
-import dean from'../assets/dean.webp'
-import secretary from'../assets/secretary.webp'
-import accountant from'../assets/accountant.webp'
+import roundedDean from '../assets/rounded-dean.png'
+import roundedSecretary from '../assets/rounded-secretary.png'
+import roundedAccountant from '../assets/rounded-accountant.png'
 import '../styles/OfficeBearers.css';
 import Footer from '../components/Footer'
 import Breadcrumb from '../components/BreadCrumbs'
@@ -18,22 +18,24 @@ const OfficeBearers = () => {
         <Breadcrumb/>
         <div className="grid office-bearers">
             <div className="imp group-container">
+                 <h3 className='title'>OFFICE BEARERS</h3>
+
                 <div className="office-group">
                     <div className="office-bearer">
-                        <img src={dean} alt="" />
-                        <h3>Rev. Jose George</h3>
+                        <img src={roundedDean} alt="" />
+                        <h3 className='bearer-name'>Rev. Jose George</h3>
                         <p>Dean</p>
                         <p>9846466513</p>
                     </div>
                     <div className="office-bearer">
-                        <img src={secretary} alt="" />
-                        <h3>Lal Thomas</h3>
+                        <img src={roundedSecretary} alt="" />
+                        <h3 className='bearer-name'>Lal Thomas</h3>
                         <p>Secretary</p>
                         <p>9496991960</p>
                     </div>
                     <div className="office-bearer">
-                        <img src={accountant} alt="" />
-                        <h3>Oommen Jacob</h3>
+                        <img src={roundedAccountant} alt="" />
+                        <h3 className='bearer-name'>Oommen Jacob</h3>
                         <p>Accountant</p>
                         <p>9446109231</p>
                     </div>

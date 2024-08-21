@@ -47,6 +47,7 @@ const Navbar = () => {
                     {dropdowns.about && (
                         <ul className="dropdown-menu">
                             <li className="dropdown-item"><Link className="link" to="/church-history">Church History</Link></li>
+                            <li className="dropdown-item"><Link className="link" to="/service-timings">Service Timings</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/milestones">Milestones</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/our-bishops">Our Bishops</Link></li>
                             <li className="dropdown-item"><Link className="link" to="/vicars-message">Vicar's Message</Link></li>

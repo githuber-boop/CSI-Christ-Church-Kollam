@@ -37,14 +37,15 @@ const CarouselComponenet = () => {
   return (
     <>
         <div className="container">
-        <div ref={galleryRef}>  
+        <div ref={galleryRef} >  
           <Carousel autoPlay={isPlaying}  // Start auto-playing only if isPlaying is true
-                interval={3000}
+                interval={4000}
                 infiniteLoop
                 showThumbs={true}
                 showStatus={true}
                 showArrows={true}
-                stopOnHover={false}>
+                stopOnHover={false}
+                dynamicHeight ={true}>
                   <div>
                       <img src={carouselImage1} />
                   </div>

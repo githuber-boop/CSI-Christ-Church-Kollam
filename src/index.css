@@ -234,11 +234,17 @@ textarea:not([rows]) {
   border: none;
 
   color: white;
-  padding: .75rem 1.5rem;
+  padding: .5rem 1.25rem;
   display: inline-block;
   transition: all 0.3s ease;
   background-color: var(--yellow);
   margin-top: 20px;
+  transition: 0.5s ease all;
+}
+
+.button:hover {
+  background: none;
+  color: var(--yellow);
 }
 
 .button a {
@@ -267,6 +273,8 @@ textarea:not([rows]) {
 }
 
 
+
+
 @media screen and (max-width:700px) {
   .image-container {
     height: 60%;
@@ -287,15 +295,12 @@ textarea:not([rows]) {
     margin-bottom: 50px !important;
   }
 
-
-}
-@media screen and (max-width:700px) {
   .vicarsSpeech p {
     font-size: 1.175rem !important;
   }
 
-
 }
+
 
 @media screen and (max-width:1000px) {
   .grid-column {
@@ -304,7 +309,13 @@ textarea:not([rows]) {
 
   }
 
+  .button {
+    padding: .45rem 1.5rem;
+  }
 
+  .button a {
+    font-size: .78rem;
+  }
     
   .grid-column .col-2-text p {
       

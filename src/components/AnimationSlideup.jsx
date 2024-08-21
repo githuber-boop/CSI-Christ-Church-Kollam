@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const SlideUpFadeIn = ({ children }) => {
+const SlideUpFadeIn = ({ children, threshold }) => {
     const ref = useRef(null);
 
     useEffect(() => {

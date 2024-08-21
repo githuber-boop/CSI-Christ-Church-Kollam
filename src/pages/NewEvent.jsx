@@ -26,6 +26,7 @@ const NewEvent = ({addEventSubmit}) => {
       }
 
       addEventSubmit(newEvent);
+      console.log(newEvent)
   }
 
   return (

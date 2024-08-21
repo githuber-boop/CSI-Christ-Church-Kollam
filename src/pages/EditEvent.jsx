@@ -8,7 +8,7 @@ const EditEvent = () => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const res = await fetch("/api/events");
+      const res = await fetch("https://church-kollam-backend.onrender.com/api/events");
       const data = await res.json();
       setDetails(data);
     };

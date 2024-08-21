@@ -28,6 +28,7 @@ import AdminChurchHerald from './pages/AdminChurchHerald.jsx';
 import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 import ChurchHistory from './pages/ChurchHistory.jsx';
 import { BreadcrumbProvider } from './components/BreadCrumsContext.jsx';
+import EditEvent from './pages/EditEvent.jsx';
 
 const addUser = async (newUser) => {
   const res = await fetch('https://church-kollam-backend.onrender.com/api/users', {
@@ -126,6 +127,10 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard/almanac",
     element: <AdminChurchAlmanac/> 
+  },
+  {
+    path: "/admin-dashboard/edit-events",
+    element: <EditEvent/> 
   },
   {
     path: "/office-bearers",

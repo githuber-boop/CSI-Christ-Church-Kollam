@@ -9,7 +9,7 @@ import LazyLoad from 'react-lazyload'
 import balikamandiram from '../assets/balikamandiram.webp'
 import Footer from '../components/Footer'
 import Breadcrumb from '../components/BreadCrumbs'
-
+import convention from '../assets/convention-inside.webp'
 
 const Missions = () => {
   return (
@@ -67,6 +67,18 @@ const Missions = () => {
                   </div>
                   <div className="mission-image">
                     <img src={balikamandiram} alt="chhattisgarh-image" />
+                  </div>
+                </div>
+              </article>
+              <article className="mission">
+                <div className="mission-content">
+                  <div className="mission-text">
+                    <h2>CSI Convention Center </h2>
+                    <p>The home for the boys-Balabhavan and the home for the girls-Balikamandiram, which are situated at the right-hand and left-hand side of the Cathedral, depicts the two extended arms of the Church, which accommodates..</p>
+                    <Link to="/balikamandhiram-balabhavan" className='button'>Read More</Link>
+                  </div>
+                  <div className="mission-image">
+                    <img src={convention} alt="chhattisgarh-image" />
                   </div>
                 </div>
               </article>
