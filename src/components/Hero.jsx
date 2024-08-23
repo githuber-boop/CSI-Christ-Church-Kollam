@@ -6,7 +6,6 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareYoutube } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
-import pdfImage from '../assets/pdf-image.webp'
 import axios from 'axios';
 
 
@@ -67,26 +66,7 @@ const Hero = () => {
         </div>
       </header>
 
-      {/* <div className='container'>
-        <div className="file-uploads">
-        {heralds.map((herald) => (
-        <div className='upload' key={herald.name}>
-          <h1>CHURCH HERALD</h1>
-          <a href={herald.url} target="_blank" rel="noopener noreferrer">
-          <img src={pdfImage} alt="Almanac" />
-          </a>
-        </div>
-      ))}
-        {almanacs.map((almanac) => (
-        <div className='upload' key={almanac.name}>
-          <h1>CHURCH ALMANAC</h1>
-          <a href={almanac.url} target="_blank" rel="noopener noreferrer">
-          <img src={pdfImage} alt="Almanac" />
-          </a>
-        </div>
-      ))}
-        </div>
-      </div> */}
+      
     </>
   );
 }
