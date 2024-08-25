@@ -4,6 +4,7 @@ import '../styles/EditUser.css';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from '../components/Sidebar';
+import axios from 'axios';
 
 function EditUser() {
   const { id } = useParams();
@@ -13,9 +14,8 @@ function EditUser() {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch(`https://church-kollam-backend.onrender.com/api/users/${id}`);
-      const data = await response.json();
-      setFormData(data);
+      const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/${id}`);
+      setFormData(response.data);
     } catch (error) {
       console.error('Error fetching user:', error);
     }
@@ -33,27 +33,17 @@ function EditUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch(`http://localhost:5000/users/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        setTimeout(() => {
-          // Navigate to the desired section
-          navigate('/admin-dashboard/members'); 
-        }, 1000)
-      } else {
-        console.error('Failed to update user');
-      }
+      await axios.put(`https://church-kollam-backend.onrender.com/api/users/${id}`, formData);
+      setTimeout(() => {
+        navigate('/admin-dashboard/members');
+      }, 2000);
+      success()
     } catch (error) {
       console.error('Error updating user:', error);
     }
   };
+
 
   return (
     <div className="admin-member-dashboard">
@@ -78,8 +68,16 @@ function EditUser() {
           <input type="text" name="number" value={formData.number || ''} onChange={handleChange} />
         </label>
         <label>
+          Email:
+          <input type="email" name="email" value={formData.email || ''} onChange={handleChange} />
+        </label>
+        <label>
           DOB:
           <input type="date" name="dob" value={formData.dob || ''} onChange={handleChange} />
+        </label>
+        <label>
+          Wedding Date:
+          <input type="date" name="weddingDte" value={formData.weddingDte || ''} onChange={handleChange} />
         </label>
         <label>
           Baptism Date:
@@ -90,7 +88,7 @@ function EditUser() {
           <input type="date" name="confirmation" value={formData.confirmation || ''} onChange={handleChange} />
         </label>
         <div className="functions-user">
-          <button type="submit" className='functionButton' onClick={success}>Save</button>
+          <button type="submit" className='functionButton'>Save</button>
           <button type="button"  className='functionButton' onClick={() => navigate('/admin-dashboard/members')}>Cancel</button>
         </div>
       </form>

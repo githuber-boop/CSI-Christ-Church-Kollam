@@ -30,27 +30,7 @@ import ChurchHistory from './pages/ChurchHistory.jsx';
 import { BreadcrumbProvider } from './components/BreadCrumsContext.jsx';
 import EditEvent from './pages/EditEvent.jsx';
 
-const addUser = async (newUser) => {
-  const res = await fetch('https://church-kollam-backend.onrender.com/api/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newUser)
-  });
-  return;
-};
 
-const addMessage = async (newMessage) => {
-  const res = await fetch('https://church-kollam-backend.onrender.com/api/message/1', {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(newMessage)
-  });
-  return;
-};
 
 const addEvent = async (newEvent) => {
   const res = await fetch('https://church-kollam-backend.onrender.com/api/events', {
@@ -102,7 +82,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin-dashboard",
-    element: <NewUser addUserSubmit={addUser} />,
+    element: <NewUser/>,
   },
   {
     path: "/admin-dashboard/members",
@@ -114,7 +94,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin-dashboard/vicar-message",
-    element: <AdminVicarsMessage addMessageSubmit={addMessage} />,
+    element: <AdminVicarsMessage/>,
   },
   {
     path: "/admin-dashboard/events",
@@ -129,7 +109,7 @@ const router = createBrowserRouter([
     element: <AdminChurchAlmanac/> 
   },
   {
-    path: "/admin-dashboard/edit-events",
+    path: "/admin-dashboard/edit-events/:id",
     element: <EditEvent/> 
   },
   {

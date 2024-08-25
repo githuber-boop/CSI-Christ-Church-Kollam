@@ -3,16 +3,17 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/AdminMemberDetails.css';
 import Sidebar from '../components/Sidebar';
-
+import axios from 'axios';
 
 
 const AdminMemberDetails = () => {
     const [details, setDetails] = useState([])
     const [searchTerm, setSearchTerm] = useState('');
+
     useEffect(() => {
         
         const fetchJobs = async () => {
-            const res = await fetch("https://church-kollam-backend.onrender.com/api/users")
+            const res = await fetch("https://church-kollam-backend.onrender.com//api/users")
             const data = await res.json()
             setDetails(data)
         }   
@@ -22,7 +23,7 @@ const AdminMemberDetails = () => {
 
     const matchesSearchCriteria = (item) => {
       const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-      const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
+      // const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
 
   
       return nameMatch;
@@ -30,24 +31,14 @@ const AdminMemberDetails = () => {
 
 
     const deleteUser = async (id) => {
-
-      const confirmation = window.confirm("Are you sure you want to delete this user?");
-
-    if (confirmation) {
+    const confirmDelete = window.confirm("Are you sure you want to delete this user?");
+    if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost:5000/users/${id}`, {
-          method: 'DELETE',
-        });
-        if (response.ok) {
-          setDetails(details.filter(user => user.id !== id));
-        } else {
-          console.error('Failed to delete user');
-        }
+        await axios.delete(`https://church-kollam-backend.onrender.com//api/users/${id}`);
+        setDetails(details.filter(detail => detail._id !== id));
       } catch (error) {
         console.error('Error deleting user:', error);
-     
       }
-    
     }
   };
 
@@ -73,16 +64,17 @@ const AdminMemberDetails = () => {
                         <div key={memberDetail.id} className="member-details">
                             <h3><span>NAME:</span>  {memberDetail.name}</h3>
                             <h3><span>ADDRESS:</span>  {memberDetail.address}</h3>
+                            <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
                             <h3><span>NUMBER:</span>  {memberDetail.number}</h3>
                             <h3><span>DOB:</span>  {memberDetail.dob}</h3>
-                            <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
+                            <h3><span>WEDDING DATE:</span>  {memberDetail.weddingDte}</h3>
                             <h3><span>BAPTISM DATE:</span>  {memberDetail.baptism}</h3>
                             <h3><span>CONFIRMATION:</span>  {memberDetail.confirmation}</h3>
                             <div className="functions-user">
-                                <Link to={`/admin-dashboard/edit-user/${memberDetail.id}`}>
+                                <Link to={`/admin-dashboard/edit-user/${memberDetail._id}`}>
                                     <button className='functionButton'>EDIT</button>
                                 </Link>
-                                <button onClick={() => deleteUser(memberDetail.id)} className='functionButton'>DELETE</button>
+                                <button onClick={() => deleteUser(memberDetail._id)} className='functionButton'>DELETE</button>
                             </div>
                         </div>
                     ))}
