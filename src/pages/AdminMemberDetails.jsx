@@ -4,18 +4,27 @@ import { Link } from 'react-router-dom'
 import '../styles/AdminMemberDetails.css';
 import Sidebar from '../components/Sidebar';
 import axios from 'axios';
-
+import Loading from '../components/Loading';
 
 const AdminMemberDetails = () => {
     const [details, setDetails] = useState([])
     const [searchTerm, setSearchTerm] = useState('');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         
         const fetchJobs = async () => {
+          try {
+            setLoading(true);
             const res = await fetch("https://church-kollam-backend.onrender.com/api/users")
             const data = await res.json()
             setDetails(data)
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }finally{
+            setLoading(false);
+          }
+            
         }   
 
         fetchJobs()
@@ -28,6 +37,10 @@ const AdminMemberDetails = () => {
   
       return nameMatch;
   };
+
+  if (loading) {
+    return <Loading />; // Show loading component while data is being fetched
+  }
 
 
     const deleteUser = async (id) => {
