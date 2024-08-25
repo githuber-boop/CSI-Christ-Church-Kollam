@@ -13,7 +13,7 @@ const AdminMemberDetails = () => {
     useEffect(() => {
         
         const fetchJobs = async () => {
-            const res = await fetch("https://church-kollam-backend.onrender.com//api/users")
+            const res = await fetch("https://church-kollam-backend.onrender.com/api/users")
             const data = await res.json()
             setDetails(data)
         }   
