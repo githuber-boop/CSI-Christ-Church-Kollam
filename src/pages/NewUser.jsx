@@ -62,7 +62,7 @@ const AdminDashboard = () => {
                 <label htmlFor="date">Email<input type="email" name='email' value={formData.email} onChange={handleChange}/></label>
                 <label htmlFor="baptism">Baptism Date:<input type="date" name='baptism' value={formData.baptism} onChange={handleChange}/></label>
                 <label htmlFor="confirmation">Confirmation Date<input type="date" name='confirmation' value={formData.confirmation} onChange={handleChange}/></label>
-                <button type='submit' onClick={success()}>Add User</button>
+                <button type='submit' onClick={success}>Add User</button>
             </form>
         </main>
     </div>

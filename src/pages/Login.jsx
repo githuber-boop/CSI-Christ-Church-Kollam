@@ -16,6 +16,7 @@ const Login = () => {
 
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [users, setUsers] = useState([])
   // const [users, setUsers]
   const navigate = useNavigate();
 
@@ -23,7 +24,8 @@ const Login = () => {
     e.preventDefault();
 
     const response = await fetch('https://church-kollam-backend.onrender.com/api/users');
-    const users = await response.json();
+    const data = await response.json();
+    setUsers(data)
     
     const memberUser = users.find(u => u.number === number && u.password === password && u.role === "member");
     const adminUser = users.find(u => u.number === '12345' && u.password === 'hey' && u.role === "admin");
@@ -58,9 +60,9 @@ const Login = () => {
               type="text"
               placeholder="Number"
               name="name"
+              required
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              required
             />
 
             <label htmlFor="psw">
