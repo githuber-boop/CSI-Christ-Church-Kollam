@@ -38,16 +38,13 @@ const AdminMemberDetails = () => {
       return nameMatch;
   };
 
-  if (loading) {
-    return <Loading />; // Show loading component while data is being fetched
-  }
 
 
     const deleteUser = async (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this user?");
     if (confirmDelete) {
       try {
-        await axios.delete(`https://church-kollam-backend.onrender.com//api/users/${id}`);
+        await axios.delete(`https://church-kollam-backend.onrender.com/api/users/${id}`);
         setDetails(details.filter(detail => detail._id !== id));
       } catch (error) {
         console.error('Error deleting user:', error);
@@ -73,6 +70,30 @@ const AdminMemberDetails = () => {
             </div>
         </div>
         <div className="grid-col-2">
+
+        {loading ? (
+          <Loading /> // Show loading only in this section
+        ) : (
+          details.filter(matchesSearchCriteria).map((memberDetail) => (
+            <div key={memberDetail.id} className="member-details">
+                <h3><span>NAME:</span>  {memberDetail.name}</h3>
+                <h3><span>ADDRESS:</span>  {memberDetail.address}</h3>
+                <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
+                <h3><span>NUMBER:</span>  {memberDetail.number}</h3>
+                <h3><span>DOB:</span>  {memberDetail.dob}</h3>
+                <h3><span>WEDDING DATE:</span>  {memberDetail.weddingDte}</h3>
+                <h3><span>BAPTISM DATE:</span>  {memberDetail.baptism}</h3>
+                <h3><span>CONFIRMATION:</span>  {memberDetail.confirmation}</h3>
+                <div className="functions-user">
+                    <Link to={`/admin-dashboard/edit-user/${memberDetail._id}`}>
+                        <button className='functionButton'>EDIT</button>
+                    </Link>
+                    <button onClick={() => deleteUser(memberDetail._id)} className='functionButton'>DELETE</button>
+                </div>
+            </div>
+        ))
+        )}
+
         {details.filter(matchesSearchCriteria).map((memberDetail) => (
                         <div key={memberDetail.id} className="member-details">
                             <h3><span>NAME:</span>  {memberDetail.name}</h3>

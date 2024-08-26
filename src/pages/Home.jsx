@@ -14,15 +14,26 @@ import SlideUpFadeIn from '../components/AnimationSlideup'
 import almanac from '../uploads/almanac-2024-1.pdf'
 import pdfImage from '../assets/pdf-image.webp'
 import herald from '../uploads/ChurchHeraldJune2024.pdf'
+import Loading from '../components/Loading'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         
         const fetchMessage = async () => {
+          setLoading(true);
+          try {
             const res = await fetch("https://church-kollam-backend.onrender.com/api/message")
             const data = await res.json()
-            setMessage(data)
+              setMessage(data)
+
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }finally{
+            setLoading(false)
+          }
+            
         }   
 
         fetchMessage()
@@ -74,13 +85,25 @@ const App = () => {
                 </div>
 
                 <div className="message">
-                {message.map((partMessage, index) => (
+                {loading ? (
+          <Loading /> // Show loading only in this section
+        ) : (
+          message && message.map((partMessage , index) => (
+            <div key={index} className="partMessage">
+                  <h2>{partMessage.date}</h2>
+                  <p>{partMessage.message.substring(0, 600) + '.................'}</p>
+                  <button className="button"><Link to='/vicars-message'>Read More</Link></button>
+              </div>
+          ))
+        )}
+
+                {/* {message.map((partMessage, index) => (
                 <div key={index} className="partMessage">
                   <h2>{partMessage.date}</h2>
                   <p>{partMessage.message.substring(0, 600) + '.................'}</p>
                   <button className="button"><Link to='/vicars-message'>Read More</Link></button>
                 </div>
-              ))}
+              ))} */}
                 </div>
             </div>
         </div>
