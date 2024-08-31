@@ -87,17 +87,53 @@
     margin: 20px 0;
 }
 
+.church-uploads {
+    margin: 40px auto !important;
+}
+
 .upload {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    padding: 30px 40px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+    padding: 70px 40px;
+
+    background-image: url('../assets/almanac.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    border-radius: 30px;
+    transition: 0.3s all ease-in;
+    width: 250px;
+    height: 200px;
+    position: relative;
 }
 
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the transparency for your desired effect */
+    border-radius: 10px;
+
+  }
+
+.upload:hover {
+}
+
+.herald {
+    background-image: url('../assets/herald.png');
+}
 .upload h1 {
-    font-size: 20px;
+    font-size: 1.7rem;
     font-family: "Khand";
+    color: white;
+    text-align:center;
 }
 
 .upload p {
@@ -190,6 +226,11 @@
     color: black;
 }
 
+.bearer-number {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 .bearer-card img {
     width: 70%;
 }
@@ -207,6 +248,11 @@
 }
 
 @media screen and (max-width:600px) {
+
+    .file-uploads {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .office-bearers-cards {
         flex-direction: column;
@@ -267,7 +313,6 @@
 
     .dean-image {
         justify-self: center;
-        order: 2;
     }
 
     .partMessage {

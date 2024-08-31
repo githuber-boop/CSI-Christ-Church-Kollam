@@ -15,10 +15,53 @@ import almanac from '../uploads/almanac-2024-1.pdf'
 import pdfImage from '../assets/pdf-image.webp'
 import herald from '../uploads/ChurchHeraldJune2024.pdf'
 import Loading from '../components/Loading'
+import axios from 'axios'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
     const [loading, setLoading] = useState(true);
+    const [AlmanacFileName, setAlmanacFileName] = useState(null);
+    const [HeraldFileName, setHeraldFileName] = useState(null);
+    const [AlmanacFileUrl, setAlmanacFileUrl] = useState(null);
+    const [HeraldFileUrl, setHeraldFileUrl] = useState(null);
+
+    const fetchAlmanacPDFUrl = async () => {
+      try {
+        const response = await axios.get(`https://church-kollam-backend.onrender.com/files/almanac`);
+        if (response.data.fileName) {
+          setAlmanacFileUrl(`https://church-kollam-backend.onrender.com/download/almanac`);
+          setAlmanacFileName(response.data.fileName)
+        } else {
+          setAlmanacFileName(null)
+          setAlmanacFileUrl(null);
+        }
+      } catch (error) {
+        console.error('Error fetching PDF file:', error);
+      }
+    };
+
+    const fetchHeraldPDFUrl = async () => {
+      try {
+        const response = await axios.get(`https://church-kollam-backend.onrender.com/files/herald`);
+        if (response.data.fileName) {
+          setHeraldFileUrl(`https://church-kollam-backend.onrender.com/download/herald`);
+          setHeraldFileName(response.data.fileName)
+        } else {
+          setHeraldFileName(null)
+          setHeraldFileUrl(null);
+        }
+      } catch (error) {
+        console.error('Error fetching PDF file:', error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchAlmanacPDFUrl();
+      fetchHeraldPDFUrl();
+    }, []);
+
+
+
     useEffect(() => {
         
         const fetchMessage = async () => {
@@ -91,7 +134,7 @@ const App = () => {
           message && message.map((partMessage , index) => (
             <div key={index} className="partMessage">
                   <h2>{partMessage.date}</h2>
-                  <p>{partMessage.message.substring(0, 600) + '.................'}</p>
+                  <p>{partMessage.message.substring(0, 600) + '.........'}</p>
                   <button className="button"><Link to='/vicars-message'>Read More</Link></button>
               </div>
           ))
@@ -147,6 +190,37 @@ const App = () => {
 
         </div>
 
+        <div className='container church-uploads'>
+
+        <div className="flexCenter">
+            <div className="heading">
+              <h1>CHURCH UPLOADS</h1>
+            </div>
+        </div>
+        <SlideUpFadeIn>
+          <div className="file-uploads">
+
+          <a href={AlmanacFileUrl} download={HeraldFileName} target='_blank'>
+            <div className='upload herald'>
+              <div class="card-content">
+                <h1>CHURCH HERALD</h1>
+              </div>
+            </div>
+          </a>
+
+        
+          <a href={HeraldFileUrl} download={AlmanacFileName} target='_blank'>
+            <div className='upload' >
+            <div class="card-content">
+                <h1>CHURCH ALMANAC</h1>
+              </div>
+            </div>
+          </a>
+
+          </div>
+        </SlideUpFadeIn>
+        </div>
+
         <div className="gallery">
           <div className="flexCenter">
             <div className="heading">
@@ -165,26 +239,7 @@ const App = () => {
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9139467430173!2d76.59111947436166!3d8.887592791187792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fc586740d3d1%3A0x746e561db8908230!2sCSI%20Christ%20Church%20Cathedral!5e0!3m2!1sen!2sin!4v1724148779697!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <div className='container'>
-        <div className="file-uploads">
-
-        <div className='upload'>
-          <h1>CHURCH HERALD</h1>
-          <a href={herald} download>
-          <img src={pdfImage} alt="Almanac" />
-          </a>
-        </div>
-
         
-        <div className='upload' >
-          <h1>CHURCH ALMANAC</h1>
-          <a href={almanac} download>
-          <img src={pdfImage} alt="Almanac" />
-          </a>
-        </div>
-
-        </div>
-      </div>
         
         <Footer/>
       </>

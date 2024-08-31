@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import Navbar from "../components/Navbar";
 import '../styles/Login.css';
 import christLogo from '../assets/christChurch.webp'
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useBreadcrumb } from '../components/BreadCrumsContext';
-
+import axios from "axios";
 
 const Login = () => {
 
@@ -14,21 +14,30 @@ const Login = () => {
     resetBreadcrumbs(); // Clear breadcrumb memory
   };
 
-  const [number, setNumber] = useState('');
+  const [number, setNumber] = useState();
   const [password, setPassword] = useState('');
   const [users, setUsers] = useState([])
   // const [users, setUsers]
   const navigate = useNavigate();
 
-  const handleLogin = async (e) =>  {
-    e.preventDefault();
+   const fetchUser = async () => {
+    try {
+      const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/`);
+      setUsers(response.data);
+    } catch (error) {
+      console.error('Error fetching user:', error);
+    }
+  };
 
-    const response = await fetch('https://church-kollam-backend.onrender.com/api/users');
-    const data = await response.json();
-    setUsers(data)
-    
-    const memberUser = users.find(u => u.number === number && u.password === password && u.role === "member");
-    const adminUser = users.find(u => u.number === '12345' && u.password === 'hey' && u.role === "admin");
+  useEffect(() => {
+    fetchUser();
+  }, []);
+  
+  const handleLogin = (e) =>  {
+    e.preventDefault();
+    const memberUser = users.find(u => u.number === Number(number) && u.password === password && u.role === "member");
+
+    const adminUser = users.find(u => u.number === 12345 && u.password === 'kollamchurch' && u.role === "admin");
     
     console.log(adminUser)
 

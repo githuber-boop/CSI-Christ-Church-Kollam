@@ -5,31 +5,47 @@ import '../styles/AdminChurchHerald.css';
 import axios from 'axios';
 
 const AdminChurchHerald = ( ) => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [file, setFile] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState(null);
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const fetchUploadedFile = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/files/herald`);
+      setUploadedFile(response.data.fileName);
+    } catch (error) {
+      console.error('Error fetching uploaded file:', error);
+    }
   };
 
   const handleUpload = async () => {
-    if (!selectedFile) return;
-  
+    if (!file) return;
+
     const formData = new FormData();
-    formData.append('file', selectedFile);
-    // Append the file name as a header
-    const headers = {
-      'Content-Type': 'multipart/form-data',
-      'file-name': selectedFile.name,
-      'file-id': 1, // Include file ID as a custom header// Ensure this is being set correctly
-    };
-  
+    formData.append('file', file);
+
     try {
-      const response = await axios.post('https://church-kollam-backend.onrender.com/herald-upload', formData, { headers });
-      console.log('File uploaded:', response.data);
+      const response = await axios.post(`https://church-kollam-backend.onrender.com/upload/herald`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log(response.data.message);
+      fetchUploadedFile();
     } catch (error) {
       console.error('Error uploading file:', error);
     }
   };
+
+  
+
+  // Fetch the uploaded file on component mount
+  useEffect(() => {
+    fetchUploadedFile();
+  }, []);
   
   
   return (
@@ -38,11 +54,16 @@ const AdminChurchHerald = ( ) => {
         <Sidebar herald={'link-active'}/>
         <main className='admin-member-content'>
 
-        <div className='almanac-upload'>
-        <h1>HERALD UPLOAD</h1>
-        <p>Click on Browse to select the file and then click Upload</p>
-        <input type="file" onChange={handleFileChange} />
-        <button onClick={handleUpload}>Upload</button>
+        <div>
+      <h3>Upload Herald File</h3>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+
+      {uploadedFile && (
+        <div>
+          <p>Current Herald file: {uploadedFile}</p>
+        </div>
+      )}
     </div>
         </main>
     </div>
