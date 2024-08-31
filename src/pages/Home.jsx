@@ -200,7 +200,7 @@ const App = () => {
         <SlideUpFadeIn>
           <div className="file-uploads">
 
-          <a href={AlmanacFileUrl} download={HeraldFileName} target='_blank'>
+          <a href={HeraldFileUrl} download={HeraldFileName} target='_blank'>
             <div className='upload herald'>
               <div class="card-content">
                 <h1>CHURCH HERALD</h1>
@@ -209,7 +209,7 @@ const App = () => {
           </a>
 
         
-          <a href={HeraldFileUrl} download={AlmanacFileName} target='_blank'>
+          <a href={AlmanacFileUrl} download={AlmanacFileName} target='_blank'>
             <div className='upload' >
             <div class="card-content">
                 <h1>CHURCH ALMANAC</h1>
