@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const SlideUpFadeIn = ({ children, threshold }) => {
+const SlideUpFadeIn = ({ children }) => {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -8,10 +8,11 @@ const SlideUpFadeIn = ({ children, threshold }) => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     ref.current.classList.add('animate');
-                    observer.unobserve(ref.current); // Stop observing once the animation is triggered
+                } else {
+                    ref.current.classList.remove('animate');
                 }
             },
-            { threshold: 0.2 } // Trigger when 1% of the element is visible
+            { threshold: 0.09 }
         );
 
         if (ref.current) {

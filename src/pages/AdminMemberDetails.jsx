@@ -30,11 +30,9 @@ const AdminMemberDetails = () => {
         fetchJobs()
     }, [])
 
+
     const matchesSearchCriteria = (item) => {
       const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-      // const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
-
-  
       return nameMatch;
   };
 
@@ -76,14 +74,15 @@ const AdminMemberDetails = () => {
         ) : (
           details.filter(matchesSearchCriteria).map((memberDetail) => (
             <div key={memberDetail.id} className="member-details">
-                <h3><span>NAME:</span>  {memberDetail.name}</h3>
-                <h3><span>ADDRESS:</span>  {memberDetail.address}</h3>
-                <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
-                <h3><span>NUMBER:</span>  {memberDetail.number}</h3>
-                <h3><span>DOB:</span>  {memberDetail.dob}</h3>
-                <h3><span>WEDDING DATE:</span>  {memberDetail.weddingDte}</h3>
-                <h3><span>BAPTISM DATE:</span>  {memberDetail.baptism}</h3>
-                <h3><span>CONFIRMATION:</span>  {memberDetail.confirmation}</h3>
+                <h3><span>NAME:</span>{memberDetail.name}</h3>
+                <h3><span>ADDRESS:</span>{memberDetail.address}</h3>
+                <h3><span>EMAIL:</span>{memberDetail.email}</h3>
+                <h3><span>NUMBER:</span>{memberDetail.number}</h3>
+                <h3><span>DOB:</span>{memberDetail.dob}</h3>
+                <h3><span>WEDDING DATE:</span>{memberDetail.weddingDte}</h3>
+                <h3><span>BAPTISM DATE:</span>{memberDetail.baptism}</h3>
+                <h3><span>CONFIRMATION:</span>{memberDetail.confirmation}</h3>
+                {/* <h3><span>CONFIRMATION:</span>  {memberDetail.familyMember}</h3> */}
                 <div className="functions-user">
                     <Link to={`/admin-dashboard/edit-user/${memberDetail._id}`}>
                         <button className='functionButton'>EDIT</button>
@@ -94,24 +93,6 @@ const AdminMemberDetails = () => {
         ))
         )}
 
-        {details.filter(matchesSearchCriteria).map((memberDetail) => (
-                        <div key={memberDetail.id} className="member-details">
-                            <h3><span>NAME:</span>  {memberDetail.name}</h3>
-                            <h3><span>ADDRESS:</span>  {memberDetail.address}</h3>
-                            <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
-                            <h3><span>NUMBER:</span>  {memberDetail.number}</h3>
-                            <h3><span>DOB:</span>  {memberDetail.dob}</h3>
-                            <h3><span>WEDDING DATE:</span>  {memberDetail.weddingDte}</h3>
-                            <h3><span>BAPTISM DATE:</span>  {memberDetail.baptism}</h3>
-                            <h3><span>CONFIRMATION:</span>  {memberDetail.confirmation}</h3>
-                            <div className="functions-user">
-                                <Link to={`/admin-dashboard/edit-user/${memberDetail._id}`}>
-                                    <button className='functionButton'>EDIT</button>
-                                </Link>
-                                <button onClick={() => deleteUser(memberDetail._id)} className='functionButton'>DELETE</button>
-                            </div>
-                        </div>
-                    ))}
         </div>
         </main>
     </div>

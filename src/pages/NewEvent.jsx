@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Sidebar from '../components/Sidebar';
 import { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const success = () => toast.info("Event added");
 
 
@@ -40,7 +41,7 @@ const NewEvent = () => {
 
   return (
 <div className="admin-dashboard dashboard">
-        <Sidebar newEvent={'link-active'}/>
+        <Sidebar event={'link-active'}/>
 
         <main className='user-form admin-content content'>
             <ToastContainer/>
@@ -53,6 +54,9 @@ const NewEvent = () => {
                 <button type='submit'>Add Event</button>
                 
             </form>
+
+            <h1>Delete Event</h1>
+            <Link to="/admin-dasboard/edit-event">Edit Events</Link>
         </main>
     </div>
   )

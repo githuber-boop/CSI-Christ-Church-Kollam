@@ -29,6 +29,8 @@ import AdminChurchAlmanac from './pages/AdminChurchAlmanac.jsx';
 import ChurchHistory from './pages/ChurchHistory.jsx';
 import { BreadcrumbProvider } from './components/BreadCrumsContext.jsx';
 import EditEvent from './pages/EditEvent.jsx';
+import Archives from './pages/Archives.jsx';
+import FamilyMembers from './pages/FamilyMembers.jsx';
 
 
 
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/milestones",
     element: <Milestones />,
+  },
+  {
+    path: "/archives",
+    element: <Archives/>,
   },
   {
     path: "/church-history",
@@ -81,6 +87,10 @@ const router = createBrowserRouter([
     element: <MemberDashboard />,
   },
   {
+    path: "/member-dashboard/family-members",
+    element: <FamilyMembers/>,
+  },
+  {
     path: "/admin-dashboard",
     element: <NewUser/>,
   },
@@ -91,6 +101,10 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard/edit-user/:id",
     element: <EditUser />,
+  },
+  {
+    path: "/admin-dasboard/edit-event",
+    element: <EditEvent />,
   },
   {
     path: "/admin-dashboard/vicar-message",

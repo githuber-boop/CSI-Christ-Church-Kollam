@@ -35,7 +35,9 @@ const Missions = () => {
                   <div className="mission-text">
                     <h2>Chhattisgarh Mission</h2>
                     <p>In accordance with the Great Commission of our Lord, the  Kollam-Kottarakara Diocese decided to adopt a mission field under the  Jubilee Mission of the South Kerala Diocese</p>
-                    <Link to="/chhattisgarh-mission" className='button'>Read More</Link>
+                    <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} to="/chhattisgarh-mission" className='button'>Read More</Link>
                   </div>
                   <div className="mission-image">
                   <LazyLoad offset={8000}>
@@ -63,7 +65,9 @@ const Missions = () => {
                   <div className="mission-text">
                     <h2>CSI Balikamandiram and Balabhavanam </h2>
                     <p>The home for the boys-Balabhavan and the home for the girls-Balikamandiram, which are situated at the right-hand and left-hand side of the Cathedral, depicts the two extended arms of the Church, which accommodates..</p>
-                    <Link to="/balikamandhiram-balabhavan" className='button'>Read More</Link>
+                    <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} to="/balikamandhiram-balabhavan" className='button'>Read More</Link>
                   </div>
                   <div className="mission-image">
                     <img src={balikamandiram} alt="chhattisgarh-image" />
@@ -75,7 +79,9 @@ const Missions = () => {
                   <div className="mission-text">
                     <h2>CSI Convention Center </h2>
                     <p>The home for the boys-Balabhavan and the home for the girls-Balikamandiram, which are situated at the right-hand and left-hand side of the Cathedral, depicts the two extended arms of the Church, which accommodates..</p>
-                    <Link to="/balikamandhiram-balabhavan" className='button'>Read More</Link>
+                    <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} to="/csi-convention-center" className='button'>Read More</Link>
                   </div>
                   <div className="mission-image">
                     <img src={convention} alt="chhattisgarh-image" />

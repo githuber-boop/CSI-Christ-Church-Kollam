@@ -7,15 +7,20 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useBreadcrumb } from '../components/BreadCrumsContext';
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const loginError = () => toast.error("Login Failed");
+
 
   const handleLogoClick = () => {
     resetBreadcrumbs(); // Clear breadcrumb memory
   };
 
-  const [number, setNumber] = useState();
-  const [password, setPassword] = useState('');
+  const [number, setNumber] = useState('');
+  const [error, setError] = useState('');
+  // const [password, setPassword] = useState('');
   const [users, setUsers] = useState([])
   // const [users, setUsers]
   const navigate = useNavigate();
@@ -33,24 +38,22 @@ const Login = () => {
     fetchUser();
   }, []);
   
-  const handleLogin = (e) =>  {
+  const handleLogin = async(e) =>  {
     e.preventDefault();
-    const memberUser = users.find(u => u.number === Number(number) && u.password === password && u.role === "member");
-
-    const adminUser = users.find(u => u.number === 12345 && u.password === 'kollamchurch' && u.role === "admin");
-    
-    console.log(adminUser)
-
-    if (memberUser) {
-      navigate('/member-dashboard');
-    } else if (adminUser){
-      navigate('/admin-dashboard');
-    }else {
-      navigate('/login')
-    }
-    
-    
-
+        try {
+            const response = await axios.post('https://church-kollam-backend.onrender.com/api/users/login', { number });
+            const user = response.data.user;
+            localStorage.setItem('userId', user._id);
+            if (number == 367) {
+              navigate('/admin-dashboard');
+            }else {
+              
+              navigate('/member-dashboard'); // Redirect to member dashboard
+            } // Save user ID in local storage
+        } catch (error) {
+            toast.error('Login failed. Please check your phone number.');
+            console.error(error);
+        }
   } 
 
   return (
@@ -74,7 +77,7 @@ const Login = () => {
               onChange={(e) => setNumber(e.target.value)}
             />
 
-            <label htmlFor="psw">
+            {/* <label htmlFor="psw">
               <b>Password</b>
             </label>
             <input
@@ -85,11 +88,12 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
 
-            />
+            /> */}
             <button type="submit">Login</button>
 
             <Link className="homeLink" to='/' onClick={handleLogoClick}>Home</Link>
           </form>
+          <ToastContainer />
         </div>
       </div>
 

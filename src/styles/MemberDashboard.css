@@ -36,17 +36,20 @@ body, html {
 
 .sidebar .links {
   /* margin-top: 30px; */
-  margin-bottom: auto;
+  /* margin-bottom: auto; */
 }
 
 .sidebar-link {
-  position: relative;
-  display: inline-block;
-  font-family: 'Khand';
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-}
+  /* position: relative; */
+    margin-top: 1.25rem;
+    position: relative;
+    display: block;
+    font-family: 'Khand';
+    font-size: 29px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
 
 .sidebar-link::after {
   content: '';
@@ -79,6 +82,7 @@ body, html {
   flex-direction: column;
 }
 
+
 .sort-filter {
   display: flex;
   gap: 1rem;
@@ -107,7 +111,7 @@ body, html {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding-left: 5px;
   font-size: 1.25rem;
-  margin-bottom: 1px;
+  margin-bottom: .5px;
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 400;
   padding: 5px;

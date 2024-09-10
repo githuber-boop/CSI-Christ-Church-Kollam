@@ -18,6 +18,7 @@ const Breadcrumbs = () => {
     "/service-timings": "Service Timings",
     "/balikamandhiram-balabhavan": "Balikamandhiram Balabhavanam",
     "/csi-convention-center": "CSI Convention Center",
+    "/archives" : "Archives"
   };
   
 
@@ -38,6 +39,8 @@ const Breadcrumbs = () => {
     }
   }, [location, addBreadcrumb, resetBreadcrumbs]);
 
+  const limitedBreadcrumbs = breadcrumbs.slice(-3);
+
   return (
     <nav>
       <ul className="breadcrumb">
@@ -45,10 +48,10 @@ const Breadcrumbs = () => {
           <Link to="/">Home</Link>
           <span className="separator">{`>`}</span>
         </li>
-        {breadcrumbs.map((crumb, index) => (
+        {limitedBreadcrumbs.map((crumb, index) => (
           <li key={crumb.path}>
             <Link to={crumb.path}>{crumb.label}</Link>
-            {index < breadcrumbs.length - 1 && <span className="separator">/</span>}
+            {index < limitedBreadcrumbs.length - 1 && <span className="separator">/</span>}
           </li>
         ))}
       </ul>

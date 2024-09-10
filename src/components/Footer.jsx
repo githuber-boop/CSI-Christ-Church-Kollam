@@ -19,22 +19,30 @@ const Footer = () => {
             <ul className="footer-links">
               <li>
                 <a>
-                  <Link className='footer-link' to={'/'}>Home</Link>
+                  <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} className='footer-link' to={'/'}>Home</Link>
                 </a>
               </li>
               <li>
                 <a>
-                  <Link className='footer-link' to={'/church-history'}>About Us</Link>
+                  <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} className='footer-link' to={'/church-history'}>About Us</Link>
                 </a>
               </li>
               <li>
                 <a>
-                  <Link className='footer-link' to={'/missions-projects'}>Missions & Projects</Link>
+                  <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} className='footer-link' to={'/missions-projects'}>Missions & Projects</Link>
                 </a>
               </li>
               <li>
                 <a>
-                  <Link className='footer-link' to={'/events'}>Events</Link>
+                  <Link onClick={() => {
+          window.scrollTo(0, 0);
+        }} className='footer-link' to={'/events'}>Events</Link>
                 </a>
               </li>
             </ul>

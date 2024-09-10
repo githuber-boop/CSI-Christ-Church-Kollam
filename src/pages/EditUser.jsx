@@ -67,10 +67,10 @@ function EditUser() {
           Number:
           <input type="text" name="number" value={formData.number || ''} onChange={handleChange} />
         </label>
-        <label>
+        {/* <label>
           Email:
           <input type="email" name="email" value={formData.email || ''} onChange={handleChange} />
-        </label>
+        </label> */}
         <label>
           DOB:
           <input type="date" name="dob" value={formData.dob || ''} onChange={handleChange} />

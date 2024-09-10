@@ -84,7 +84,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 .church-uploads {
@@ -96,7 +96,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
     padding: 70px 40px;
 
@@ -124,6 +124,7 @@
   }
 
 .upload:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .herald {
@@ -245,6 +246,49 @@
 .bearer-position {
     font-family: "Khand";
     text-transform: uppercase;
+}
+
+.location-contact {
+    display: grid;
+    grid-template-columns: 75% 1fr;
+    gap: 1rem;
+}
+
+
+.contactUs {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: var(--yellow) 0px 1px 2px 0px, var(--yellow) 0px 1px 3px 1px;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border:2px solid var(--yellow);
+}
+
+.number {
+    padding: 0 1.25rem;
+    font-family: 'Khand', sans-serif;
+    display: flex;
+    align-items: center;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    /* padding: 20px;
+    margin: 0px 20px; */
+}
+
+.number h1 {
+    font-size: 25px;
+}
+.number p {
+    font-size: 20px;
+}
+
+.number i {
+    max-width: 100px;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 200px;
+    margin-right: 10px;
+    font-size: 27px;
 }
 
 @media screen and (max-width:600px) {

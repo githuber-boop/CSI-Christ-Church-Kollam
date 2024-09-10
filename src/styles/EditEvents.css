@@ -17,10 +17,10 @@
     
     }
   
-    .grid-full {
+    .events-grid {
       display: grid;
-      grid-template-columns: 1fr;
-
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
   
     .functionButton {
@@ -40,13 +40,7 @@
       color: black;
       background: none;
     }
-  
-    
-    .functions-user {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+
   
     
     

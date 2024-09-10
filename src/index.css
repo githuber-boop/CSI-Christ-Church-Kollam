@@ -173,6 +173,19 @@ textarea:not([rows]) {
     padding: 0 1rem;
 }
 
+.Carouselcontainer {
+    max-width: 1250px;
+    margin: 30px auto;
+    display: block;
+    padding: 0 1rem;
+}
+
+.carousel .legend {
+  opacity: 1 !important; /* Make the legend fully visible */
+  /* visibility: visible !important; Ensure the legend is visible */
+  transition: none !important; /* Remove the transition effect */
+}
+
 .flex-align {
   display: inline-flex;
   align-items: center;
@@ -245,6 +258,7 @@ textarea:not([rows]) {
 .button:hover {
   background: none;
   color: var(--yellow);
+  border: 1px solid var(--yellow);
 }
 
 .button a {
@@ -264,7 +278,7 @@ textarea:not([rows]) {
 .slide-up-fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .slide-up-fade-in.animate {

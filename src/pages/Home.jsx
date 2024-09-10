@@ -11,17 +11,14 @@ import roundedSecretary from '../assets/rounded-secretary.png'
 import roundedAccountant from '../assets/rounded-accountant.png'
 import CarouselComponenet from '../components/CarouselComponenet'
 import SlideUpFadeIn from '../components/AnimationSlideup'
-import almanac from '../uploads/almanac-2024-1.pdf'
-import pdfImage from '../assets/pdf-image.webp'
-import herald from '../uploads/ChurchHeraldJune2024.pdf'
 import Loading from '../components/Loading'
 import axios from 'axios'
 
 const App = () => {
     const [message, setMessage] = useState([]) 
     const [loading, setLoading] = useState(true);
-    const [AlmanacFileName, setAlmanacFileName] = useState(null);
-    const [HeraldFileName, setHeraldFileName] = useState(null);
+    // const [AlmanacFileName, setAlmanacFileName] = useState(null);
+    // const [HeraldFileName, setHeraldFileName] = useState(null);
     const [AlmanacFileUrl, setAlmanacFileUrl] = useState(null);
     const [HeraldFileUrl, setHeraldFileUrl] = useState(null);
 
@@ -67,7 +64,11 @@ const App = () => {
         const fetchMessage = async () => {
           setLoading(true);
           try {
-            const res = await fetch("https://church-kollam-backend.onrender.com/api/message")
+            const res = await fetch("https://church-kollam-backend.onrender.com/api/message", {
+              headers: {
+                'Cache-Control': 'no-store',
+              },
+            })
             const data = await res.json()
               setMessage(data)
 
@@ -129,17 +130,20 @@ const App = () => {
 
                 <div className="message">
                 {loading ? (
-          <Loading /> // Show loading only in this section
+          <Loading /> // Show the spinner while loading
         ) : (
-          message && message.map((partMessage , index) => (
-            <div key={index} className="partMessage">
-                  <h2>{partMessage.date}</h2>
-                  <p>{partMessage.message.substring(0, 600) + '.........'}</p>
+          message && message.length > 0 ? (
+            message.map((partMessage, index) => (
+              <div className="partMessage" key={index}>
+                <h2>{new Date(partMessage.date).toLocaleDateString()}</h2>
+                  <p>{partMessage.message.substring(0, 600) + '.................'}</p>
                   <button className="button"><Link to='/vicars-message'>Read More</Link></button>
               </div>
-          ))
+            ))
+          ) : (
+            <p>No data available</p> // Handle case with no data
+          )
         )}
-
                 {/* {message.map((partMessage, index) => (
                 <div key={index} className="partMessage">
                   <h2>{partMessage.date}</h2>
@@ -194,13 +198,13 @@ const App = () => {
 
         <div className="flexCenter">
             <div className="heading">
-              <h1>CHURCH UPLOADS</h1>
+              <h1>CHURCH PUBLICATIONS</h1>
             </div>
         </div>
         <SlideUpFadeIn>
           <div className="file-uploads">
 
-          <a href={HeraldFileUrl} download={HeraldFileName} target='_blank'>
+          <a href={HeraldFileUrl} target='_blank'>
             <div className='upload herald'>
               <div class="card-content">
                 <h1>CHURCH HERALD</h1>
@@ -209,7 +213,7 @@ const App = () => {
           </a>
 
         
-          <a href={AlmanacFileUrl} download={AlmanacFileName} target='_blank'>
+          <a href={AlmanacFileUrl}target='_blank'>
             <div className='upload' >
             <div class="card-content">
                 <h1>CHURCH ALMANAC</h1>
@@ -236,7 +240,33 @@ const App = () => {
               <h1>Visit Us Here</h1>
             </div>
           </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9139467430173!2d76.59111947436166!3d8.887592791187792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fc586740d3d1%3A0x746e561db8908230!2sCSI%20Christ%20Church%20Cathedral!5e0!3m2!1sen!2sin!4v1724148779697!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <div className="location-contact">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.9139467430173!2d76.59111947436166!3d8.887592791187792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fc586740d3d1%3A0x746e561db8908230!2sCSI%20Christ%20Church%20Cathedral!5e0!3m2!1sen!2sin!4v1724148779697!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div className="contactUs">
+                  <div className="number">
+                  <i class="fa-solid fa-phone"></i>
+                    <div className="number-details">
+                      <h1>DEAN</h1>
+                      <p>+91 98464 66513</p>
+                    </div>
+                  </div>
+                  <div className="number">
+                  <i class="fa-solid fa-envelope"></i>
+                    <div className="number-details">
+                      <h1>CHRIST CHURCH</h1>
+                      <p>csichristchurchkollam@org</p>
+                    </div>
+                  </div>
+                  <div className="number">
+                  <i class="fa-solid fa-phone"></i>
+                    <div className="number-details">
+                      <h1>SECRETARY</h1>
+                      <p>+91 94969 91960</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
         </div>
 
         

@@ -14,7 +14,7 @@ const AdminChurchHerald = ( ) => {
 
   const fetchUploadedFile = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/files/herald`);
+      const response = await axios.get(`https://church-kollam-backend.onrender.com/files/herald`, );
       setUploadedFile(response.data.fileName);
     } catch (error) {
       console.error('Error fetching uploaded file:', error);

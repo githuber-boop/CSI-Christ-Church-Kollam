@@ -1,7 +1,6 @@
 import React from 'react'
 import office from '../assets/office.webp'
 import PageBackgrounds from '../components/PageBackgrounds'
-import profileImg from'../assets/profile-img.webp'
 import roundedDean from '../assets/rounded-dean.png'
 import roundedSecretary from '../assets/rounded-secretary.png'
 import roundedAccountant from '../assets/rounded-accountant.png'

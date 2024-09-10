@@ -4,29 +4,44 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/MemberDashboard.css";
 import { FaSearch } from "react-icons/fa";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MemberDashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [details, setDetails] = useState([]);
+    const [users, setUsers] = useState([]);
+    // const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchJobs = async () => {
-      const res = await fetch("https://church-kollam-backend.onrender.com/api/users");
-      const data = await res.json();
-      setDetails(data);
-    };
+    const fetchUserData = async () => {
+      try {
+         // Get user ID from local storage
+          const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/`);
+          setUsers(response.data);
+      } catch (error) {
+          setError('Failed to load user data');
+          console.error(error);
+      }
+  };
 
-    fetchJobs();
+  fetchUserData();
   }, []);
 
+  const logOut = () => {
+    try {
+      localStorage.removeItem('userId');
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const matchesSearchCriteria = (item) => {
     const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-    const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
-
-
+    // const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
     return nameMatch;
 };
+
+
 
   return (
     <div className="grid dashboard">
@@ -36,13 +51,14 @@ const MemberDashboard = () => {
           <a href="#" className="sidebar-link">
             MEMBER DETAILS
           </a>
+            <Link  className="sidebar-link" to={'/member-dashboard/family-members'}>FAMILY DETAILS</Link>
         </div>
 
         <div className="bottom-links">
           <Link to="/" className="log-out">
             Home
           </Link>
-          <Link to="/login" className="log-out">
+          <Link to="/login" onClick={logOut} className="log-out">
             Log Out
           </Link>
         </div>
@@ -62,30 +78,32 @@ const MemberDashboard = () => {
         </div>
 
         <div className="usersGrid">
-          {details.filter(matchesSearchCriteria).map((memberDetail) => (
+          {users.filter(matchesSearchCriteria).map((memberDetail) => (
             <div key={memberDetail.id} className="member-details">
               <h3>
-                <span>NAME:</span> {memberDetail.name}
+                <span>NAME:</span>{memberDetail.name}
               </h3>
               <h3>
-                <span>ADDRESS:</span> {memberDetail.address}
+                <span>ADDRESS:</span>{memberDetail.address}
               </h3>
               <h3>
-                <span>NUMBER:</span> {memberDetail.number}
+                <span>NUMBER:</span>{memberDetail.number}
               </h3>
               <h3>
-                <span>DOB:</span> {memberDetail.dob}
+                <span>DOB:</span>{memberDetail.dob}
               </h3>
-              <h3><span>EMAIL:</span>  {memberDetail.email}</h3>
+              <h3><span>EMAIL:</span>{memberDetail.email}</h3>
               <h3>
-                <span>BAPTISM DATE:</span> {memberDetail.baptism}
+                <span>BAPTISM DATE:</span>{memberDetail.baptism}
               </h3>
               <h3>
-                <span>CONFIRMATION:</span> {memberDetail.confirmation}
+                <span>CONFIRMATION:</span>{memberDetail.confirmation}
               </h3>
             </div>
           ))}
         </div>
+
+
       </main>
     </div>
   );

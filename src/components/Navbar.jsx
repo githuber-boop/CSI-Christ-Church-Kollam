@@ -74,6 +74,10 @@ const Navbar = () => {
                     <Link className="link" to="/events">Events </Link>
                 </li>
 
+                <li className="nav-link">
+                    <Link className="link" to="/archives">Archives </Link>
+                </li>
+
                 <li className="nav-link"><Link className="link" to="/login">Login</Link></li>
             </ul>
         </nav>
