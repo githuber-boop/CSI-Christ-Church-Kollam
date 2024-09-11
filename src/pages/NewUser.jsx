@@ -144,7 +144,7 @@ const AdminDashboard = () => {
           <label htmlFor="number">Phone Number: <input type="text" name="number" value={formData.number} onChange={handleChange} /></label>
           <label htmlFor="dob">Date of Birth: <input readOnly onPaste={handlePaste} type="text" name="dob" value={formData.dob} onChange={handleChange} /></label>
           <label htmlFor="weddingDte">Wedding Date: <input readOnly onPaste={handlePaste} type="text" name="weddingDte" value={formData.weddingDte} onChange={handleChange} /></label>
-          <label htmlFor="email">Email: <input type="email" name="email" value={formData.email} onChange={handleChange} /></label>
+          <label htmlFor="email">Email: <input type="text" name="email" value={formData.email} onChange={handleChange} /></label>
           
           {/* Main User Baptism & Confirmation */}
           <label htmlFor="baptism">
