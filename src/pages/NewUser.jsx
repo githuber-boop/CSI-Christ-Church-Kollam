@@ -133,6 +133,22 @@ const AdminDashboard = () => {
     }
   };
 
+  const handlePaste = (e) => {
+    e.preventDefault(); // Prevent the default paste behavior
+    const pastedText = e.clipboardData.getData('text');
+
+    // Regular expression to match dd/mm/yyyy format
+    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+
+    if (datePattern.test(pastedText)) {
+      const { name } = e.target;
+      setFormData({ ...formData, [name]: pastedText });
+      // Set the date if format is correct
+    } else {
+      alert('Invalid date format! Please use dd-mm-yy');
+    }
+  };
+
   const submitForm = async (e) => {
     e.preventDefault();
     try {
