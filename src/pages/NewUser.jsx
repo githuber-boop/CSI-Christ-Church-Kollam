@@ -50,6 +50,7 @@ const AdminDashboard = () => {
   };
 
   const handleFamilyMemberChange = (index, e) => {
+    e.preventDefault()
     const { name, value } = e.target;
     const updatedFamilyMembers = formData.familyMembers.map((member, i) =>
       i === index ? { ...member, [name]: value } : member
@@ -57,7 +58,7 @@ const AdminDashboard = () => {
     setFormData({ ...formData, familyMembers: updatedFamilyMembers });
   };
 
-  const addFamilyMember = () => {
+  const  addFamilyMember= () => {
     setFormData({
       ...formData,
       familyMembers: [
@@ -171,7 +172,7 @@ const AdminDashboard = () => {
           {formData.familyMembers.map((member, index) => (
             <div key={index} className="family-member">
               <label>Family Member Name: <input type="text" name="name" value={member.name} onChange={(e) => handleFamilyMemberChange(index, e)} /></label>
-              <label>Date of Birth: <input type="text" readOnly onPaste={handlePaste} name="dob" value={member.dob} onChange={(e) => handleFamilyMemberChange(index, e)} /></label>
+              <label>Date of Birth: <input type="text" readOnly onPaste={handlePaste} name="baptism" value={member.baptism} onChange={(e) => handleFamilyMemberChange(index, e)} /> </label>
 
               {/* Family Member Baptism */}
               <label>
