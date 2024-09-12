@@ -291,8 +291,7 @@ const AdminDashboard = () => {
                 Date of Birth:
                 <input
                   type="text"
-                  readOnly
-                  onPaste={handlePaste}
+                  onPaste={(e) => handlePasteFamilyMember(e, index, "dob")} 
                   name="dob"
                   value={member.dob}
                   onChange={(e) => handleFamilyMemberChange(index, e)}
@@ -305,9 +304,9 @@ const AdminDashboard = () => {
                 {!member.baptised ? (
                   <input
                     type="text"
-                    readOnly
                     name="baptism"
-                    onPaste={handlePaste}
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
+
                     value={member.baptism}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
                   />
@@ -340,6 +339,7 @@ const AdminDashboard = () => {
                     type="text"
                     readOnly
                     name="confirmation"
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
                     value={member.confirmation}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
                   />
