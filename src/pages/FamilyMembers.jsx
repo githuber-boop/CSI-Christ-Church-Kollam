@@ -79,7 +79,7 @@ if (!user) {
                   {user.familyMembers.map((member, index) => (
                             <li key={index}>
                               <h3><span>Name:</span> {member.name}</h3>
-                              <h3><span>Date of Birth:</span> {new Date(member.dob).toLocaleDateString()}</h3>
+                              <h3><span>Date of Birth:</span> {member.dob}</h3>
                               <h3><span>Baptism Date:</span>{ 
     member.baptism && new Date(member.baptism) !== "Invalid Date" && !isNaN(new Date(member.baptism))
       ? new Date(member.baptism).toLocaleDateString()
