@@ -84,9 +84,9 @@ const AdminMemberDetails = () => {
       : memberDetail.dob 
   }</h3>
                 <h3><span>WEDDING DATE:</span>{ 
-    memberDetail.wedddingDte && new Date(memberDetail.wedddingDte) !== "Invalid Date" && !isNaN(new Date(memberDetail.wedddingDte))
-      ? new Date(memberDetail.wedddingDte).toLocaleDateString()
-      : memberDetail.wedddingDte 
+    memberDetail.weddingDte && new Date(memberDetail.weddingDte) !== "Invalid Date" && !isNaN(new Date(memberDetail.weddingDte))
+      ? new Date(memberDetail.weddingDte).toLocaleDateString()
+      : memberDetail.weddingDte 
   }</h3>
                 <h3><span>BAPTISM DATE:</span>{ 
     memberDetail.baptism && new Date(memberDetail.baptism) !== "Invalid Date" && !isNaN(new Date(memberDetail.baptism))
