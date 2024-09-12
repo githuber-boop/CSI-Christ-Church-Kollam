@@ -57,8 +57,9 @@ const AdminDashboard = () => {
     setFormData({ ...formData, familyMembers: updatedFamilyMembers });
   };
 
-  const addFamilyMember = () => {
-    setFormData({
+  const addFamilyMember = (e) => {
+    e.preventDefault();
+        setFormData({
       ...formData,
       familyMembers: [
         ...formData.familyMembers,
