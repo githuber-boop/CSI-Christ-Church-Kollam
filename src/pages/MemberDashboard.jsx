@@ -99,6 +99,9 @@ const MemberDashboard = () => {
               <h3>
                 <span>CONFIRMATION:</span>{memberDetail.confirmation}
               </h3>
+              <h3>
+                <span>HOUSE NAME:</span>{memberDetail.house}
+              </h3>
             </div>
           ))}
         </div>

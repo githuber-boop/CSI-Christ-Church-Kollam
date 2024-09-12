@@ -133,6 +133,15 @@ function EditUser() {
                 onChange={handleChange}
               />
             </label>
+            <label>
+              House Name:
+              <input
+                type="text"
+                name="house"
+                value={formData.house || ""}
+                onChange={handleChange}
+              />
+            </label>
 
             {formData.familyMembers && formData.familyMembers.length > 0 ? (
               <ol className="member-details">

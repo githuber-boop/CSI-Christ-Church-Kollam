@@ -21,24 +21,27 @@ const AdminDashboard = () => {
     weddingDte: "",
     confirmation: "",
     baptism: "",
+    house: "",
     role: "member",
     password: "kollamchurch",
     familyMembers: [],
   });
 
-  const handlePaste = (e) => {
-    e.preventDefault(); // Prevent the default paste behavior
-    const pastedText = e.clipboardData.getData("text");
-
+  const handlePasteFamilyMember = (e, index, field) => {
+    e.preventDefault(); // Prevent default paste behavior
+    const pastedText = e.clipboardData.getData('text');
+  
     // Regular expression to match dd/mm/yyyy format
     const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
-
+  
     if (datePattern.test(pastedText)) {
-      const { name } = e.target;
-      setFormData({ ...formData, [name]: pastedText });
-      // Set the date if format is correct
+      // Update the specific family member's field
+      const updatedFamilyMembers = formData.familyMembers.map((member, i) =>
+        i === index ? { ...member, [field]: pastedText } : member
+      );
+      setFormData({ ...formData, familyMembers: updatedFamilyMembers });
     } else {
-      alert("Invalid date format! Please use dd-mm-yy");
+      alert('Invalid date format! Please use dd-mm-yyyy');
     }
   };
 
@@ -275,6 +278,16 @@ const AdminDashboard = () => {
             </div>
           </label>
 
+          <label htmlFor="house">
+            House Name:{" "}
+            <input
+              type="text"
+              name="house"
+              value={formData.house}
+              onChange={handleChange}
+            />
+          </label>
+
           {/* Family Members Section */}
           <h1>Family Members</h1>
           {formData.familyMembers.map((member, index) => (
@@ -338,7 +351,6 @@ const AdminDashboard = () => {
                 {!member.confirmed ? (
                   <input
                     type="text"
-                    readOnly
                     name="confirmation"
                     onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
                     value={member.confirmation}

@@ -82,6 +82,7 @@ const AdminMemberDetails = () => {
                 <h3><span>WEDDING DATE:</span>{memberDetail.weddingDte}</h3>
                 <h3><span>BAPTISM DATE:</span>{memberDetail.baptism}</h3>
                 <h3><span>CONFIRMATION:</span>{memberDetail.confirmation}</h3>
+                <h3><span>HOUSE NAME:</span>{memberDetail.house}</h3>
                 {/* <h3><span>CONFIRMATION:</span>  {memberDetail.familyMember}</h3> */}
                 <div className="functions-user">
                     <Link to={`/admin-dashboard/edit-user/${memberDetail._id}`}>
