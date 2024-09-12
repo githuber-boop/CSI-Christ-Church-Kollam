@@ -44,41 +44,14 @@ function EditUser() {
     }
   };
 
-  const formatDateToDDMMYYYY = (dateString) => {
-    if (!dateString) return '';
-    const [year, month, day] = dateString.split("-");
-    return `${day}-${month}-${year}`;
-  };
   
-  // Function to convert dd-mm-yyyy to yyyy-mm-dd (for saving back to date input)
-  const formatDateToYYYYMMDD = (dateString) => {
-    if (!dateString) return '';
-    const [day, month, year] = dateString.split("-");
-    return `${year}-${month}-${day}`;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formattedFormData = {
-      ...formData,
-      dob: formatDateToYYYYMMDD(formData.dob),  // convert to yyyy-mm-dd
-      weddingDte: formatDateToYYYYMMDD(formData.weddingDte),
-      baptism: formatDateToYYYYMMDD(formData.baptism),
-      confirmation: formatDateToYYYYMMDD(formData.confirmation),
-      familyMembers: formData.familyMembers.map(member => ({
-        ...member,
-        dob: formatDateToYYYYMMDD(member.dob),
-        baptism: formatDateToYYYYMMDD(member.baptism),
-        confirmation: formatDateToYYYYMMDD(member.confirmation),
-      }))
-    };
-  
-
     try {
       await axios.put(
         `https://church-kollam-backend.onrender.com/api/users/${id}`,
-        formattedFormData
+        formData
       );
       setTimeout(() => {
         navigate("/admin-dashboard/members");
@@ -131,7 +104,7 @@ function EditUser() {
               <input
                 type="date"
                 name="dob"
-                value={formatDateToDDMMYYYY(formData.dob) || ""}
+                value={formData.dob || ""}
                 onChange={handleChange}
               />
             </label>
@@ -140,7 +113,7 @@ function EditUser() {
               <input
                 type="date"
                 name="weddingDte"
-                value={formatDateToDDMMYYYY(formData.weddingDte) || ""}
+                value={formData.weddingDte || ""}
                 onChange={handleChange}
               />
             </label>
@@ -149,7 +122,7 @@ function EditUser() {
               <input
                 type="date"
                 name="baptism"
-                value={formatDateToDDMMYYYY(formData.baptism) || ""}
+                value={formData.baptism || ""}
                 onChange={handleChange}
               />
             </label>
@@ -158,7 +131,7 @@ function EditUser() {
               <input
                 type="date"
                 name="confirmation"
-                value={formatDateToDDMMYYYY(formData.confirmation) || ""}
+                value={formData.confirmation || ""}
                 onChange={handleChange}
               />
             </label>
@@ -190,7 +163,7 @@ function EditUser() {
                       <input
                         type="date"
                         name="dob"
-                        value={formatDateToDDMMYYYY(member.dob) || ""}
+                        value={member.dob || ""}
                         onChange={(e) => handleChange(e, index)}
                       />
                     </label>
@@ -199,7 +172,7 @@ function EditUser() {
                       <input
                         type="date"
                         name="baptism"
-                        value={formatDateToDDMMYYYY(member.baptism) || ""}
+                        value={member.baptism || ""}
                         onChange={(e) => handleChange(e, index)}
                       />
                     </label>
@@ -208,7 +181,7 @@ function EditUser() {
                       <input
                         type="date"
                         name="confirmation"
-                        value={formatDateToDDMMYYYY(member.confirmation) || ""}
+                        value={member.confirmation || ""}
                         onChange={(e) => handleChange(e, index)}
                       />
                     </label>

@@ -78,10 +78,26 @@ const AdminMemberDetails = () => {
                 <h3><span>ADDRESS:</span>{memberDetail.address}</h3>
                 <h3><span>EMAIL:</span>{memberDetail.email}</h3>
                 <h3><span>NUMBER:</span>{memberDetail.number}</h3>
-                <h3><span>DOB:</span>{memberDetail.dob}</h3>
-                <h3><span>WEDDING DATE:</span>{memberDetail.weddingDte}</h3>
-                <h3><span>BAPTISM DATE:</span>{memberDetail.baptism}</h3>
-                <h3><span>CONFIRMATION:</span>{memberDetail.confirmation}</h3>
+                <h3><span>DOB:</span>{ 
+    memberDetail.dob && new Date(memberDetail.dob) !== "Invalid Date" && !isNaN(new Date(memberDetail.dob))
+      ? new Date(memberDetail.dob).toLocaleDateString()
+      : memberDetail.dob 
+  }</h3>
+                <h3><span>WEDDING DATE:</span>{ 
+    memberDetail.wedddingDte && new Date(memberDetail.wedddingDte) !== "Invalid Date" && !isNaN(new Date(memberDetail.wedddingDte))
+      ? new Date(memberDetail.wedddingDte).toLocaleDateString()
+      : memberDetail.wedddingDte 
+  }</h3>
+                <h3><span>BAPTISM DATE:</span>{ 
+    memberDetail.baptism && new Date(memberDetail.baptism) !== "Invalid Date" && !isNaN(new Date(memberDetail.baptism))
+      ? new Date(memberDetail.baptism).toLocaleDateString()
+      : memberDetail.baptism 
+  }</h3>
+                <h3><span>CONFIRMATION:</span>{ 
+    memberDetail.confirmation && new Date(memberDetail.confirmation) !== "Invalid Date" && !isNaN(new Date(memberDetail.confirmation))
+      ? new Date(memberDetail.confirmation).toLocaleDateString()
+      : memberDetail.confirmation 
+  }</h3>
                 <h3><span>HOUSE NAME:</span>{memberDetail.house}</h3>
                 {/* <h3><span>CONFIRMATION:</span>  {memberDetail.familyMember}</h3> */}
                 <div className="functions-user">

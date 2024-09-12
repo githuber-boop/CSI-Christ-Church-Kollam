@@ -32,26 +32,16 @@ const AdminDashboard = () => {
     const pastedText = e.clipboardData.getData('text');
   
     // Regular expression to match dd/mm/yyyy format
-    const datePattern = /^(?:(\d{2})[-\/]{1,2}(\d{2})[-\/]{1,2}(\d{2}|\d{4}))$/;
-
+    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+  
     if (datePattern.test(pastedText)) {
-        let [_, day, month, year] = pastedText.match(datePattern);
-
-        // Ensure year is 4 digits if it's in 2 digits (assuming 20th or 21st century)
-        if (year.length === 2) {
-            year = year < "50" ? "20" + year : "19" + year;  // Example: 23 -> 2023, 45 -> 1945
-        }
-
-        const formattedDate = `${day}-${month}-${year}`;
       // Update the specific family member's field
       const updatedFamilyMembers = formData.familyMembers.map((member, i) =>
-        i === index ? { ...member, [field]: formattedDate } : member
+        i === index ? { ...member, [field]: pastedText } : member
       );
       setFormData({ ...formData, familyMembers: updatedFamilyMembers });
-
-      // Update formData with the formatted date
     } else {
-        alert("Invalid date format! Please use dd-mm-yy");
+      alert('Invalid date format! Please use dd-mm-yyyy');
     }
   };
 
@@ -148,22 +138,14 @@ const AdminDashboard = () => {
     const pastedText = e.clipboardData.getData('text');
 
     // Regular expression to match dd/mm/yyyy format
-    const datePattern = /^(?:(\d{2})[-\/]{1,2}(\d{2})[-\/]{1,2}(\d{2}|\d{4}))$/;
+    const datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
 
     if (datePattern.test(pastedText)) {
-        let [_, day, month, year] = pastedText.match(datePattern);
-
-        // Ensure year is 4 digits if it's in 2 digits (assuming 20th or 21st century)
-        if (year.length === 2) {
-            year = year < "50" ? "20" + year : "19" + year;  // Example: 23 -> 2023, 45 -> 1945
-        }
-
-        const formattedDate = `${day}-${month}-${year}`;
-
-        const { name } = e.target;
-        setFormData({ ...formData, [name]: formattedDate });  // Update formData with the formatted date
+      const { name } = e.target;
+      setFormData({ ...formData, [name]: pastedText });
+      // Set the date if format is correct
     } else {
-        alert("Invalid date format! Please use dd-mm-yy");
+      alert('Invalid date format! Please use dd-mm-yy');
     }
   };
 
@@ -225,7 +207,6 @@ const AdminDashboard = () => {
               name="dob"
               value={formData.dob}
               onChange={handleChange}
-              placeholder="dd-mm-yyyy"
             />
           </label>
           <label htmlFor="weddingDte">
@@ -237,7 +218,6 @@ const AdminDashboard = () => {
               name="weddingDte"
               value={formData.weddingDte}
               onChange={handleChange}
-              placeholder="dd-mm-yyyy"
             />
           </label>
           <label htmlFor="email">
@@ -261,7 +241,6 @@ const AdminDashboard = () => {
                 name="baptism"
                 value={formData.baptism}
                 onChange={handleChange}
-              placeholder="dd-mm-yyyy"
               />
             ) : (
               <input
@@ -293,8 +272,6 @@ const AdminDashboard = () => {
                 name="confirmation"
                 value={formData.confirmation}
                 onChange={handleChange}
-                placeholder="dd-mm-yyyy"
-
               />
             ) : (
               <input
@@ -347,7 +324,6 @@ const AdminDashboard = () => {
                   onPaste={(e) => handlePasteFamilyMember(e, index, "dob")} 
                   name="dob"
                   value={member.dob}
-                  placeholder="dd-mm-yyyy"
                   onChange={(e) => handleFamilyMemberChange(index, e)}
                 />
               </label>
@@ -359,8 +335,7 @@ const AdminDashboard = () => {
                   <input
                     type="text"
                     name="baptism"
-                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
-                    placeholder="dd-mm-yyyy"
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "confirmation")} 
                     value={member.baptism}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
                   />
@@ -392,10 +367,9 @@ const AdminDashboard = () => {
                   <input
                     type="text"
                     name="confirmation"
-                    onPaste={(e) => handlePasteFamilyMember(e, index, "confirmation")} 
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
                     value={member.confirmation}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
-                    placeholder="dd-mm-yyyy"
                   />
                 ) : (
                   <input
