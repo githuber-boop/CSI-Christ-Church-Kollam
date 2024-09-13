@@ -28,6 +28,11 @@ body, html {
   text-align: center;
 }
 
+.editButton.button {
+  /* width: fit-content; */
+  /* padding:1rem; */
+}
+
 .admin-sidebar-link {
   margin-top: 30px;
   display: block;

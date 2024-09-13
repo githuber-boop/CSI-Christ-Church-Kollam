@@ -165,7 +165,7 @@ const AdminDashboard = () => {
   return (
     <div className="admin-dashboard">
       <Sidebar newUser={"link-active"} />
-      <main className="user-form admin-content">
+      <main className="user-form admin-member-content">
         <ToastContainer />
 
         <h1>CREATE A NEW USER</h1>

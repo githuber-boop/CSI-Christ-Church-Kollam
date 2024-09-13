@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     <div className="admin-dashboard dashboard">
         <Sidebar message={'link-active'}/>
 
-        <main className='user-form admin-content content'>
+        <main className='user-form admin-member-content content'>
             <ToastContainer/>
             <h1>VICAR'S MESSAGE</h1>
             <form onSubmit={submitForm} className='new_user-form'>

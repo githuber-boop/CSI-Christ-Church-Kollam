@@ -255,7 +255,7 @@ const App = () => {
                   <i class="fa-solid fa-envelope"></i>
                     <div className="number-details">
                       <h1>CHRIST CHURCH</h1>
-                      <p>csichristchurchkollam@org</p>
+                      <p>christchurchkollam@gmail.com</p>
                     </div>
                   </div>
                   <div className="number">
