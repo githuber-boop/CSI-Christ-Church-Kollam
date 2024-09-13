@@ -40,7 +40,7 @@ const EditEvent = () => {
               <h3>{eventDetail.date}</h3>
               <h3>{eventDetail.time}</h3>
               <h3>{eventDetail.eventDetails}</h3>
-              <h3>{eventDetail.imageUrl}</h3>
+              <img src={eventDetail.imageUrl} alt={eventDetail.eventName} />
 
               <div className="functions-user">
                 <button
