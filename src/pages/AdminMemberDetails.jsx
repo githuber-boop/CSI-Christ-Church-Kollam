@@ -32,8 +32,7 @@ const AdminMemberDetails = () => {
 
 
     const matchesSearchCriteria = (item) => {
-      const termMatch = (item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
-                          (item.houseName && item.houseName.toLowerCase().includes(searchTerm.toLowerCase()));
+      const termMatch = (item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())) || (item.house && item.house.toLowerCase().includes(searchTerm.toLowerCase()));
 
       // const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
       return termMatch;
