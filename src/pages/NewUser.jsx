@@ -335,7 +335,7 @@ const AdminDashboard = () => {
                   <input
                     type="text"
                     name="baptism"
-                    onPaste={(e) => handlePasteFamilyMember(e, index, "confirmation")} 
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
                     value={member.baptism}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
                   />
@@ -367,7 +367,7 @@ const AdminDashboard = () => {
                   <input
                     type="text"
                     name="confirmation"
-                    onPaste={(e) => handlePasteFamilyMember(e, index, "baptism")} 
+                    onPaste={(e) => handlePasteFamilyMember(e, index, "confirmation")} 
                     value={member.confirmation}
                     onChange={(e) => handleFamilyMemberChange(index, e)}
                   />

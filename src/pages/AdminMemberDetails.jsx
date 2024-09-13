@@ -32,10 +32,11 @@ const AdminMemberDetails = () => {
 
 
     const matchesSearchCriteria = (item) => {
-      const termMatch = (item.name && item.name.toLowerCase().includes(searchTerm.toLowerCase())) || (item.house && item.house.toLowerCase().includes(searchTerm.toLowerCase()));
-
-      // const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-      return termMatch;
+      const term = searchTerm.toLowerCase();
+      return (
+          (item.name && item.name.toLowerCase().includes(term)) ||
+          (item.house && item.house.toLowerCase().includes(term))
+      );
   };
 
 
@@ -63,7 +64,7 @@ const AdminMemberDetails = () => {
             <div className="input">
               <input
                   type="text"
-                  placeholder="Search by name or email"
+                  placeholder="Search by name or house name"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -75,7 +76,7 @@ const AdminMemberDetails = () => {
           <Loading /> // Show loading only in this section
         ) : (
           details.filter(matchesSearchCriteria).map((memberDetail) => (
-            <div key={memberDetail.id} className="member-details">
+            <div key={memberDetail._id} className="member-details">
                 <h3><span>NAME:</span>{memberDetail.name}</h3>
                 <h3><span>ADDRESS:</span>{memberDetail.address}</h3>
                 <h3><span>EMAIL:</span>{memberDetail.email}</h3>
