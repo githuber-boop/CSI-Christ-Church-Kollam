@@ -11,7 +11,7 @@ import '../styles/OurBishop.css'
 const OurBishop = () => {
   return (
     <>
-        <PageBackgrounds backgroundImg={bishopBg} heroText={"OUR BISHOP"}/>
+        <PageBackgrounds backgroundImg={bishopBg} heroText={"OUR BISHOPS"}/>
         <div className="container">
           <Breadcrumb/>
           <div className="bishop-1">

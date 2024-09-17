@@ -8,7 +8,9 @@ import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
 const AdminDashboard = () => {
-  const success = () => toast.info("User Created");
+
+ 
+
 
   const [confirmed, setConfirmed] = useState(false);
   const [baptised, setBaptised] = useState(false);
@@ -156,6 +158,7 @@ const AdminDashboard = () => {
         "https://church-kollam-backend.onrender.com/api/users/newUser",
         formData
       );
+      toast.info("User Created")
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -405,7 +408,7 @@ const AdminDashboard = () => {
             Add Family Member
           </button>
 
-          <button type="submit" onClick={success}>
+          <button type="submit">
             Add User
           </button>
         </form>

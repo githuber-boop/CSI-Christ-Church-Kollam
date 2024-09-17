@@ -10,6 +10,8 @@ function EditUser() {
   const { id } = useParams();
   const [formData, setFormData] = useState({});
   const navigate = useNavigate();
+  const [confirmed, setConfirmed] = useState(false);
+  const [baptised, setBaptised] = useState(false);
   const success = () => toast.info("User Edited");
 
   const fetchUser = async () => {
@@ -59,6 +61,24 @@ function EditUser() {
       success();
     } catch (error) {
       console.error("Error updating user:", error);
+    }
+  };
+
+  const handleConfirmationToggle = () => {
+    setConfirmed(!confirmed);
+    if (!confirmed) {
+      setFormData({ ...formData, confirmation: "Confirmed" });
+    } else {
+      setFormData({ ...formData, confirmation: "" });
+    }
+  };
+
+  const handleBaptisedToggle = () => {
+    setBaptised(!baptised);
+    if (!baptised) {
+      setFormData({ ...formData, baptism: "Baptised" });
+    } else {
+      setFormData({ ...formData, baptism: "" });
     }
   };
 
@@ -118,23 +138,66 @@ function EditUser() {
               />
             </label>
             <label>
-              Baptism Date:
-              <input
-                type="date"
-                name="baptism"
-                value={formData.baptism || ""}
-                onChange={handleChange}
-              />
-            </label>
+                Baptism Date:
+                {!baptised ? (
+                  <input
+                    type="date"
+                    name="baptism"
+                    value={formData.baptism || ""}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    name="baptism"
+                    value={formData.baptism}
+                    disabled
+                  />
+                )}
+                <h3 className="spacing">Current Info: {formData.baptism}</h3>
+                <div className="block-container">
+                  <label>
+                    <input
+                      type="checkbox"
+                      className="checkbox"
+                      checked={baptised}
+                      onChange={handleBaptisedToggle}
+                    />
+                    Mark as "Baptised"
+                  </label>
+                </div>
+              </label>
+
             <label>
-              Confirmation:
-              <input
-                type="date"
-                name="confirmation"
-                value={formData.confirmation || ""}
-                onChange={handleChange}
-              />
-            </label>
+                Confirmation Date:
+                {!confirmed ? (
+                  <input
+                    type="date"
+                    name="confirmation"
+                    value={formData.confirmation || ""}
+                    onChange={handleChange}
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    name="confirmation"
+                    value={formData.confirmation}
+                    disabled
+                  />
+                )}
+                <h3 className="spacing">Current Info: {formData.confirmation}</h3>
+                <div className="block-container">
+                  <label>
+                    <input
+                      type="checkbox"
+                      className="checkbox"
+                      checked={confirmed}
+                      onChange={handleConfirmationToggle}
+                    />
+                    Mark as "Confirmed"
+                  </label>
+                </div>
+              </label>
             <label>
               House Name:
               <input

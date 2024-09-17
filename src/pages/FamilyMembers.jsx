@@ -18,8 +18,9 @@ const FamilyMembers = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-          const userId = localStorage.getItem('userId'); // Get user ID from local storage
-          const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/${userId}`);
+          const token = localStorage.getItem('token'); 
+          const decodedToken = JSON.parse(atob(token.split('.')[1]));
+          const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/${decodedToken.id}`);
           setUser(response.data);
       } catch (error) {
           setError('Failed to load user data');
@@ -30,9 +31,10 @@ const FamilyMembers = () => {
   fetchUserData();
   }, []);
 
-  const logOut = (req,res) => {
+  const logOut = () => {
     try {
-      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+      navigate('/login')
     } catch (error) {
       console.error(error);
     }

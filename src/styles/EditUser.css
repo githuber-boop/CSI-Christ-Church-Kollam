@@ -103,10 +103,30 @@
     /* gap: 1rem; */
   }
 
+  .edit-form .checkbox {
+    width: 1%;
+    transform: scale(2);
+    display: inline;
+    margin-right: 10px;
+  }
+
+  .block-container label {
+    display: inline !important;
+  }
+
+  .spacing {
+    margin:5px 0;
+  }
+
   .logOut {
     margin: 20px;
   }
 
+  .block-container {
+    /* width: 0%; */
+    display: block;
+  }
+  
 
   @media screen and (max-width: 1100px) {
     .admin-member-sidebar {

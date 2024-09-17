@@ -35,12 +35,12 @@ const EditEvent = () => {
       <main className="admin-member-content">
         <div className="events-grid">
           {details.map((eventDetail) => (
-            <div key={eventDetail.id} className="event-details">
+            <div key={eventDetail._id} className="event-details">
               <h3>{eventDetail.eventName}</h3>
               <h3>{eventDetail.date}</h3>
               <h3>{eventDetail.time}</h3>
-              <h3>{eventDetail.eventDetails}</h3>
-              <img src={eventDetail.imageUrl} alt={eventDetail.eventName} />
+              <h3>Details: {eventDetail.eventDetails}</h3>
+              <img src={eventDetail.imageUrl} style={{ width: '300px' }} alt={eventDetail.eventName} />
 
               <div className="functions-user">
                 <button

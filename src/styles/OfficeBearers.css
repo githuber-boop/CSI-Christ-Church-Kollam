@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #FFF7ED;
-    padding: 20px 25px;
+    padding: 20px 35px;
     gap: .5rem;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -29,6 +29,11 @@
     text-transform: uppercase;
 }
 
+.office-bearer p {
+    font-size:1.25rem;
+    font-weight: 500;
+}
+
 .bearer-card img {
     width: 70%;
 }
@@ -37,13 +42,14 @@
     color: #3E0202;
     font-family: "Khand";
     text-transform: uppercase;
-    font-size: 1.875rem;
+    font-size: 2rem !important;
 }
 
 
 .bearer-position {
     font-family: "Khand";
     text-transform: uppercase;
+    font-size: 1.125rem;
 }
 
 .office-members {
@@ -91,6 +97,7 @@
 
 .office-bearer h3 {
     margin-top: 10px;
+    font-size: 1.125rem;
 }
 
  

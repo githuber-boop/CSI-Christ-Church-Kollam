@@ -16,7 +16,7 @@ const AdminMemberDetails = () => {
         const fetchJobs = async () => {
           try {
             setLoading(true);
-            const res = await fetch("https://church-kollam-backend.onrender.com/api/users")
+            const res = await fetch("https://church-kollam-backend.onrender.com/api/users/")
             const data = await res.json()
             setDetails(data)
           } catch (error) {

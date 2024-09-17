@@ -245,7 +245,7 @@ textarea:not([rows]) {
 
 .button {
   border: none;
-
+  text-decoration: none;
   color: white;
   padding: .5rem 1.25rem;
   display: inline-block;
@@ -253,6 +253,7 @@ textarea:not([rows]) {
   background-color: var(--yellow);
   margin-top: 20px;
   transition: 0.5s ease all;
+  /* font-family: "Khand", sans-serif; */
 }
 
 .button:hover {

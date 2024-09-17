@@ -250,7 +250,7 @@
 
 .location-contact {
     display: grid;
-    grid-template-columns: 75% 1fr;
+    grid-template-columns: 2.5fr 1fr;
     gap: 1rem;
 }
 
@@ -332,6 +332,20 @@
 }
 
 @media screen and (max-width:900px) {
+
+    .location-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contactUs {
+        padding: 10px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .number{
+        margin: 20px 0;
+    }
 
     .bearer-name {
         font-size: 1.687rem;

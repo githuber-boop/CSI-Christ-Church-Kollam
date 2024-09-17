@@ -31,6 +31,8 @@ import { BreadcrumbProvider } from './components/BreadCrumsContext.jsx';
 import EditEvent from './pages/EditEvent.jsx';
 import Archives from './pages/Archives.jsx';
 import FamilyMembers from './pages/FamilyMembers.jsx';
+import ProtectedRoute from './components/ProtectedRoutes.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 
 
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage error={"404"} errorDetails={"Sorry, we couldn't find the page"} errorReason={"Page not Found"}/>,
   },
   {
     path: "/milestones",
@@ -83,49 +89,67 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/member-dashboard",
-    element: <MemberDashboard />,
+    path: "/unauthorized",
+    element: <ErrorPage error={"401"} errorDetails={"You are not authorised to enter this page"} errorReason={"Unauthorised"}/>,
   },
   {
-    path: "/member-dashboard/family-members",
-    element: <FamilyMembers/>,
+    path:"/",
+    element: <ProtectedRoute allowedRoles={['member', 'admin']}/>,
+    children:[
+      {
+        path: "/member-dashboard",
+        element: <MemberDashboard />,
+      },
+      {
+        path: "/member-dashboard/family-members",
+        element: <FamilyMembers/>,
+      },
+    ]
   },
   {
-    path: "/admin-dashboard",
-    element: <NewUser/>,
+    path:"/",
+    element: <ProtectedRoute allowedRoles={['admin']}/>,
+    children:[
+      {
+        path: "/admin-dashboard",
+        element: <NewUser/>,
+      },
+      {
+        path: "/admin-dashboard/members",
+        element: <AdminMemberDetails />,
+      },
+      {
+        path: "/admin-dashboard/edit-user/:id",
+        element: <EditUser />,
+      },
+      {
+        path: "/admin-dasboard/edit-event",
+        element: <EditEvent />,
+      },
+      {
+        path: "/admin-dashboard/vicar-message",
+        element: <AdminVicarsMessage/>,
+      },
+      {
+        path: "/admin-dashboard/events",
+        element: <NewEvent addEventSubmit={addEvent} />,
+      },
+      {
+        path: "/admin-dashboard/herald",
+        element: <AdminChurchHerald/> 
+      },
+      {
+        path: "/admin-dashboard/almanac",
+        element: <AdminChurchAlmanac/> 
+      },
+      {
+        path: "/admin-dashboard/edit-events/:id",
+        element: <EditEvent/> 
+      },
+    ]
   },
-  {
-    path: "/admin-dashboard/members",
-    element: <AdminMemberDetails />,
-  },
-  {
-    path: "/admin-dashboard/edit-user/:id",
-    element: <EditUser />,
-  },
-  {
-    path: "/admin-dasboard/edit-event",
-    element: <EditEvent />,
-  },
-  {
-    path: "/admin-dashboard/vicar-message",
-    element: <AdminVicarsMessage/>,
-  },
-  {
-    path: "/admin-dashboard/events",
-    element: <NewEvent addEventSubmit={addEvent} />,
-  },
-  {
-    path: "/admin-dashboard/herald",
-    element: <AdminChurchHerald/> 
-  },
-  {
-    path: "/admin-dashboard/almanac",
-    element: <AdminChurchAlmanac/> 
-  },
-  {
-    path: "/admin-dashboard/edit-events/:id",
-    element: <EditEvent/> 
-  },
+  
+ 
   {
     path: "/office-bearers",
     element: <OfficeBearers />,

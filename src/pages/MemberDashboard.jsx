@@ -10,12 +10,12 @@ import { useNavigate } from "react-router-dom";
 const MemberDashboard = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [users, setUsers] = useState([]);
-    // const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-         // Get user ID from local storage
           const response = await axios.get(`https://church-kollam-backend.onrender.com/api/users/`);
           setUsers(response.data);
       } catch (error) {
@@ -29,16 +29,19 @@ const MemberDashboard = () => {
 
   const logOut = () => {
     try {
-      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+      navigate('/login')
     } catch (error) {
       console.error(error);
     }
   }
 
   const matchesSearchCriteria = (item) => {
-    const nameMatch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-    // const numberMatch = item.number.toLowerCase().includes(searchTerm.toLowerCase()) 
-    return nameMatch;
+    const term = searchTerm.toLowerCase();
+      return (
+          (item.name && item.name.toLowerCase().includes(term)) ||
+          (item.house && item.house.toLowerCase().includes(term))
+      );
 };
 
 
@@ -79,7 +82,7 @@ const MemberDashboard = () => {
 
         <div className="usersGrid">
           {users.filter(matchesSearchCriteria).map((memberDetail) => (
-            <div key={memberDetail.id} className="member-details">
+            <div key={memberDetail._id} className="member-details">
               <h3>
                 <span>NAME:</span>{memberDetail.name}
               </h3>

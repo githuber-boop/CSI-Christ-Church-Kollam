@@ -3,11 +3,21 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import logo from '../assets/csi-christ-logo.webp'
 import '../styles/Sidebar.css';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Sidebar = ({member, newUser, message, event, herald, almanac}) => {
+  const navigate = useNavigate()
+  const logOut = () => {
+    try {
+      localStorage.removeItem('token');
+      navigate('/login')
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <aside className='admin-member-sidebar sidebar'>
             <div>
@@ -28,7 +38,7 @@ const Sidebar = ({member, newUser, message, event, herald, almanac}) => {
                 </div>
             </div>
             <div className="logOut">
-              <Link to='/login' className='log-out'>Log Out</Link>
+              <Link to='/login' className='log-out' onClick={logOut}>Log Out</Link>
             </div>
         </aside>
   );
