@@ -8,7 +8,7 @@ const Breadcrumbs = () => {
   const breadcrumbLabels = {
     "/milestones": "Milestones",
     "/church-history": "Church History",
-    "/our-bishops": "Our Bishop",
+    "/our-bishops": "Our Bishops",
     "/vicars-message": "Vicar's Message",
     "/missions-projects": "Missions & Projects",
     "/chhattisgarh-mission": "Chhattisgarh Mission",
