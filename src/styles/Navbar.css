@@ -46,7 +46,7 @@
     transition: all 0.5s ease;
     background: rgba(51, 51, 51, 0.8);
     z-index: 1;
-
+    
   }
   
   .nav-links.active {
