@@ -141,7 +141,7 @@ const App = () => {
               </div>
             ))
           ) : (
-            <p>No data available</p> // Handle case with no data
+            <p>Reload the page</p> // Handle case with no data
           )
         )}
                 {/* {message.map((partMessage, index) => (
