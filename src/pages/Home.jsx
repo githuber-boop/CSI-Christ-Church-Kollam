@@ -186,7 +186,7 @@ const App = () => {
             <div className="bearer-card">
               <img src={roundedAccountant} alt="deanImage" />
               <div className="bearer-text">
-                <h1 className='bearer-name'>Oommen George</h1>
+                <h1 className='bearer-name'>Oommen Jacob</h1>
                 <h3 className='bearer-position'>accountant</h3>
                 <p className='bearer-number'>+91 94461 09231</p>
               </div>
