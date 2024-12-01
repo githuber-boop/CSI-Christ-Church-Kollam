@@ -42,7 +42,7 @@ const Login = () => {
   const handleLogin = async(e) =>  {
     e.preventDefault();
         try {
-            const response = await axios.post('https://church-kollam-backend.onrender.com/api/users/login', { number , password});
+            const response = await axios``.post('https://church-kollam-backend.onrender.com/api/users/login', { number , password});
             const { token } = response.data;
 
             const decodedToken = JSON.parse(atob(token.split('.')[1]));

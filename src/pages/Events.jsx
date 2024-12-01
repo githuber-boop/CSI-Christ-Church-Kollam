@@ -49,7 +49,7 @@ const Events = () => {
           events && events.map((event , index) => (
             <div key={index} className="event-card">
                     <h2>{event.eventName}</h2>
-                    <p><strong>Date Time:</strong> {new Date(event.date).toLocaleDateString()} {event.time}</p>
+                    <p><strong>Date and Time:</strong> {new Date(event.date).toLocaleDateString()} {event.time}</p>
                     <p>{event.eventDetails}</p>
                     <img src={event.imageUrl} alt={event.eventName} style={{ width: '300px' }} />
               </div>

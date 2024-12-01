@@ -9,9 +9,17 @@
     width: 600px;
 } */
 
-.parish-text p {
+.parish-text  {
     font-size: 1.25rem;
     text-align: center;
+}
+
+.parish-text h3 {
+    padding: 20px;
+    background-color: var(--yellow);
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 1.3rem !important;
 }
 
 .parish-text {

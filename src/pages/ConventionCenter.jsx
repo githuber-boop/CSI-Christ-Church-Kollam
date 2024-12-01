@@ -41,6 +41,8 @@ received from the Parish members and was dedicated on December 28 th ,
 2005. The hall is rented out to the public at very affordable rates, so that
 even the poor gets access to top-class facilities. The proceeds from the
 hall are utilized for mission and charity work.</p>
+
+                <h3>Visit the page <a href='https://www.csiconventioncentre.com/'>https://www.csiconventioncentre.com/</a></h3>
             </div>
 
             <div className="parish-image-grid">
